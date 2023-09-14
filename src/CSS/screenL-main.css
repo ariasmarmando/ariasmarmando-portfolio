@@ -9,7 +9,7 @@
   left: 0;
   right: 0;
   margin: auto;
-  border: 1px solid rgb(91, 164, 86);
+  border: 1px solid rgba(91, 164, 86, 0);
   max-width: 90%;
   max-height: 80%;
   height: auto;
