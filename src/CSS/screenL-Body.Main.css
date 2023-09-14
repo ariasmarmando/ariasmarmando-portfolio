@@ -1,0 +1,12 @@
+.mainBody-container {
+  border-radius: 20px;
+  background: var(
+    --portfolio-bg,
+    radial-gradient(
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
+    )
+  );
+}

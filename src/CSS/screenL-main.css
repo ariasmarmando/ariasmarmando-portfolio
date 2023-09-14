@@ -1,0 +1,28 @@
+.screenL-skeleton-container {
+  aspect-ratio: 7/4;
+  position: absolute;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-columns: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 1px solid red;
+  max-width: 90%;
+  max-height: 80%;
+  height: auto;
+}
+.screenL-skeleton-container :nth-child(1) {
+  grid-column: auto;
+  grid-row: 1;
+}
+.screenL-skeleton-container :nth-child(2) {
+  grid-column: auto;
+  grid-row: 2;
+}
+.screenL-skeleton-container :nth-child(3) {
+  grid-column: auto;
+  grid-row: 3;
+}
