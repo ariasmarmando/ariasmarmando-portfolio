@@ -1,12 +1,11 @@
 .Nav-Container {
   display: grid;
-  grid-template-columns: 0.5fr 1fr 4fr;
+  grid-template-columns: 10% 10% 80%;
   grid-template-rows: 100%;
   background-color: #38383f;
   width: 85%;
   height: 50%;
   margin-top: auto;
-  margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
   border: 0;
@@ -27,34 +26,34 @@
 }
 .nav-title {
   color: #a9a9c2;
-  text-align: left;
-  font-size: 130%;
+  text-align: center;
+  font-size: 1.5vw;
   padding-left: 5%;
   margin-top: 5%;
 }
 
 .nav-links img {
-  max-width: 15%;
+  max-width: 30%;
   padding-top: 1%;
-  padding-left: 1%;
+  padding-left: 3%;
 }
 .nav-links img:hover {
-  max-width: 16%;
+  max-width: 32%;
 }
 
 .nav ul {
-  text-align: right;
   color: #a9a9c2;
   margin: 0 auto;
-  padding-top: 1%;
   list-style-type: none;
 }
 .nav li {
-  font-size: 100%;
-  display: inline-block;
-  padding-left: 2%;
   padding-right: 2%;
+  padding-left: 2%;
+  font-size: 1.5vw;
+  white-space: nowrap;
+  display: inline;
   border-left: 1px solid #464651;
+  border-right: 1px solid transparent;
 }
 
 .nav li:hover {
