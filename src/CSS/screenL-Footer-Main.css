@@ -1,7 +1,7 @@
 .Footer-Container {
   background-color: #38383f;
   width: 85%;
-  height: 50%;
+  height: 40%;
   margin-top: 0;
   margin-bottom: auto;
   margin-left: auto;
@@ -9,4 +9,12 @@
   border: 0;
   border-style: none;
   border-radius: 0px 0px 5px 5px;
+}
+
+.Footer-Container p {
+  color: #a9a9c2;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  font-size: 1vw;
 }
