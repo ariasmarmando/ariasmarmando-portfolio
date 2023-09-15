@@ -1,0 +1,45 @@
+.ID-Card {
+  display: flexbox;
+  margin: 0 auto;
+  width: 60%;
+  height: 100%;
+}
+.ID-Picture {
+  margin: 15% auto;
+  width: 40%;
+  height: 40%;
+  background-color: rgb(231, 231, 231);
+  border-radius: 100%;
+  border: 5px solid #54545e;
+  box-shadow: 0px 3px 16px 3px rgba(36, 36, 38, 0.25);
+}
+
+.ID-Name {
+  text-align: center;
+  margin-top: -12%;
+  color: #848496;
+  font-size: 1.5vw;
+  line-height: normal;
+}
+
+.ID-Title1 {
+  text-align: center;
+  color: #a9a9c2;
+  font-size: 2vw;
+  line-height: normal;
+}
+
+.orangeBrackets {
+  color: #a93a2b;
+}
+
+.ID-Title2 {
+  text-align: center;
+  color: #a9a9c2;
+  font-size: 1.2vw;
+}
+
+#orangePsign {
+  font-weight: bold;
+  color: #a93a2b;
+}
