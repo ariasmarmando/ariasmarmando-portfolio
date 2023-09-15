@@ -1,5 +1,5 @@
 .screenL-skeleton-container {
-  aspect-ratio: 7/4;
+  aspect-ratio: 8/5;
   position: absolute;
   display: grid;
   grid-template-rows: 10% 80% 10%;
@@ -11,7 +11,7 @@
   margin: auto;
   border: 1px solid rgba(91, 164, 86, 0);
   max-width: 90%;
-  max-height: 80%;
+  max-height: 90%;
   height: auto;
 }
 .screenL-skeleton-container :nth-child(1) {

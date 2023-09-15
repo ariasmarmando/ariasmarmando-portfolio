@@ -4,7 +4,7 @@
   grid-template-rows: 100%;
   background-color: #38383f;
   width: 85%;
-  height: 50%;
+  height: 40%;
   margin-top: auto;
   margin-left: auto;
   margin-right: auto;
@@ -27,18 +27,18 @@
 .nav-title {
   color: #a9a9c2;
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 1vw;
   padding-left: 5%;
   margin-top: 5%;
 }
 
 .nav-links img {
-  max-width: 30%;
-  padding-top: 1%;
+  max-width: 20%;
+  padding-top: 5%;
   padding-left: 3%;
 }
 .nav-links img:hover {
-  max-width: 32%;
+  max-width: 22%;
 }
 
 .nav ul {
@@ -47,9 +47,9 @@
   list-style-type: none;
 }
 .nav li {
+  font-size: 1vw;
   padding-right: 2%;
   padding-left: 2%;
-  font-size: 1.5vw;
   white-space: nowrap;
   display: inline;
   border-left: 1px solid #464651;
