@@ -21,8 +21,23 @@
 
 .spaceBlock {
   display: inline-block;
-  background-color: aliceblue;
-  min-width: 90%;
+
+  min-width: 100%;
   margin-left: 5%;
+}
+
+#home {
+  background-color: #848496;
+}
+
+#aboutMe {
+  background-color: #111111;
+}
+
+#projects {
+  background-color: #7b3c3c;
+}
+#contact {
+  background-color: aliceblue;
   margin-right: 5%;
 }
