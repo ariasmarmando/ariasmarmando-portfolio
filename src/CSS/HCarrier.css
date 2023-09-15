@@ -21,13 +21,19 @@
 
 .spaceBlock {
   display: inline-block;
-
   min-width: 100%;
-  margin-left: 5%;
 }
 
 #home {
-  background-color: #848496;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  background: radial-gradient(
+    94.03% 57.44% at 50% 45.7%,
+    rgba(46, 46, 51, 0) 0%,
+    #2e2e33 93.23%,
+    #2e2e33 100%
+  );
 }
 
 #aboutMe {
