@@ -12,6 +12,7 @@
 .elements-carrier {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
   margin: 0 auto;
   height: 100%;
   width: 100%;
@@ -19,9 +20,9 @@
 }
 
 .spaceBlock {
+  display: inline-block;
   background-color: aliceblue;
   min-width: 90%;
-  min-height: 100%;
-  margin-right: 1%;
-  margin-left: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
