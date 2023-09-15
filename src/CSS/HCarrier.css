@@ -1,0 +1,27 @@
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #848496;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.elements-carrier {
+  display: flex;
+  overflow-x: auto;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.spaceBlock {
+  background-color: aliceblue;
+  min-width: 90%;
+  min-height: 100%;
+  margin-right: 1%;
+  margin-left: 1%;
+}
