@@ -1,0 +1,49 @@
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #848496;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.elements-carrier {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.spaceBlock {
+  display: inline-block;
+  min-width: 100%;
+}
+
+#home {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  background: radial-gradient(
+    94.03% 57.44% at 50% 45.7%,
+    rgba(46, 46, 51, 0) 0%,
+    #2e2e33 93.23%,
+    #2e2e33 100%
+  );
+}
+
+#aboutMe {
+  background-color: #111111;
+}
+
+#projects {
+  background-color: #7b3c3c;
+}
+#contact {
+  background-color: aliceblue;
+  margin-right: 5%;
+}
