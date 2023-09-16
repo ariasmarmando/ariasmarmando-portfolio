@@ -13,7 +13,6 @@ const HomeAnimation = () => {
       smartBackspace: true,
       loop: true,
       loopCount: Infinity,
-      startDelay: 100,
     });
 
     return () => {
