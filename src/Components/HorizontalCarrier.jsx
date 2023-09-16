@@ -1,7 +1,7 @@
 import "../CSS/HCarrier.css";
 import IDCard from "./IDCard";
 import IDimage from "../images/PFP3.png";
-
+import HomeAnimation from "./homeAnimation";
 const personalData = {
   pfp: IDimage,
   name: "Armando Arias",
@@ -19,6 +19,9 @@ const HorizontalCarrier = () => {
           title1={personalData.title1}
           title2={personalData.title2}
         />
+        <div id="homeAnimation">
+          <HomeAnimation />
+        </div>
       </div>
       <div id="aboutMe" className="spaceBlock"></div>
       <div id="projects" className="spaceBlock"></div>

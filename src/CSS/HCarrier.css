@@ -39,6 +39,16 @@
   grid-column: 2 / 4;
   grid-row: 1/7;
 }
+#home :nth-child(2) {
+  text-align: center;
+  grid-column: 1 / 5;
+  grid-row: 6/8;
+}
+#homeAnimation {
+  font-size: 5vw;
+  color: #848496;
+  font-weight: 800;
+}
 #aboutMe {
   background-color: #111111;
 }
@@ -49,4 +59,8 @@
 #contact {
   background-color: aliceblue;
   margin-right: 5%;
+}
+
+#orangeForth {
+  color: #a93a2b;
 }
