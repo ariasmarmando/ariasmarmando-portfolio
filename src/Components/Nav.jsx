@@ -1,20 +1,7 @@
 import "../CSS/ScreenL-Nav-Main.css";
 import linkedInButton from "../svg/linkedin.svg";
 import githubButton from "../svg/square-github.svg";
-const Nav = () => {
-  const handleClick = (anchor) => () => {
-    const id = `${anchor}`;
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "center",
-      });
-    }
-    window.history.pushState({}, "", id);
-  };
-
+const Nav = (props) => {
   return (
     <div className="Nav-Container">
       <p className="nav-title">Portfolio</p>
@@ -28,16 +15,16 @@ const Nav = () => {
       </div>
       <div className="nav">
         <ul>
-          <a onClick={handleClick("home")}>
+          <a onClick={props.clickHandle("home")}>
             <li>Home</li>
           </a>
-          <a onClick={handleClick("aboutMe")}>
+          <a onClick={props.clickHandle("aboutMe")}>
             <li>About me</li>
           </a>
-          <a onClick={handleClick("projects")}>
+          <a onClick={props.clickHandle("projects")}>
             <li>Projects</li>
           </a>
-          <a onClick={handleClick("contact")}>
+          <a onClick={props.clickHandle("contact")}>
             <li>Contact</li>
           </a>
         </ul>

@@ -44,6 +44,25 @@
   grid-column: 1 / 5;
   grid-row: 6/8;
 }
+#home :nth-child(3) {
+  text-align: center;
+  grid-column: 1 / 5;
+  grid-row: 8;
+}
+
+.aboutMeButton button {
+  margin-top: 1%;
+  width: 15%;
+  font-size: 1vw;
+  border-radius: 5px;
+  background-color: #a93a2b;
+  color: #a9a9c2;
+}
+
+.aboutMeButton button:hover {
+  background-color: #b83f2f;
+}
+
 #homeAnimation {
   font-size: 5vw;
   color: #848496;
