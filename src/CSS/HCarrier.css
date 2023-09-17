@@ -51,9 +51,9 @@
 }
 
 .aboutMeButton button {
-  margin-top: 1%;
+  margin-top: 2%;
   width: 15%;
-  font-size: 1vw;
+  font-size: 1.2vw;
   border-radius: 5px;
   background-color: #a93a2b;
   color: #a9a9c2;
@@ -64,6 +64,7 @@
 }
 
 #homeAnimation {
+  margin-top: 1%;
   font-size: 5vw;
   color: #848496;
   font-weight: 800;
