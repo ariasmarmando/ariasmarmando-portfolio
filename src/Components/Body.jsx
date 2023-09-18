@@ -11,6 +11,8 @@ const Body = (props) => {
         title2={props.title2}
         scrollMeTo={(where) => props.clickHandle(where)}
       />
+      <div className="prev-button" onClick={props.scrollerClickb}></div>
+      <div className="next-button" onClick={props.scrollerClickf}></div>
     </div>
   );
 };
