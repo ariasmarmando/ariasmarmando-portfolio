@@ -14,15 +14,15 @@
   max-height: 90%;
   height: auto;
 }
-.screenL-skeleton-container :nth-child(1) {
+Nav {
   grid-column: auto;
   grid-row: 1;
 }
-.screenL-skeleton-container :nth-child(2) {
+Body {
   grid-column: auto;
   grid-row: 2;
 }
-.screenL-skeleton-container :nth-child(3) {
+Footer {
   grid-column: auto;
   grid-row: 3;
 }

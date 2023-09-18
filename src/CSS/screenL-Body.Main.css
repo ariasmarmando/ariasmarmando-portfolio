@@ -1,12 +1,41 @@
 .mainBody-container {
+  display: grid;
+  grid-template-columns: 2% 96% 2%;
+  grid-template-rows: 1fr;
   border-radius: 20px;
-  background: var(
-    --portfolio-bg,
-    radial-gradient(
-      94.03% 57.44% at 50% 45.7%,
-      rgba(46, 46, 51, 0) 0%,
-      #2e2e33 93.23%,
-      #2e2e33 100%
-    )
-  );
+}
+.mainBody-container :nth-child(1) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.prev-button {
+  opacity: 0.7;
+  grid-column: 1;
+  grid-row: 1;
+  margin: auto -0.5em;
+  width: 95%;
+  height: 5%;
+}
+.prev-button:hover {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  left: -5px;
+}
+.next-button {
+  opacity: 0.7;
+  grid-column: 3;
+  grid-row: 1;
+  margin: auto 0.5em;
+  width: 95%;
+  height: 5%;
+}
+.next-button:hover {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  right: -5px;
 }
