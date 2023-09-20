@@ -8,6 +8,7 @@
   margin-top: auto;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0;
   border: 0;
   border-style: none;
   border-radius: 5px 5px 0px 0px;
@@ -27,9 +28,13 @@
 .nav-title {
   color: #a9a9c2;
   text-align: center;
-  font-size: 1vw;
-  padding-left: 5%;
-  margin-top: 5%;
+  color: #a9a9c2;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 5px 0 0 0;
 }
 
 .nav-links img {
@@ -43,10 +48,11 @@
 
 .nav ul {
   color: #a9a9c2;
-  margin: 0 auto;
+  margin: 0.3em auto;
   list-style-type: none;
 }
 .nav li {
+  font-family: "Roboto", sans-serif;
   font-size: 1vw;
   padding-right: 2%;
   padding-left: 2%;
@@ -56,10 +62,18 @@
   border-right: 1px solid transparent;
 }
 
-.nav li:hover {
-  cursor: pointer;
-  color: #a93a2b;
-}
 .nav a {
   color: #a9a9c2;
+  border-bottom-width: 0em;
+}
+
+.nav a.active {
+  transition: all 0.4s;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  border-bottom: 0.15em solid #a93a2bb9;
+}
+.nav li a:hover {
+  cursor: pointer;
+  color: #a93a2b;
 }

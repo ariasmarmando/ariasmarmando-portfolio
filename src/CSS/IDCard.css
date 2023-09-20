@@ -22,11 +22,13 @@
   text-align: center;
   margin-top: -12%;
   color: #848496;
+  font-family: "Roboto", sans-serif;
   font-size: 1.5vw;
   line-height: normal;
 }
 
 .ID-Title1 {
+  font-family: "Roboto", sans-serif;
   text-align: center;
   color: #a9a9c2;
   font-size: 2vw;
@@ -34,16 +36,19 @@
 }
 
 .orangeBrackets {
+  font-family: "Roboto", sans-serif;
   color: #a93a2b;
 }
 
 .ID-Title2 {
+  font-family: "Roboto", sans-serif;
   text-align: center;
   color: #a9a9c2;
   font-size: 1.2vw;
 }
 
 #orangePsign {
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   color: #a93a2b;
 }

@@ -52,6 +52,7 @@
 }
 
 .aboutMeButton button {
+  font-family: "Roboto", sans-serif;
   margin-top: 2%;
   width: 15%;
   font-size: 1.2vw;
@@ -65,6 +66,7 @@
 }
 
 #homeAnimation {
+  font-family: "Roboto", sans-serif;
   margin-top: 1%;
   font-size: 5vw;
   color: #848496;
