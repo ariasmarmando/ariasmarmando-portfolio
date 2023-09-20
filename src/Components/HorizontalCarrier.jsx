@@ -2,7 +2,7 @@ import "../CSS/HCarrier.css";
 import IDCard from "./IDCard";
 import HomeAnimation from "./homeAnimation";
 import ScrollTo from "./ScrollTo.jsx";
-
+import CoffeeMug from "../svg/mug-hot-solid.svg";
 const HorizontalCarrier = (props) => {
   return (
     <div className="elements-carrier">
@@ -18,6 +18,9 @@ const HorizontalCarrier = (props) => {
         </div>
         <div className="aboutMeButton">
           <ScrollTo name="About Me" whereTo={props.scrollMeTo("aboutMe")} />
+        </div>
+        <div className="coffee-button">
+          <img src={CoffeeMug} />
         </div>
       </div>
       <div id="aboutMe" className="spaceBlock"></div>
