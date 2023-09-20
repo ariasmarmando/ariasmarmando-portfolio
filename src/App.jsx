@@ -57,7 +57,10 @@ function App() {
 
   return (
     <div className="screenL-skeleton-container">
-      <Nav clickHandle={(props) => handleClick(`${props}`)} />
+      <Nav
+        sliderLocator={locIndex}
+        clickHandle={(props) => handleClick(`${props}`)}
+      />
       <Body
         pfp={personalData.pfp}
         name={personalData.name}
