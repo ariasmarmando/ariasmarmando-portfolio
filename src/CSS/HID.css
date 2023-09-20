@@ -1,0 +1,82 @@
+.H-ID-Card {
+  display: grid;
+  grid-template-columns: 10% 20% 40% 30%;
+  grid-template-rows: 100%;
+  width: 60%;
+  height: 45%;
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  justify-content: center;
+  background-color: #4949515a;
+  box-shadow: 0px 1px 3px 1px rgba(36, 36, 38, 0.158);
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.H-ID-Card .H-ID-Picture {
+  width: 7%;
+  height: 80%;
+  border-radius: 100%;
+  border: 2px solid #54545e;
+  box-shadow: 0px 3px 16px 3px rgba(36, 36, 38, 0.25);
+  overflow: hidden;
+  grid-row: 1;
+  grid-column: 1;
+  margin-left: 2%;
+  margin-top: 0.1em;
+}
+
+.H-ID-Picture img {
+  max-width: 100%;
+}
+
+.H-ID-Name {
+  grid-row: 1;
+  grid-column: 2;
+  font-family: "Roboto", sans-serif;
+  color: #848496;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 13%;
+  font-size: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+.H-ID-Title1 {
+  grid-row: 1;
+  grid-column: 3;
+  font-family: "Roboto", sans-serif;
+  color: #a9a9c2;
+  line-height: normal;
+  margin-top: 5%;
+  font-size: 1.3em;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+.H-ID-Title2 {
+  grid-row: 1;
+  grid-column: 4;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  line-height: normal;
+  color: #848496;
+  margin-top: 8%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1em;
+  white-space: nowrap;
+}
+
+.H-orangeBrackets {
+  color: #a93a2b;
+}
+#H-orangePsign {
+  color: #a93a2b;
+}

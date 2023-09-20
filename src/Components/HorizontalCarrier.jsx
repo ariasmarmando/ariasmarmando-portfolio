@@ -3,6 +3,8 @@ import IDCard from "./IDCard";
 import HomeAnimation from "./homeAnimation";
 import ScrollTo from "./ScrollTo.jsx";
 import CoffeeMug from "../svg/mug-hot-solid.svg";
+import HID from "./HID.jsx";
+
 const HorizontalCarrier = (props) => {
   return (
     <div className="elements-carrier">
@@ -23,7 +25,14 @@ const HorizontalCarrier = (props) => {
           <img src={CoffeeMug} />
         </div>
       </div>
-      <div id="aboutMe" className="spaceBlock"></div>
+      <div id="aboutMe" className="spaceBlock">
+        <HID
+          pfp={props.pfp}
+          name={props.name}
+          title1={props.title1}
+          title2={props.title2}
+        />
+      </div>
       <div id="projects" className="spaceBlock"></div>
       <div id="contact" className="spaceBlock"></div>
     </div>
