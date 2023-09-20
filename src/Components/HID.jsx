@@ -6,15 +6,16 @@ const HID = (props) => {
         <img src={props.pfp} />
       </div>
       <div className="H-ID-Name">
-        <span id="H-NameID">{props.name}</span>
+        <span className="h-inside-text">{props.name}</span>
       </div>
       <div className="H-ID-Title1">
         <span className="H-orangeBrackets">&#91;</span>{" "}
-        <span>{props.title1}</span>
+        <span className="h-inside-text">{props.title1}</span>
         <span className="H-orangeBrackets">&#93;</span>
       </div>
       <div className="H-ID-Title2">
-        <span id="H-orangePsign">&#43;</span> <span>{props.title2}</span>
+        <span id="H-orangePsign">&#43;</span>{" "}
+        <span className="h-inside-text">{props.title2}</span>
       </div>
     </div>
   );
