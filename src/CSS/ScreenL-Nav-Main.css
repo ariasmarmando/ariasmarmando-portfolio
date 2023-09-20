@@ -62,13 +62,8 @@
   border-right: 1px solid transparent;
 }
 
-.nav a {
-  color: #a9a9c2;
-  border-bottom-width: 0em;
-}
-
 .nav a.active {
-  transition: all 0.4s;
+  transition: all 200ms ease-in;
   border-bottom-left-radius: 5%;
   border-bottom-right-radius: 5%;
   border-bottom: 0.15em solid #a93a2bb9;
