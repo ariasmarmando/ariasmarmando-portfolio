@@ -75,7 +75,7 @@
 #aboutMe {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-rows: 20% 30% 25% 25%;
   background: radial-gradient(
     94.03% 57.44% at 50% 45.7%,
     rgba(46, 46, 51, 0) 0%,
@@ -87,6 +87,36 @@
 #aboutMe :nth-child(1) {
   grid-row: 1;
   grid-column: 1/5;
+}
+#aboutMe .bio-section {
+  display: inline-block;
+  margin: 0 auto;
+  width: 80%;
+  grid-row: 2;
+  grid-column: 1/5;
+}
+#bio-title1 #bio-slash {
+  color: #a93a2b;
+  font-size: calc(0.5vmax + 2vmin);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: "Roboto", sans-serif;
+}
+#bio-title1 #bio-title {
+  color: #848496;
+  font-size: calc(0.5vmax + 2vmin);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: "Roboto", sans-serif;
+}
+#aboutMe #bio-bio {
+  color: #a9a9c2;
+  font-size: calc(0.7vmax + 1vmin);
+  font-style: normal;
+  line-height: normal;
+  font-family: "Roboto", sans-serif;
 }
 #projects {
   background-color: #7b3c3c;
