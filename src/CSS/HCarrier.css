@@ -51,24 +51,6 @@
   grid-row: 8;
 }
 
-.coffee-button {
-  grid-column: 4;
-  grid-row: 10;
-  margin-left: 70%;
-  margin-right: 10%;
-}
-.coffee-button img {
-  opacity: 80%;
-  display: block;
-  margin: 20% auto;
-  max-width: 50%;
-}
-.coffee-button img:hover {
-  transition: 0.5s ease;
-  opacity: 100%;
-  max-width: 55%;
-  cursor: pointer;
-}
 .aboutMeButton button {
   font-family: "Roboto", sans-serif;
   margin-top: 2%;
@@ -91,9 +73,21 @@
   font-weight: 800;
 }
 #aboutMe {
-  background-color: #111111;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+  background: radial-gradient(
+    94.03% 57.44% at 50% 45.7%,
+    rgba(46, 46, 51, 0) 0%,
+    #2e2e33 93.23%,
+    #2e2e33 100%
+  );
 }
 
+#aboutMe :nth-child(1) {
+  grid-row: 1;
+  grid-column: 1/5;
+}
 #projects {
   background-color: #7b3c3c;
 }
@@ -104,4 +98,23 @@
 
 #orangeForth {
   color: #a93a2b;
+}
+
+.coffee-button {
+  grid-column: 4;
+  grid-row: 10;
+  margin-left: 70%;
+  margin-right: 10%;
+}
+.coffee-button img {
+  opacity: 80%;
+  display: block;
+  margin: 20% auto;
+  max-width: 50%;
+}
+.coffee-button img:hover {
+  transition: 0.5s ease;
+  opacity: 100%;
+  max-width: 55%;
+  cursor: pointer;
 }
