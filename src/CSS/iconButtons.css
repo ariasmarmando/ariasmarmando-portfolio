@@ -1,0 +1,20 @@
+.IconsButton {
+  display: inline-flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  width: 12%;
+  font-size: 1.2vw;
+  border-radius: 0.3em;
+  background-color: #a93a2b;
+  color: #a9a9c2;
+  margin-right: 1%;
+  padding: 1%;
+}
+.IconsButton:hover {
+  background-color: #b83f2f;
+  cursor: pointer;
+}
+.IconsButton img {
+  max-width: 15%;
+  margin-right: 5%;
+}
