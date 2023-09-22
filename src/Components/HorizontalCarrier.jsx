@@ -5,10 +5,18 @@ import ScrollTo from "./ScrollTo.jsx";
 import CoffeeMug from "../svg/mug-hot-solid.svg";
 import HID from "./HID.jsx";
 import IconButtons from "./IconButtons.jsx";
+import Skill from "./Skill.jsx";
 import ResIcon from "../svg/file-lines-regular.svg";
 import Linkedin from "../svg/linkedin.svg";
 import Github from "../svg/square-github.svg";
-
+import JavaScripticon from "../svg/square-js.svg";
+import Reacticon from "../svg/react.svg";
+import HTMLicon from "../svg/html5.svg";
+import CSSicon from "../svg/css3-alt.svg";
+import Figmaicon from "../svg/figma.svg";
+import IllustratorIcon from "../svg/bezier-curve-solid.svg";
+import Photoshopicon from "../svg/image-solid.svg";
+import SkillsIcon from "../svg/gem-regular.svg";
 const buttonData = [
   {
     id: 1,
@@ -36,6 +44,78 @@ const buttonData = [
   },
 ];
 
+const skillList = [
+  {
+    id: 1,
+    name: "JavaScript",
+    image: JavaScripticon,
+  },
+  {
+    id: 2,
+    name: "React.js",
+    image: Reacticon,
+  },
+  {
+    id: 3,
+    name: "HTML",
+    image: HTMLicon,
+  },
+  {
+    id: 4,
+    name: "CSS",
+    image: CSSicon,
+  },
+  {
+    id: 5,
+    name: "Figma",
+    image: Figmaicon,
+  },
+  {
+    id: 6,
+    name: "Illustrator",
+    image: IllustratorIcon,
+  },
+  {
+    id: 7,
+    name: "Photoshop",
+    image: Photoshopicon,
+  },
+  {
+    id: 0,
+    name: "placeholder",
+    image: null,
+  },
+  {
+    id: 0,
+    name: "placeholder",
+    image: null,
+  },
+  {
+    id: 0,
+    name: "placeholder",
+    image: null,
+  },
+  {
+    id: 0,
+    name: "placeholder",
+    image: null,
+  },
+  {
+    id: 0,
+    name: "placeholder",
+    image: null,
+  },
+  {
+    id: 0,
+    name: "placeholder",
+    image: null,
+  },
+  {
+    id: 0,
+    name: "placeholder",
+    image: null,
+  },
+];
 const HorizontalCarrier = (props) => {
   return (
     <div className="elements-carrier">
@@ -86,6 +166,27 @@ const HorizontalCarrier = (props) => {
               buttonRoute={buttonData.route}
             />
           ))}
+        </div>
+        <div className="skills-section">
+          <div id="bio-title1">
+            <span id="bio-slash">// </span>
+            <span id="bio-title">Skills</span>
+          </div>
+          <div id="skills-section-skills">
+            <div className="title-icon">
+              <img src={SkillsIcon} />
+            </div>
+            <div id="skillList">
+              {skillList.map((skillList) => (
+                <Skill
+                  key={skillList.id}
+                  id={skillList.id}
+                  skillName={skillList.name}
+                  iconIMG={skillList.image}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 

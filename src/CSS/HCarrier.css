@@ -75,7 +75,7 @@
 #aboutMe {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 20% 30% 25% 25%;
+  grid-template-rows: 20% 35% 15% 30%;
   background: radial-gradient(
     94.03% 57.44% at 50% 45.7%,
     rgba(46, 46, 51, 0) 0%,
@@ -125,6 +125,33 @@
   margin: 0 auto;
   grid-row: 3;
   grid-column: 1/5;
+}
+
+.skills-section {
+  width: 80%;
+  display: inline-block;
+  margin: 0 auto;
+  grid-row: 4;
+  grid-column: 1/5;
+}
+.skills-section #skills-section-skills {
+  display: grid;
+  grid-template-columns: 5% 95%;
+  grid-template-rows: 100%;
+  border-radius: 5px;
+  padding: 1%;
+  background: rgba(63, 63, 70, 0.38);
+  overflow-y: scroll;
+}
+.title-icon {
+  grid-column: 1;
+  grid-row: 1;
+  padding-top: 2%;
+  max-width: 4%;
+}
+#skillList {
+  grid-column: 2;
+  grid-row: 1;
 }
 #projects {
   background-color: #7b3c3c;
