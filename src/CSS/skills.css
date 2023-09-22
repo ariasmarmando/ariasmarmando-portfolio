@@ -1,0 +1,38 @@
+.Skills {
+  display: inline-flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 10%;
+  font-size: 1vw;
+  border-radius: 0.3em;
+  background-color: #a93a2b;
+  color: #a9a9c2;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  padding: 1%;
+}
+
+.Skills img {
+  max-width: 15%;
+  margin-right: 5%;
+}
+
+.Skills-none {
+  display: inline-flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 10%;
+  font-size: 1vw;
+  border-radius: 0.3em;
+  background-color: rgba(132, 132, 150, 0.3);
+  color: rgba(132, 132, 150, 0);
+  margin-right: 1%;
+  margin-bottom: 1%;
+  padding: 1%;
+}
