@@ -18,12 +18,18 @@ const buttonData = [
   },
   {
     id: 2,
+    name: "Certs",
+    image: ResIcon,
+    route: null,
+  },
+  {
+    id: 3,
     name: "LinkedIn",
     image: Linkedin,
     route: null,
   },
   {
-    id: 3,
+    id: 4,
     name: "Github",
     image: Github,
     route: null,
