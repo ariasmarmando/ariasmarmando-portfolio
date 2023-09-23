@@ -17,6 +17,8 @@ import Figmaicon from "../svg/figma.svg";
 import IllustratorIcon from "../svg/bezier-curve-solid.svg";
 import Photoshopicon from "../svg/image-solid.svg";
 import SkillsIcon from "../svg/gem-regular.svg";
+
+/* These data needs to be placed inside of a contex API later */
 const buttonData = [
   {
     id: 1,
@@ -116,6 +118,7 @@ const skillList = [
     image: null,
   },
 ];
+
 const HorizontalCarrier = (props) => {
   return (
     <div className="elements-carrier">
@@ -158,14 +161,19 @@ const HorizontalCarrier = (props) => {
           </span>
         </div>
         <div className="icons-buttons">
-          {buttonData.map((buttonData) => (
-            <IconButtons
-              key={buttonData.id}
-              buttonName={buttonData.name}
-              iconIMG={buttonData.image}
-              buttonRoute={buttonData.route}
-            />
-          ))}
+          <div id="bio-title1">
+            <span id="bio-title">More of me</span>
+          </div>
+          <div id="link-buttons-positioner">
+            {buttonData.map((buttonData) => (
+              <IconButtons
+                key={buttonData.id}
+                buttonName={buttonData.name}
+                iconIMG={buttonData.image}
+                buttonRoute={buttonData.route}
+              />
+            ))}
+          </div>
         </div>
         <div className="skills-section">
           <div id="bio-title1">

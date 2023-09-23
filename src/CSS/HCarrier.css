@@ -51,6 +51,29 @@
   grid-row: 8;
 }
 
+.coffee-button {
+  grid-column: 4;
+  grid-row: 10;
+  margin-left: 70%;
+  margin-right: 10%;
+}
+.coffee-button img {
+  opacity: 80%;
+  display: block;
+  margin: 20% auto;
+  max-width: 50%;
+}
+.coffee-button img:hover {
+  transition: 0.5s ease;
+  opacity: 100%;
+  max-width: 55%;
+  cursor: pointer;
+}
+
+#orangeForth {
+  color: #a93a2b;
+}
+
 .aboutMeButton button {
   font-family: "Roboto", sans-serif;
   margin-top: 2%;
@@ -75,7 +98,7 @@
 #aboutMe {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 20% 35% 15% 30%;
+  grid-template-rows: 20% 30% 20% 30%;
   background: radial-gradient(
     94.03% 57.44% at 50% 45.7%,
     rgba(46, 46, 51, 0) 0%,
@@ -94,8 +117,9 @@
   width: 80%;
   grid-row: 2;
   grid-column: 1/5;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
+
 #bio-title1 #bio-slash {
   color: #a93a2b;
   font-size: calc(0.5vmax + 2vmin);
@@ -114,9 +138,8 @@
 }
 #aboutMe #bio-bio {
   color: #a9a9c2;
-  font-size: calc(0.7vmax + 1vmin);
+  font-size: 1.4vw;
   font-style: normal;
-  line-height: normal;
   font-family: "Roboto", sans-serif;
 }
 .icons-buttons {
@@ -124,7 +147,17 @@
   display: inline-block;
   margin: 0 auto;
   grid-row: 3;
-  grid-column: 1/5;
+  grid-column: 1 / span 5;
+}
+
+.icons-buttons #bio-title1 {
+  text-align: center;
+  padding-bottom: 1%;
+}
+.icons-buttons #link-buttons-positioner {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .skills-section {
@@ -141,7 +174,6 @@
   border-radius: 5px;
   padding: 1%;
   background: rgba(63, 63, 70, 0.38);
-  overflow-y: scroll;
 }
 .title-icon {
   grid-column: 1;
@@ -159,27 +191,4 @@
 #contact {
   background-color: aliceblue;
   margin-right: 5%;
-}
-
-#orangeForth {
-  color: #a93a2b;
-}
-
-.coffee-button {
-  grid-column: 4;
-  grid-row: 10;
-  margin-left: 70%;
-  margin-right: 10%;
-}
-.coffee-button img {
-  opacity: 80%;
-  display: block;
-  margin: 20% auto;
-  max-width: 50%;
-}
-.coffee-button img:hover {
-  transition: 0.5s ease;
-  opacity: 100%;
-  max-width: 55%;
-  cursor: pointer;
 }
