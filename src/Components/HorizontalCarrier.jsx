@@ -1,11 +1,17 @@
+/* CSS */
 import "../CSS/HCarrier.css";
-import IDCard from "./IDCard";
-import HomeAnimation from "./homeAnimation";
+
+/* Components */
+import IDCard from "./IDCard.jsx";
+import HomeAnimation from "./HomeAnimation.jsx";
 import ScrollTo from "./ScrollTo.jsx";
-import CoffeeMug from "../svg/mug-hot-solid.svg";
 import HID from "./HID.jsx";
 import IconButtons from "./IconButtons.jsx";
 import Skill from "./Skill.jsx";
+import LiveProjects from "./LiveProjects";
+
+/* svgs */
+import CoffeeMug from "../svg/mug-hot-solid.svg";
 import ResIcon from "../svg/file-lines-regular.svg";
 import Linkedin from "../svg/linkedin.svg";
 import Github from "../svg/square-github.svg";
@@ -18,7 +24,7 @@ import IllustratorIcon from "../svg/bezier-curve-solid.svg";
 import Photoshopicon from "../svg/image-solid.svg";
 import SkillsIcon from "../svg/gem-regular.svg";
 
-/* These data needs to be placed inside of a contex API later */
+/* This data needs to be placed inside of a contex API later */
 const buttonData = [
   {
     id: 1,
@@ -139,6 +145,7 @@ const HorizontalCarrier = (props) => {
           <img src={CoffeeMug} />
         </div>
       </div>
+
       <div id="aboutMe" className="spaceBlock">
         <HID
           pfp={props.pfp}
@@ -198,7 +205,18 @@ const HorizontalCarrier = (props) => {
         </div>
       </div>
 
-      <div id="projects" className="spaceBlock"></div>
+      <div id="projects" className="spaceBlock">
+        <div id="projects-content">
+          <div id="bio-title1">
+            <span id="bio-slash">// </span>
+            <span id="bio-title">Live Projects</span>
+          </div>
+          <div id="projects-component">
+            <LiveProjects />
+          </div>
+        </div>
+      </div>
+
       <div id="contact" className="spaceBlock"></div>
     </div>
   );
