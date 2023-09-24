@@ -130,7 +130,14 @@ const liveProjectData = [
     id: 1,
     name: "Portfolio",
     desc: "Project Description goes here.",
-    skills: [{ ...skillList[0] }, { ...skillList[1] }],
+    skills: [
+      { ...skillList[0] },
+      { ...skillList[1] },
+      { ...skillList[2] },
+      { ...skillList[3] },
+      { ...skillList[4] },
+      { ...skillList[5] },
+    ],
   },
 ];
 

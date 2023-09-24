@@ -57,7 +57,7 @@
   grid-column: 1;
   grid-row: 2;
   width: 100%;
-  height: 80%;
+  height: 60%;
   margin-bottom: 1%;
   background-color: #3f3f46;
   border: 1px solid transparent;
@@ -73,7 +73,7 @@
   grid-column: 3 / span 4;
   grid-row: 3 / 5;
   width: 100%;
-  height: 45%;
+  height: 60%;
   display: grid;
   grid-gap: 10%;
   grid-template-columns: 100%;
@@ -94,13 +94,19 @@
 .project-grid #project-skills-container #skillList {
   grid-column: 1;
   grid-row: 2;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: auto;
   width: 100%;
-  height: 100%;
+  height: 90%;
   background-color: #3f3f46;
   border: 1px solid transparent;
+  &::-webkit-scrollbar {
+    height: 0.5em;
+  }
 }
 
 .project-grid #project-skills-container #skillList #ind-skill {
-  width: 200%;
-  padding: 2%;
+  display: flex;
+  padding: 3%;
 }
