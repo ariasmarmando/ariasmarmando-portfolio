@@ -1,3 +1,4 @@
+import { useState } from "react";
 /* CSS */
 import "../CSS/HCarrier.css";
 
@@ -25,6 +26,7 @@ import Photoshopicon from "../svg/image-solid.svg";
 import SkillsIcon from "../svg/gem-regular.svg";
 import ArrowUp from "../svg/chevron-up-solid.svg/";
 import ArrowDown from "../svg/chevron-down-solid.svg/";
+import p1Preview from "../svg/projectPreview.png";
 
 /* This data needs to be placed inside of a contex API later */
 const buttonData = [
@@ -132,6 +134,7 @@ const liveProjectData = [
     id: "lp1",
     name: "Portfolio",
     desc: "Project Description goes here.",
+    img: p1Preview,
     skills: [
       { ...skillList[0] },
       { ...skillList[1] },
@@ -240,6 +243,7 @@ const HorizontalCarrier = (props) => {
               <LiveProjects
                 key={liveProjectData.id}
                 id={liveProjectData.id}
+                img={liveProjectData.img}
                 skillObject={liveProjectData.skills}
                 title={liveProjectData.name}
                 desc={liveProjectData.desc}

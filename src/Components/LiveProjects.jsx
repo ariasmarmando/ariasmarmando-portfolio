@@ -6,7 +6,9 @@ const LiveProjects = (props) => {
   return (
     <div className="project-grid" id={props.id}>
       <div id="project-img-section">
-        <div id="img-container"></div>
+        <div id="img-container">
+          <img src={props.img} />
+        </div>
       </div>
       <div id="project-desc-container">
         <div id="section-title">
