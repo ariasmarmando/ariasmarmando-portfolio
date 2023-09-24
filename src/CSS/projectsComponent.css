@@ -33,7 +33,7 @@
 }
 .project-grid #project-img-section #img-container img:hover {
   transition: 0.5s ease;
-  transform: rotate(5deg);
+  transform: rotate(5deg) scale(1.2);
 }
 
 .project-grid #project-desc-container {
@@ -49,7 +49,6 @@
   margin-right: auto;
   margin-bottom: auto;
   margin-top: 7%;
-  padding: 2%;
 }
 .project-grid #project-desc-container #section-title {
   grid-column: 1;
@@ -78,10 +77,13 @@
   color: #a9a9c2;
   font-size: 1vw;
   font-family: "Roboto", sans-serif;
+  text-align: left;
 }
 .project-grid #project-desc-container #section-desc #description {
-  padding: 2%;
+  width: 95%;
+  margin: auto;
 }
+
 .project-grid #project-skills-container {
   grid-column: 3 / span 4;
   grid-row: 3 / 5;
@@ -91,7 +93,6 @@
   grid-gap: 10%;
   grid-template-columns: 100%;
   grid-template-rows: 20% 80%;
-  padding: 2%;
   margin: auto auto;
 }
 .project-grid #project-skills-container #section-title {

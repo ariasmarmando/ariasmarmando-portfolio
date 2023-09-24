@@ -16,7 +16,9 @@ const LiveProjects = (props) => {
           <span>Project Name: {props.title}</span>
         </div>
         <div id="section-desc">
-          <span id="description">{props.desc}</span>
+          <div id="description">
+            <span>{props.desc}</span>
+          </div>
         </div>
       </div>
       <div id="project-skills-container">

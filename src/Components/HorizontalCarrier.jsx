@@ -133,7 +133,7 @@ const liveProjectData = [
   {
     id: "lp1",
     name: "Portfolio",
-    desc: "Project Description goes here.",
+    desc: "My personal portfolio is a single-page application developed in React.js + vite to showcase my skills and other projects.",
     img: p1Preview,
     skills: [
       { ...skillList[0] },
