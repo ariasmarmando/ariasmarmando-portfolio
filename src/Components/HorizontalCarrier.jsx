@@ -1,11 +1,18 @@
+import { useState } from "react";
+/* CSS */
 import "../CSS/HCarrier.css";
-import IDCard from "./IDCard";
-import HomeAnimation from "./homeAnimation";
+
+/* Components */
+import IDCard from "./IDCard.jsx";
+import HomeAnimation from "./HomeAnimation.jsx";
 import ScrollTo from "./ScrollTo.jsx";
-import CoffeeMug from "../svg/mug-hot-solid.svg";
 import HID from "./HID.jsx";
 import IconButtons from "./IconButtons.jsx";
 import Skill from "./Skill.jsx";
+import LiveProjects from "./LiveProjects";
+
+/* svgs */
+import CoffeeMug from "../svg/mug-hot-solid.svg";
 import ResIcon from "../svg/file-lines-regular.svg";
 import Linkedin from "../svg/linkedin.svg";
 import Github from "../svg/square-github.svg";
@@ -17,29 +24,32 @@ import Figmaicon from "../svg/figma.svg";
 import IllustratorIcon from "../svg/bezier-curve-solid.svg";
 import Photoshopicon from "../svg/image-solid.svg";
 import SkillsIcon from "../svg/gem-regular.svg";
+import ArrowUp from "../svg/chevron-up-solid.svg/";
+import ArrowDown from "../svg/chevron-down-solid.svg/";
+import p1Preview from "../svg/projectPreview.png";
 
-/* These data needs to be placed inside of a contex API later */
+/* This data needs to be placed inside of a contex API later */
 const buttonData = [
   {
-    id: 1,
+    id: "bd1",
     name: "Resume",
     image: ResIcon,
     route: null,
   },
   {
-    id: 2,
+    id: "bd2",
     name: "Certs",
     image: ResIcon,
     route: null,
   },
   {
-    id: 3,
+    id: "bd3",
     name: "LinkedIn",
     image: Linkedin,
     route: null,
   },
   {
-    id: 4,
+    id: "bd4",
     name: "Github",
     image: Github,
     route: null,
@@ -48,74 +58,97 @@ const buttonData = [
 
 const skillList = [
   {
-    id: 1,
+    id: "sk1",
     name: "JavaScript",
     image: JavaScripticon,
   },
   {
-    id: 2,
+    id: "sk2",
     name: "React.js",
     image: Reacticon,
   },
   {
-    id: 3,
+    id: "sk3",
     name: "HTML",
     image: HTMLicon,
   },
   {
-    id: 4,
+    id: "sk4",
     name: "CSS",
     image: CSSicon,
   },
   {
-    id: 5,
+    id: "sk5",
     name: "Figma",
     image: Figmaicon,
   },
   {
-    id: 6,
+    id: "sk6",
     name: "Illustrator",
     image: IllustratorIcon,
   },
   {
-    id: 7,
+    id: "sk7",
     name: "Photoshop",
     image: Photoshopicon,
   },
   {
-    id: 0,
+    id: "sk8",
     name: "placeholder",
     image: null,
   },
   {
-    id: 0,
+    id: "sk9",
     name: "placeholder",
     image: null,
   },
   {
-    id: 0,
+    id: "sk10",
     name: "placeholder",
     image: null,
   },
   {
-    id: 0,
+    id: "sk11",
     name: "placeholder",
     image: null,
   },
   {
-    id: 0,
+    id: "sk12",
     name: "placeholder",
     image: null,
   },
   {
-    id: 0,
+    id: "sk13",
     name: "placeholder",
     image: null,
   },
   {
-    id: 0,
+    id: "sk14",
     name: "placeholder",
     image: null,
+  },
+];
+
+const liveProjectData = [
+  {
+    id: "lp1",
+    name: "Portfolio",
+    desc: "My personal portfolio is a single-page application developed in React.js + vite to showcase my skills and other projects.",
+    img: p1Preview,
+    skills: [
+      { ...skillList[0] },
+      { ...skillList[1] },
+      { ...skillList[2] },
+      { ...skillList[3] },
+      { ...skillList[4] },
+      { ...skillList[5] },
+    ],
+  },
+  {
+    id: "lp2",
+    name: "Placeholer",
+    desc: "Project Description goes here.",
+    skills: [{ ...skillList[0] }, { ...skillList[1] }, { ...skillList[2] }],
   },
 ];
 
@@ -139,6 +172,7 @@ const HorizontalCarrier = (props) => {
           <img src={CoffeeMug} />
         </div>
       </div>
+
       <div id="aboutMe" className="spaceBlock">
         <HID
           pfp={props.pfp}
@@ -198,7 +232,35 @@ const HorizontalCarrier = (props) => {
         </div>
       </div>
 
-      <div id="projects" className="spaceBlock"></div>
+      <div id="projects" className="spaceBlock">
+        <div id="projects-content">
+          <div id="bio-title1">
+            <span id="bio-slash">// </span>
+            <span id="bio-title">Live Projects</span>
+          </div>
+          <div id="projects-component">
+            {liveProjectData.map((liveProjectData) => (
+              <LiveProjects
+                key={liveProjectData.id}
+                id={liveProjectData.id}
+                img={liveProjectData.img}
+                skillObject={liveProjectData.skills}
+                title={liveProjectData.name}
+                desc={liveProjectData.desc}
+              />
+            ))}
+          </div>
+          <div className="projectScroller">
+            <div id="scrollDown" onClick={props.scrollMeTo("lp2")}>
+              <img src={ArrowDown} />
+            </div>
+            <div id="scrollUp" onClick={props.scrollMeTo("lp1")}>
+              <img src={ArrowUp} />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div id="contact" className="spaceBlock"></div>
     </div>
   );

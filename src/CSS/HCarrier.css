@@ -142,6 +142,7 @@
   font-style: normal;
   font-family: "Roboto", sans-serif;
 }
+
 .icons-buttons {
   width: 80%;
   display: inline-block;
@@ -185,8 +186,90 @@
   grid-column: 2;
   grid-row: 1;
 }
+
 #projects {
-  background-color: #7b3c3c;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 20% 30% 20% 30%;
+  background: radial-gradient(
+    94.03% 57.44% at 50% 45.7%,
+    rgba(46, 46, 51, 0) 0%,
+    #2e2e33 93.23%,
+    #2e2e33 100%
+  );
+}
+#projects #projects-content {
+  margin: auto auto;
+  grid-column: 1/5;
+  grid-row: 1/5;
+  width: 90%;
+  height: 80%;
+  background-color: #38383f;
+  border: 1px solid transparent;
+  border-radius: 0.5em;
+}
+#projects #bio-title1 {
+  text-align: center;
+  padding: 2%;
+}
+
+#projects #projects-component {
+  margin: 0 auto;
+  width: 95%;
+  height: 80%;
+  background: rgb(56, 56, 63);
+  background: linear-gradient(
+    0deg,
+    rgba(56, 56, 63, 1) 0%,
+    rgba(63, 63, 70, 0.499) 50%,
+    rgba(56, 56, 63, 0.62) 100%
+  );
+
+  overflow-y: hidden;
+}
+#projects .projectScroller {
+  width: 100%;
+  height: 15%;
+  margin: -1% auto;
+  position: relative;
+  display: grid;
+  border: 1px solid transparent;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  background: #38383f;
+}
+
+#projects .projectScroller #scrollUp {
+  width: 90%;
+  padding: 2%;
+  margin: auto;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 0.2em;
+}
+
+#projects .projectScroller #scrollUp img {
+  max-width: 5%;
+}
+#projects .projectScroller #scrollUp:hover {
+  cursor: pointer;
+  background-color: #a93a2b;
+}
+
+#projects .projectScroller #scrollDown {
+  width: 90%;
+  padding: 2%;
+  margin: auto;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 0.2em;
+}
+#projects .projectScroller #scrollDown:hover {
+  cursor: pointer;
+  background-color: #a93a2b;
+}
+#projects .projectScroller #scrollDown img {
+  max-width: 5%;
 }
 #contact {
   background-color: aliceblue;

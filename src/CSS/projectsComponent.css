@@ -1,0 +1,123 @@
+.project-grid {
+  width: 95%;
+  height: 90%;
+  margin: auto auto;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(4, 25%);
+  padding-bottom: 1%;
+}
+
+.project-grid #project-img-section {
+  display: flex;
+  width: 90%;
+  height: 80%;
+  background-color: #3f3f46;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 4;
+  margin: auto auto;
+  border: 1px solid transparent;
+  border-radius: 0.5em;
+}
+.project-grid #project-img-section #img-container {
+  display: flex;
+  width: 90%;
+  height: 90%;
+  margin: auto auto;
+}
+.project-grid #project-img-section #img-container img {
+  transition: 0.5s ease;
+  margin: auto auto;
+  max-width: 100%;
+  max-height: 90%;
+}
+.project-grid #project-img-section #img-container img:hover {
+  transition: 0.5s ease;
+  transform: rotate(5deg) scale(1.2);
+}
+
+.project-grid #project-desc-container {
+  width: 100%;
+  height: 80%;
+  grid-column: 3 / span 4;
+  grid-row: 1 / span 3;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 90%;
+  grid-gap: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: 7%;
+}
+.project-grid #project-desc-container #section-title {
+  grid-column: 1;
+  grid-row: 1;
+  color: #848496;
+  font-size: 1.2vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: "Roboto", sans-serif;
+}
+
+#title-dec {
+  color: #a93a2b;
+}
+
+.project-grid #project-desc-container #section-desc {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+  height: 60%;
+  margin-bottom: 1%;
+  background-color: #3f3f46;
+  border: 1px solid transparent;
+  border-radius: 0.2em;
+  color: #a9a9c2;
+  font-size: 1vw;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+}
+.project-grid #project-desc-container #section-desc #description {
+  width: 95%;
+  margin: auto;
+}
+
+.project-grid #project-skills-container {
+  grid-column: 3 / span 4;
+  grid-row: 3 / 5;
+  width: 100%;
+  height: 60%;
+  display: grid;
+  grid-gap: 10%;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 80%;
+  margin: auto auto;
+}
+.project-grid #project-skills-container #section-title {
+  grid-column: 1;
+  grid-row: 1;
+  color: #848496;
+  font-size: 1.2vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: "Roboto", sans-serif;
+}
+.project-grid #project-skills-container #skillList {
+  grid-column: 1;
+  grid-row: 2;
+  overflow-y: auto;
+  width: 100%;
+  height: 90%;
+  background-color: #3f3f46;
+  border: 1px solid transparent;
+  &::-webkit-scrollbar {
+    height: 0.4em;
+  }
+}
+
+.project-grid #project-skills-container #skillList #ind-skill {
+  padding: 1%;
+}
