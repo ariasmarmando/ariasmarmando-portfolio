@@ -27,25 +27,25 @@ import SkillsIcon from "../svg/gem-regular.svg";
 /* This data needs to be placed inside of a contex API later */
 const buttonData = [
   {
-    id: 1,
+    id: "bd1",
     name: "Resume",
     image: ResIcon,
     route: null,
   },
   {
-    id: 2,
+    id: "bd2",
     name: "Certs",
     image: ResIcon,
     route: null,
   },
   {
-    id: 3,
+    id: "bd3",
     name: "LinkedIn",
     image: Linkedin,
     route: null,
   },
   {
-    id: 4,
+    id: "bd4",
     name: "Github",
     image: Github,
     route: null,
@@ -54,72 +54,72 @@ const buttonData = [
 
 const skillList = [
   {
-    id: 1,
+    id: "sk1",
     name: "JavaScript",
     image: JavaScripticon,
   },
   {
-    id: 2,
+    id: "sk2",
     name: "React.js",
     image: Reacticon,
   },
   {
-    id: 3,
+    id: "sk3",
     name: "HTML",
     image: HTMLicon,
   },
   {
-    id: 4,
+    id: "sk4",
     name: "CSS",
     image: CSSicon,
   },
   {
-    id: 5,
+    id: "sk5",
     name: "Figma",
     image: Figmaicon,
   },
   {
-    id: 6,
+    id: "sk6",
     name: "Illustrator",
     image: IllustratorIcon,
   },
   {
-    id: 7,
+    id: "sk7",
     name: "Photoshop",
     image: Photoshopicon,
   },
   {
-    id: 0,
+    id: "sk8",
     name: "placeholder",
     image: null,
   },
   {
-    id: 0,
+    id: "sk9",
     name: "placeholder",
     image: null,
   },
   {
-    id: 0,
+    id: "sk10",
     name: "placeholder",
     image: null,
   },
   {
-    id: 0,
+    id: "sk11",
     name: "placeholder",
     image: null,
   },
   {
-    id: 0,
+    id: "sk12",
     name: "placeholder",
     image: null,
   },
   {
-    id: 0,
+    id: "sk13",
     name: "placeholder",
     image: null,
   },
   {
-    id: 0,
+    id: "sk14",
     name: "placeholder",
     image: null,
   },
@@ -127,7 +127,7 @@ const skillList = [
 
 const liveProjectData = [
   {
-    id: 1,
+    id: "lp1",
     name: "Portfolio",
     desc: "Project Description goes here.",
     skills: [
@@ -138,6 +138,12 @@ const liveProjectData = [
       { ...skillList[4] },
       { ...skillList[5] },
     ],
+  },
+  {
+    id: "lp2",
+    name: "Placeholer",
+    desc: "Project Description goes here.",
+    skills: [{ ...skillList[0] }, { ...skillList[1] }, { ...skillList[2] }],
   },
 ];
 
@@ -228,11 +234,13 @@ const HorizontalCarrier = (props) => {
             <span id="bio-title">Live Projects</span>
           </div>
           <div id="projects-component">
-            <LiveProjects
-              skillObject={liveProjectData[0].skills}
-              title={liveProjectData[0].name}
-              desc={liveProjectData[0].desc}
-            />
+            {liveProjectData.map((liveProjectData) => (
+              <LiveProjects
+                skillObject={liveProjectData.skills}
+                title={liveProjectData.name}
+                desc={liveProjectData.desc}
+              />
+            ))}
           </div>
         </div>
       </div>

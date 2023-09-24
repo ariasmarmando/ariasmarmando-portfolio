@@ -94,19 +94,16 @@
 .project-grid #project-skills-container #skillList {
   grid-column: 1;
   grid-row: 2;
-  display: flex;
-  overflow-x: auto;
   overflow-y: auto;
   width: 100%;
   height: 90%;
   background-color: #3f3f46;
   border: 1px solid transparent;
   &::-webkit-scrollbar {
-    height: 0.5em;
+    height: 0.4em;
   }
 }
 
 .project-grid #project-skills-container #skillList #ind-skill {
-  display: flex;
-  padding: 3%;
+  padding: 1%;
 }

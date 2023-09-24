@@ -224,6 +224,7 @@
     rgba(63, 63, 70, 0.499) 50%,
     rgba(56, 56, 63, 0.62) 100%
   );
+  overflow-y: auto;
 }
 
 #contact {
