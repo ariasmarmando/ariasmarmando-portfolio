@@ -224,9 +224,53 @@
     rgba(63, 63, 70, 0.499) 50%,
     rgba(56, 56, 63, 0.62) 100%
   );
-  overflow-y: auto;
+
+  overflow-y: hidden;
+}
+#projects .projectScroller {
+  width: 100%;
+  height: 15%;
+  margin: -1% auto;
+  position: relative;
+  display: grid;
+  border: 1px solid transparent;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  background: #38383f;
 }
 
+#projects .projectScroller #scrollUp {
+  width: 90%;
+  padding: 2%;
+  margin: auto;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 0.2em;
+}
+
+#projects .projectScroller #scrollUp img {
+  max-width: 5%;
+}
+#projects .projectScroller #scrollUp:hover {
+  cursor: pointer;
+  background-color: #a93a2b;
+}
+
+#projects .projectScroller #scrollDown {
+  width: 90%;
+  padding: 2%;
+  margin: auto;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 0.2em;
+}
+#projects .projectScroller #scrollDown:hover {
+  cursor: pointer;
+  background-color: #a93a2b;
+}
+#projects .projectScroller #scrollDown img {
+  max-width: 5%;
+}
 #contact {
   background-color: aliceblue;
   margin-right: 5%;

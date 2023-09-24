@@ -23,6 +23,8 @@ import Figmaicon from "../svg/figma.svg";
 import IllustratorIcon from "../svg/bezier-curve-solid.svg";
 import Photoshopicon from "../svg/image-solid.svg";
 import SkillsIcon from "../svg/gem-regular.svg";
+import ArrowUp from "../svg/chevron-up-solid.svg/";
+import ArrowDown from "../svg/chevron-down-solid.svg/";
 
 /* This data needs to be placed inside of a contex API later */
 const buttonData = [
@@ -236,11 +238,21 @@ const HorizontalCarrier = (props) => {
           <div id="projects-component">
             {liveProjectData.map((liveProjectData) => (
               <LiveProjects
+                key={liveProjectData.id}
+                id={liveProjectData.id}
                 skillObject={liveProjectData.skills}
                 title={liveProjectData.name}
                 desc={liveProjectData.desc}
               />
             ))}
+          </div>
+          <div className="projectScroller">
+            <div id="scrollDown" onClick={props.scrollMeTo("lp2")}>
+              <img src={ArrowDown} />
+            </div>
+            <div id="scrollUp" onClick={props.scrollMeTo("lp1")}>
+              <img src={ArrowUp} />
+            </div>
           </div>
         </div>
       </div>

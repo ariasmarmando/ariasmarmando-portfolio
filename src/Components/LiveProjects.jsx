@@ -4,7 +4,7 @@ import Skill from "./Skill";
 const LiveProjects = (props) => {
   const skillVar = props.skillObject;
   return (
-    <div className="project-grid">
+    <div className="project-grid" id={props.id}>
       <div id="project-img-section">
         <div id="img-container"></div>
       </div>
