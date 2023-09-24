@@ -10,6 +10,7 @@ import HID from "./HID.jsx";
 import IconButtons from "./IconButtons.jsx";
 import Skill from "./Skill.jsx";
 import LiveProjects from "./LiveProjects";
+import ContactForm from "./ContactForm";
 
 /* svgs */
 import CoffeeMug from "../svg/mug-hot-solid.svg";
@@ -261,7 +262,20 @@ const HorizontalCarrier = (props) => {
         </div>
       </div>
 
-      <div id="contact" className="spaceBlock"></div>
+      <div id="contact" className="spaceBlock">
+        <div id="contact-content-title">
+          <div id="bio-title1">
+            <span id="bio-slash"> &#91; </span>
+            <span id="bio-title">Let's Work Together!</span>
+            <span id="bio-slash"> &#93; </span>
+          </div>
+        </div>
+        <div id="contact-content-form">
+          <div id="form-container">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

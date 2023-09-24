@@ -271,7 +271,39 @@
 #projects .projectScroller #scrollDown img {
   max-width: 5%;
 }
+
 #contact {
-  background-color: aliceblue;
-  margin-right: 5%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 90%;
+  background: radial-gradient(
+    94.03% 57.44% at 50% 45.7%,
+    rgba(46, 46, 51, 0) 0%,
+    #2e2e33 93.23%,
+    #2e2e33 100%
+  );
+}
+#contact #contact-content-title {
+  grid-row: 1;
+  grid-column: 1;
+  padding: 2%;
+  margin: 0 auto;
+}
+#contact #contact-content-form {
+  margin: auto auto;
+  grid-column: 1;
+  grid-row: 2;
+  width: 90%;
+  height: 95%;
+  display: flex;
+  background-color: #38383f;
+  border: 1px solid transparent;
+  border-radius: 0.5em;
+}
+#contact #contact-content-form #form-container {
+  margin: auto auto;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
 }
