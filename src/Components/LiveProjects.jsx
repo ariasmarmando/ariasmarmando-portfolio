@@ -1,18 +1,39 @@
 import "../CSS/projectsComponent.css";
+import Skill from "./Skill";
 
-const LiveProjects = () => {
+const LiveProjects = (props) => {
+  const skillVar = props.skillObject;
   return (
     <div className="project-grid">
       <div id="project-img-section">
         <div id="img-container"></div>
       </div>
       <div id="project-desc-container">
-        <span id="section-title">Portfolio</span>
-        <span id="section-desc">Desc here</span>
+        <div id="section-title">
+          <span id="title-dec">// </span>
+          <span>Project Name: {props.title}</span>
+        </div>
+        <div id="section-desc">
+          <span id="description">{props.desc}</span>
+        </div>
       </div>
       <div id="project-skills-container">
-        <span id="section-title">Created with:</span>
-        <div id="skillList"></div>
+        <div id="section-title">
+          <span id="title-dec">// </span>
+          <span>Created With</span>
+        </div>
+        <div id="skillList">
+          <div id="ind-skill">
+            {skillVar.map((skillVar) => (
+              <Skill
+                key={skillVar.id}
+                id={skillVar.id}
+                skillName={skillVar.name}
+                iconIMG={skillVar.image}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

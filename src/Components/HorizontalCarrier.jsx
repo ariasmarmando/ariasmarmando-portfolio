@@ -125,6 +125,15 @@ const skillList = [
   },
 ];
 
+const liveProjectData = [
+  {
+    id: 1,
+    name: "Portfolio",
+    desc: "Project Description goes here.",
+    skills: [{ ...skillList[0] }, { ...skillList[1] }],
+  },
+];
+
 const HorizontalCarrier = (props) => {
   return (
     <div className="elements-carrier">
@@ -212,7 +221,11 @@ const HorizontalCarrier = (props) => {
             <span id="bio-title">Live Projects</span>
           </div>
           <div id="projects-component">
-            <LiveProjects />
+            <LiveProjects
+              skillObject={liveProjectData[0].skills}
+              title={liveProjectData[0].name}
+              desc={liveProjectData[0].desc}
+            />
           </div>
         </div>
       </div>

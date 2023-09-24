@@ -41,7 +41,18 @@
 .project-grid #project-desc-container #section-title {
   grid-column: 1;
   grid-row: 1;
+  color: #848496;
+  font-size: 1.2vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: "Roboto", sans-serif;
 }
+
+#title-dec {
+  color: #a93a2b;
+}
+
 .project-grid #project-desc-container #section-desc {
   grid-column: 1;
   grid-row: 2;
@@ -51,8 +62,13 @@
   background-color: #3f3f46;
   border: 1px solid transparent;
   border-radius: 0.2em;
+  color: #a9a9c2;
+  font-size: 1vw;
+  font-family: "Roboto", sans-serif;
 }
-
+.project-grid #project-desc-container #section-desc #description {
+  padding: 2%;
+}
 .project-grid #project-skills-container {
   grid-column: 3 / span 4;
   grid-row: 3 / 5;
@@ -68,6 +84,12 @@
 .project-grid #project-skills-container #section-title {
   grid-column: 1;
   grid-row: 1;
+  color: #848496;
+  font-size: 1.2vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: "Roboto", sans-serif;
 }
 .project-grid #project-skills-container #skillList {
   grid-column: 1;
@@ -75,6 +97,10 @@
   width: 100%;
   height: 100%;
   background-color: #3f3f46;
-  background-color: #3f3f46;
   border: 1px solid transparent;
+}
+
+.project-grid #project-skills-container #skillList #ind-skill {
+  width: 200%;
+  padding: 2%;
 }
