@@ -272,7 +272,18 @@ const HorizontalCarrier = (props) => {
         </div>
         <div id="contact-content-form">
           <div id="form-container">
-            <ContactForm />
+            <div id="form-section-one">
+              <ContactForm placeholder="First Name" id="stack3" />
+              <ContactForm placeholder="Last Name" id="stack3" />
+              <ContactForm placeholder="Company / Organization" id="stack3" />
+            </div>
+            <div id="form-section-two">
+              <ContactForm placeholder="Email Address" id="stack2" />
+              <ContactForm placeholder="Confirm Email Address" id="stack2" />
+            </div>
+            <div id="form-section-three">
+              <ContactForm placeholder="Write a message" id="stack1" />
+            </div>
           </div>
         </div>
       </div>

@@ -1,14 +1,9 @@
-const ContactForm = () => {
+import "../CSS/ContactForm.css";
+const ContactForm = (props) => {
   return (
-    <div>
-      <form name="ContactForm">
-        <label htmlFor="First-Name">First Name</label>
-        <input id="First-Name" className="singleInput" name="firstName" />
-        <label htmlFor="Last-Name">Last Name</label>
-        <input id="Last-Name" className="singleInput" name="lastName" />
-        <label htmlFor="Org">Organization</label>
-        <input id="Org" className="singleInput" name="Org" />
-      </form>
+    <div className="formInput">
+      <label htmlFor={props.id}>{props.placeholder}</label>
+      <input ref={props.refer} placeholder={props.placeholder} id={props.id} />
     </div>
   );
 };

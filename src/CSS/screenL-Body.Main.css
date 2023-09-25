@@ -3,6 +3,7 @@
   grid-template-columns: 2% 96% 2%;
   grid-template-rows: 1fr;
   border-radius: 20px;
+  cursor: url("../svg/arrow-pointer-solid.svg"), auto;
 }
 .mainBody-container :nth-child(1) {
   grid-column: 2;
