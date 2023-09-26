@@ -1,10 +1,9 @@
 .formInput {
-  width: 90%;
-  height: 80%;
+  height: 20%;
+  flex: 1 1 30%;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 10% 90%;
-  margin: auto;
   font-size: 1.8vh;
   color: #afafc3;
   font-family: "Roboto", sans-serif;
@@ -24,12 +23,18 @@ input {
   grid-column: 1;
   grid-row: 2;
 }
+
 #stack3 {
   width: 90%;
 }
 #stack2 {
-  width: 93%;
+  width: 90%;
 }
 #stack1 {
-  width: 96%;
+  width: 100%;
+}
+#none {
+  height: 30%;
+  width: 90%;
+  display: none;
 }
