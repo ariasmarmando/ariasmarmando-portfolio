@@ -224,6 +224,14 @@ const HorizontalCarrier = (props) => {
     message: "",
   });
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+  const onChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  };
+
+  console.log(formValues);
   return (
     <div className="elements-carrier">
       <div id="home" className="spaceBlock">
@@ -341,17 +349,18 @@ const HorizontalCarrier = (props) => {
           </div>
         </div>
         <div id="contact-content-form">
-          <div id="form-container">
+          <form onSubmit={handleSubmit} id="form-container">
             {formInputs.map((input) => (
               <ContactForm
                 key={input.id}
                 value={formValues[input.name]}
                 {...input}
-                id={input.style}
+                style={input.style}
                 placeholder={input.placeholder}
+                onChange={onChange}
               />
             ))}
-          </div>
+          </form>
         </div>
       </div>
     </div>
