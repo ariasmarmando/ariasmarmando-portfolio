@@ -10,6 +10,7 @@ import HID from "./HID.jsx";
 import IconButtons from "./IconButtons.jsx";
 import Skill from "./Skill.jsx";
 import LiveProjects from "./LiveProjects";
+import ContactForm from "./ContactForm";
 
 /* svgs */
 import CoffeeMug from "../svg/mug-hot-solid.svg";
@@ -152,7 +153,102 @@ const liveProjectData = [
   },
 ];
 
+/*Form Data */
+
 const HorizontalCarrier = (props) => {
+  const [formValues, setFormValues] = useState({
+    firstName: "",
+    lastName: "",
+    fromCompany: "",
+    email: "",
+    confirmEmail: "",
+    phoneNumber: "",
+    message: "",
+  });
+
+  const formInputs = [
+    {
+      id: 1,
+      type: "text",
+      name: "firstName",
+      placeholder: "First Name",
+      errorMessage: "Please tell me your first name",
+      label: "First Name",
+      style: "stack3",
+      required: true,
+    },
+    {
+      id: 2,
+      type: "text",
+      name: "lastName",
+      placeholder: "Last Name",
+      errorMessage: "Please tell me your last name",
+      label: "Last Name",
+      style: "stack3",
+      required: true,
+    },
+    {
+      id: 3,
+      type: "text",
+      name: "fromCompany",
+      placeholder: "Company / Organization (optional)",
+      errorMessage: "",
+      label: "Company / Organization (optional)",
+      style: "stack3",
+    },
+    {
+      id: 4,
+      type: "email",
+      name: "email",
+      placeholder: "Email",
+      errorMessage: "It should be a valid email address",
+      label: "Email",
+      style: "stack2",
+      required: true,
+    },
+    {
+      id: 5,
+      type: "email",
+      name: "confirmEmail",
+      placeholder: "Confirm Email",
+      errorMessage: "Email address does not match",
+      label: "Confirm Email",
+      style: "stack2",
+      required: true,
+      pattern: formValues.email,
+    },
+    {
+      id: 6,
+      type: "text",
+      name: "phoneNumber",
+      placeholder: "Phone Number (optional)",
+      errorMessage: "Please enter a valid phone number",
+      label: "Phone Number",
+      style: "stack2",
+      pattern: "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
+    },
+    {
+      id: 7,
+      type: "text",
+      name: "message",
+      placeholder: "Write a message",
+      errorMessage:
+        "Please tell me how I can help you! use at least 10 characters.",
+      label: "Write a message",
+      style: "stack1",
+      required: true,
+      pattern: "^.{10,}$",
+    },
+  ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(console.log(formValues));
+  };
+  const onChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  };
+
   return (
     <div className="elements-carrier">
       <div id="home" className="spaceBlock">
@@ -261,7 +357,31 @@ const HorizontalCarrier = (props) => {
         </div>
       </div>
 
-      <div id="contact" className="spaceBlock"></div>
+      <div id="contact" className="spaceBlock">
+        <div id="contact-content-title">
+          <div id="bio-title1">
+            <span id="bio-slash"> &#91; </span>
+            <span id="bio-title">Let's Work Together!</span>
+            <span id="bio-slash"> &#93; </span>
+          </div>
+        </div>
+        <div id="contact-content-form">
+          <form onSubmit={handleSubmit} id="form-container">
+            {formInputs.map((input) => (
+              <ContactForm
+                key={input.id}
+                value={formValues[input.name]}
+                {...input}
+                style={input.style}
+                type={input.type}
+                placeholder={input.placeholder}
+                onChange={onChange}
+              />
+            ))}
+            <button>SUBMIT</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

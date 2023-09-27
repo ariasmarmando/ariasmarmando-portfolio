@@ -1,23 +1,22 @@
 import "../CSS/projectsComponent.css";
 import Skill from "./Skill";
 
-const LiveProjects = (props) => {
-  const skillVar = props.skillObject;
+const LiveProjects = ({ id, img, title, desc, skillObject }) => {
   return (
-    <div className="project-grid" id={props.id}>
+    <div className="project-grid" id={id}>
       <div id="project-img-section">
         <div id="img-container">
-          <img src={props.img} />
+          <img src={img} />
         </div>
       </div>
       <div id="project-desc-container">
         <div id="section-title">
           <span id="title-dec">// </span>
-          <span>Project Name: {props.title}</span>
+          <span>Project Name: {title}</span>
         </div>
         <div id="section-desc">
           <div id="description">
-            <span>{props.desc}</span>
+            <span>{desc}</span>
           </div>
         </div>
       </div>
@@ -28,12 +27,12 @@ const LiveProjects = (props) => {
         </div>
         <div id="skillList">
           <div id="ind-skill">
-            {skillVar.map((skillVar) => (
+            {skillObject.map((skillObject) => (
               <Skill
-                key={skillVar.id}
-                id={skillVar.id}
-                skillName={skillVar.name}
-                iconIMG={skillVar.image}
+                key={skillObject.id}
+                id={skillObject.id}
+                skillName={skillObject.name}
+                iconIMG={skillObject.image}
               />
             ))}
           </div>

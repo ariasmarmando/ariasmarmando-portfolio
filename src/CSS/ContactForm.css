@@ -1,0 +1,70 @@
+.formInput {
+  height: 20%;
+  flex: 1 1 30%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 5% 70% 25%;
+  font-size: 1.8vh;
+  color: #afafc3;
+  font-family: "Roboto", sans-serif;
+}
+input {
+  color: #848496;
+  all: unset;
+  border-bottom: 0.5em solid #51515b;
+  font-family: "Roboto", sans-serif;
+  caret-color: #a93a2b;
+}
+input:invalid[focused="true"] {
+  border-color: #a93a2b;
+}
+
+.formInput label {
+  display: none;
+}
+.formInput:hover label {
+  display: block;
+}
+.formInput:active label {
+  display: block;
+}
+
+.formInput label[focused="true"] {
+  display: block;
+}
+
+.formInput span {
+  display: none;
+  color: #b83f2f;
+}
+input:invalid[focused="true"] ~ span {
+  display: block;
+}
+
+.formInput :nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+.formInput :nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+.formInput :nth-child(3) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#stack3 {
+  width: 90%;
+}
+#stack2 {
+  width: 90%;
+}
+#stack1 {
+  width: 100%;
+}
+#none {
+  height: 30%;
+  width: 90%;
+  display: none;
+}
