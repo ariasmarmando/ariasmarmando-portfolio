@@ -303,6 +303,20 @@
 #contact #contact-content-form #form-container {
   display: flex;
   flex-wrap: wrap;
-  padding: 5%;
+  padding: 4%;
   width: 100%;
+}
+
+#contact form button {
+  background-color: #b83f2f;
+  font-family: "Roboto", sans-serif;
+  height: 15%;
+  font-weight: bold;
+  font-size: calc(1vh + 1vw);
+  width: 100%;
+  margin: 1%;
+  margin-left: 35%;
+  margin-right: 35%;
+  display: table;
+  border-radius: calc(0.2vh + 0.2vw);
 }

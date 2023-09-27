@@ -155,65 +155,6 @@ const liveProjectData = [
 
 /*Form Data */
 
-const formInputs = [
-  {
-    id: 1,
-    type: "text",
-    name: "firstName",
-    placeholder: "First Name",
-    label: "First Name",
-    style: "stack3",
-  },
-  {
-    id: 2,
-    type: "text",
-    name: "lastName",
-    placeholder: "Last Name",
-    label: "Last Name",
-    style: "stack3",
-  },
-  {
-    id: 3,
-    type: "text",
-    name: "fromCompany",
-    placeholder: "Company / Organization",
-    label: "Company / Organization",
-    style: "stack3",
-  },
-  {
-    id: 4,
-    type: "text",
-    name: "email",
-    placeholder: "Email",
-    label: "Email",
-    style: "stack2",
-  },
-  {
-    id: 5,
-    type: "text",
-    name: "confirmEmail",
-    placeholder: "Confirm Email",
-    label: "Confirm Email",
-    style: "stack2",
-  },
-  {
-    id: 6,
-    type: "",
-    name: "",
-    placeholder: "",
-    label: "",
-    style: "none",
-  },
-  {
-    id: 7,
-    type: "text",
-    name: "message",
-    placeholder: "Write a message",
-    label: "Write a message",
-    style: "stack1",
-  },
-];
-
 const HorizontalCarrier = (props) => {
   const [formValues, setFormValues] = useState({
     firstName: "",
@@ -221,17 +162,93 @@ const HorizontalCarrier = (props) => {
     fromCompany: "",
     email: "",
     confirmEmail: "",
+    phoneNumber: "",
     message: "",
   });
 
+  const formInputs = [
+    {
+      id: 1,
+      type: "text",
+      name: "firstName",
+      placeholder: "First Name",
+      errorMessage: "Please tell me your first name",
+      label: "First Name",
+      style: "stack3",
+      required: true,
+    },
+    {
+      id: 2,
+      type: "text",
+      name: "lastName",
+      placeholder: "Last Name",
+      errorMessage: "Please tell me your last name",
+      label: "Last Name",
+      style: "stack3",
+      required: true,
+    },
+    {
+      id: 3,
+      type: "text",
+      name: "fromCompany",
+      placeholder: "Company / Organization (optional)",
+      errorMessage: "",
+      label: "Company / Organization (optional)",
+      style: "stack3",
+    },
+    {
+      id: 4,
+      type: "email",
+      name: "email",
+      placeholder: "Email",
+      errorMessage: "It should be a valid email address",
+      label: "Email",
+      style: "stack2",
+      required: true,
+    },
+    {
+      id: 5,
+      type: "email",
+      name: "confirmEmail",
+      placeholder: "Confirm Email",
+      errorMessage: "Email address does not match",
+      label: "Confirm Email",
+      style: "stack2",
+      required: true,
+      pattern: formValues.email,
+    },
+    {
+      id: 6,
+      type: "text",
+      name: "phoneNumber",
+      placeholder: "Phone Number (optional)",
+      errorMessage: "Please enter a valid phone number",
+      label: "Phone Number",
+      style: "stack2",
+      pattern: "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
+    },
+    {
+      id: 7,
+      type: "text",
+      name: "message",
+      placeholder: "Write a message",
+      errorMessage:
+        "Please tell me how I can help you! use at least 10 characters.",
+      label: "Write a message",
+      style: "stack1",
+      required: true,
+      pattern: "^.{10,}$",
+    },
+  ];
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(console.log(formValues));
   };
   const onChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
 
-  console.log(formValues);
   return (
     <div className="elements-carrier">
       <div id="home" className="spaceBlock">
@@ -356,10 +373,12 @@ const HorizontalCarrier = (props) => {
                 value={formValues[input.name]}
                 {...input}
                 style={input.style}
+                type={input.type}
                 placeholder={input.placeholder}
                 onChange={onChange}
               />
             ))}
+            <button>SUBMIT</button>
           </form>
         </div>
       </div>
