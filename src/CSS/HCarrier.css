@@ -14,6 +14,7 @@
 
 .elements-carrier {
   display: flex;
+  flex-direction: row;
   overflow-x: auto;
   overflow-y: hidden;
   margin: 0 auto;
@@ -25,6 +26,7 @@
 .spaceBlock {
   display: inline-block;
   min-width: 100%;
+  max-height: 100%;
 }
 
 #home {
@@ -68,7 +70,7 @@
 .coffee-button img:hover {
   transition: 0.5s ease;
   opacity: 100%;
-  max-width: 55%;
+  scale: 1.2;
   cursor: pointer;
 }
 
@@ -77,17 +79,30 @@
 }
 
 .aboutMeButton button {
-  font-family: "Roboto", sans-serif;
   margin-top: 2%;
-  width: 15%;
-  font-size: 1.2vw;
-  border-radius: 5px;
+  width: 18%;
+  font-weight: bold;
+  font-size: calc(0.9vh + 0.9vw);
+  border-radius: calc(0.2vh + 0.2vw);
   background-color: #a93a2b;
-  color: #a9a9c2;
+  color: rgb(187, 187, 206);
+  font-family: "Roboto", sans-serif;
 }
-
+.aboutMeButton button img {
+  display: inline-flex;
+  max-width: 10%;
+  margin: auto auto;
+  padding-left: 3%;
+  position: relative;
+}
 .aboutMeButton button:hover {
   background-color: #b83f2f;
+  transition: 100ms ease-in;
+}
+
+.aboutMeButton button:hover img {
+  left: 5%;
+  transition: 100ms ease-in;
 }
 
 #homeAnimation {
@@ -310,15 +325,32 @@
 }
 
 #contact form button {
-  background-color: #b83f2f;
+  background-color: #a93a2b;
+  color: rgb(187, 187, 206);
   font-family: "Roboto", sans-serif;
-  height: 15%;
+  height: 12%;
   font-weight: bold;
-  font-size: calc(1vh + 1vw);
+  font-size: calc(0.9vh + 0.9vw);
   width: 100%;
   margin: 1%;
-  margin-left: 35%;
-  margin-right: 35%;
-  display: table;
+  margin-left: 40%;
+  margin-right: 40%;
+  display: block;
   border-radius: calc(0.2vh + 0.2vw);
+}
+#contact form button:hover {
+  background-color: #b83f2f;
+  transition: 100ms ease-in;
+}
+#contact form button img {
+  display: inline-flex;
+  max-width: 10%;
+  margin: auto auto;
+  padding-left: 3%;
+  position: relative;
+}
+
+#contact form button:hover img {
+  left: 5%;
+  transition: 5s ease-in;
 }

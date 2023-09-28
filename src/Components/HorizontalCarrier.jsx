@@ -28,7 +28,7 @@ import SkillsIcon from "../svg/gem-regular.svg";
 import ArrowUp from "../svg/chevron-up-solid.svg/";
 import ArrowDown from "../svg/chevron-down-solid.svg/";
 import p1Preview from "../svg/projectPreview.png";
-
+import rightArrow from "../svg/circle-chevron-right-solid variation.svg";
 /* This data needs to be placed inside of a contex API later */
 const buttonData = [
   {
@@ -262,7 +262,11 @@ const HorizontalCarrier = (props) => {
           <HomeAnimation />
         </div>
         <div className="aboutMeButton">
-          <ScrollTo name="About Me" whereTo={props.scrollMeTo("aboutMe")} />
+          <ScrollTo
+            name="SEE MORE"
+            whereTo={props.scrollMeTo("aboutMe")}
+            img={rightArrow}
+          />
         </div>
         <div className="coffee-button">
           <img src={CoffeeMug} />
@@ -378,7 +382,10 @@ const HorizontalCarrier = (props) => {
                 onChange={onChange}
               />
             ))}
-            <button>SUBMIT</button>
+            <button>
+              SUBMIT
+              <img src={rightArrow} />
+            </button>
           </form>
         </div>
       </div>
