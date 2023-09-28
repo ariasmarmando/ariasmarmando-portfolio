@@ -47,7 +47,7 @@
   margin: 2%;
   font-family: "Roboto", sans-serif;
   color: #848496;
-  font-size: calc(0.5vmax + 1.2vmin);
+  font-size: calc(0.8vh + 0.8vw);
   white-space: nowrap;
 }
 
@@ -70,10 +70,10 @@
 .H-orangeBrackets {
   color: #a93a2b;
   white-space: nowrap;
-  font-size: calc(0.5vmax + 1.2vmin);
+  font-size: calc(0.8vh + 0.8vw);
 }
 #H-orangePsign {
   color: #a93a2b;
   white-space: nowrap;
-  font-size: calc(0.5vmax + 1.2vmin);
+  font-size: calc(0.8vh + 0.8vw);
 }

@@ -29,7 +29,12 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #3f3f46;
+  background: rgb(68, 68, 74);
+  background: radial-gradient(
+    circle,
+    rgba(68, 68, 74, 1) 59%,
+    rgba(93, 93, 103, 1) 100%
+  );
 }
 
 h1 {

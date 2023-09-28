@@ -4,7 +4,9 @@ import githubButton from "../svg/square-github.svg";
 const Nav = (props) => {
   return (
     <div className="Nav-Container">
-      <span className="nav-title">Portfolio</span>
+      <span className="nav-title">
+        <a onClick={props.clickHandle("home")}>Portfolio</a>
+      </span>
       <div className="nav-links">
         <a href="https://github.com/ariasmarmando">
           <img src={githubButton} />
