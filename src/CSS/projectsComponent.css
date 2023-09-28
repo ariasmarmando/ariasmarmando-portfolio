@@ -54,7 +54,7 @@
   grid-column: 1;
   grid-row: 1;
   color: #848496;
-  font-size: 1.2vw;
+  font-size: calc(0.8vh + 0.8vw);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -75,7 +75,7 @@
   border: 1px solid transparent;
   border-radius: 0.2em;
   color: #a9a9c2;
-  font-size: 1vw;
+  font-size: calc(0.6vh + 0.6vw);
   font-family: "Roboto", sans-serif;
   text-align: left;
 }
@@ -99,7 +99,7 @@
   grid-column: 1;
   grid-row: 1;
   color: #848496;
-  font-size: 1.2vw;
+  font-size: calc(0.8vh + 0.8vw);
   font-style: normal;
   font-weight: 700;
   line-height: normal;

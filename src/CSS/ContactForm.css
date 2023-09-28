@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 5% 70% 25%;
-  font-size: 1.8vh;
+  font-size: calc(0.6vh + 0.6vw);
   color: #afafc3;
   font-family: "Roboto", sans-serif;
 }

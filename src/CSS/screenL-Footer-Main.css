@@ -9,6 +9,7 @@
   border: 0;
   border-style: none;
   border-radius: 0px 0px 5px 5px;
+  filter: drop-shadow(0em 0.2em 0.4em #2a27276d);
 }
 
 .Footer-Container p {

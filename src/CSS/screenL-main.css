@@ -1,5 +1,5 @@
 .screenL-skeleton-container {
-  aspect-ratio: 8/5;
+  aspect-ratio: 9/6;
   position: absolute;
   display: grid;
   grid-template-rows: 10% 80% 10%;
@@ -9,11 +9,12 @@
   left: 0;
   right: 0;
   margin: auto;
-  border: 1px solid rgba(91, 164, 86, 0);
   max-width: 90%;
   max-height: 90%;
   height: auto;
+  filter: drop-shadow(1em 1em 2em #2a272798);
 }
+
 Nav {
   grid-column: auto;
   grid-row: 1;
