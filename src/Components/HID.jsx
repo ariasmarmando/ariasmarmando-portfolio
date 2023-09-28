@@ -1,7 +1,7 @@
 import "../CSS/HID.css";
 const HID = (props) => {
   return (
-    <div className="H-ID-Card">
+    <div className={props.scrollLocation == 2 ? "H-ID-Card" : "none"}>
       <div className="H-ID-Picture">
         <img src={props.pfp} />
       </div>

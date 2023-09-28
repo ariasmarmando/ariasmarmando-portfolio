@@ -69,6 +69,7 @@ function App() {
         clickHandle={(props) => handleClick(`${props}`)}
         scrollerClickf={scrollerClickf()}
         scrollerClickb={scrollerClickb()}
+        scrollLocation={locIndex}
       />
       <Footer />
     </div>

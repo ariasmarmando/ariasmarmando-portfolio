@@ -1,6 +1,6 @@
 @keyframes slideTtB {
   from {
-    transform: translateY(-5%);
+    transform: translateY(-10%);
     opacity: 0;
   }
 
@@ -88,4 +88,8 @@
   color: #a93a2b;
   white-space: nowrap;
   font-size: calc(0.8vh + 0.8vw);
+}
+
+.none {
+  display: none;
 }
