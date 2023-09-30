@@ -1,9 +1,3 @@
-.ID-Card {
-  display: block;
-  margin: 0 auto;
-  width: 70%;
-  height: 100%;
-}
 @keyframes slideTtB {
   from {
     transform: translateY(-5%);
@@ -15,54 +9,122 @@
     opacity: 100%;
   }
 }
+@media only screen and (orientation: portrait) {
+  .ID-Card {
+    display: flex;
+    flex-direction: column;
+    margin: auto auto;
+    width: 100%;
+    height: 50%;
+    margin-bottom: -15%;
+  }
+  .ID-Picture {
+    aspect-ratio: 5/5;
+    display: block;
+    margin: 15% auto;
+    max-width: 40%;
+    border-radius: 100%;
+    border: 0.2em solid #54545e;
+    box-shadow: 0px 3px 16px 3px rgba(36, 36, 38, 0.25);
+    overflow: hidden;
+    position: relative;
+    animation: slideTtB 1.5s ease-out 0s 1 normal;
+  }
+  .ID-Picture img {
+    width: 100%;
+  }
+  .ID-Name {
+    text-align: center;
+    margin-top: -12%;
+    color: #848496;
+    font-family: "Roboto", sans-serif;
+    font-size: calc(1.5vh + 1.5vw);
+    line-height: normal;
+  }
 
-.ID-Picture {
-  display: block;
-  margin: 15% auto;
-  width: 38%;
-  height: 40%;
-  border-radius: 100%;
-  border: 0.2em solid #54545e;
-  box-shadow: 0px 3px 16px 3px rgba(36, 36, 38, 0.25);
-  overflow: hidden;
-  position: relative;
-  animation: slideTtB 1.5s ease-out 0s 1 normal;
-}
-.ID-Picture img {
-  position: absolute;
-  max-width: 100%;
-}
-.ID-Name {
-  text-align: center;
-  margin-top: -12%;
-  color: #848496;
-  font-family: "Roboto", sans-serif;
-  font-size: calc(1vh + 1vw);
-  line-height: normal;
+  .ID-Title1 {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    color: #a9a9c2;
+    font-size: calc(1.6vh + 1.6vw);
+    line-height: normal;
+    text-wrap: nowrap;
+  }
+
+  .orangeBrackets {
+    font-family: "Roboto", sans-serif;
+    color: #a93a2b;
+  }
+
+  .ID-Title2 {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    color: #a9a9c2;
+    font-size: calc(1vh + 1vw);
+  }
+
+  #orangePsign {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #a93a2b;
+  }
 }
 
-.ID-Title1 {
-  font-family: "Roboto", sans-serif;
-  text-align: center;
-  color: #a9a9c2;
-  font-size: calc(1.2vh + 1.2vw);
-  line-height: normal;
-}
+@media only screen and (orientation: landscape) {
+  .ID-Card {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: 100%;
+  }
+  .ID-Picture {
+    display: block;
+    margin: 15% auto;
+    width: 38%;
+    height: 40%;
+    border-radius: 100%;
+    border: 0.2em solid #54545e;
+    box-shadow: 0px 3px 16px 3px rgba(36, 36, 38, 0.25);
+    overflow: hidden;
+    position: relative;
+    animation: slideTtB 1.5s ease-out 0s 1 normal;
+  }
+  .ID-Picture img {
+    position: absolute;
+    max-width: 100%;
+  }
+  .ID-Name {
+    text-align: center;
+    margin-top: -12%;
+    color: #848496;
+    font-family: "Roboto", sans-serif;
+    font-size: calc(1vh + 1vw);
+    line-height: normal;
+  }
 
-.orangeBrackets {
-  font-family: "Roboto", sans-serif;
-  color: #a93a2b;
-}
+  .ID-Title1 {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    color: #a9a9c2;
+    font-size: calc(1.2vh + 1.2vw);
+    line-height: normal;
+  }
 
-.ID-Title2 {
-  font-family: "Roboto", sans-serif;
-  text-align: center;
-  color: #a9a9c2;
-  font-size: calc(1vh + 1vw);
-}
+  .orangeBrackets {
+    font-family: "Roboto", sans-serif;
+    color: #a93a2b;
+  }
 
-#orangePsign {
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  color: #a93a2b;
+  .ID-Title2 {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    color: #a9a9c2;
+    font-size: calc(1vh + 1vw);
+  }
+
+  #orangePsign {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #a93a2b;
+  }
 }

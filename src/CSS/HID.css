@@ -9,6 +9,7 @@
     opacity: 100%;
   }
 }
+
 .H-ID-Card {
   display: grid;
   width: calc(6vw + 60vmin);
