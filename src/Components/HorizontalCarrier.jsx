@@ -371,6 +371,13 @@ const HorizontalCarrier = (props) => {
               <img src={ArrowUp} />
             </div>
           </div>
+          <div className="formMeButton">
+            <ScrollTo
+              name="SEE MORE"
+              whereTo={props.scrollMeTo("contact")}
+              img={rightArrow}
+            />
+          </div>
         </div>
       </div>
 

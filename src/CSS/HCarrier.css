@@ -252,6 +252,8 @@
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 20% 30% 20% 30%;
+    overflow-y: auto;
+    overflow-x: hidden;
     background: radial-gradient(
       94.03% 57.44% at 50% 45.7%,
       rgba(46, 46, 51, 0) 0%,
@@ -260,11 +262,11 @@
     );
   }
   #projects #projects-content {
-    margin: auto auto;
+    margin: 15% auto;
     grid-column: 1/5;
-    grid-row: 1/5;
+    grid-row: 1/4;
     width: 90%;
-    height: 80%;
+    height: 90%;
     background-color: #38383f;
     border: 1px solid transparent;
     border-radius: 0.5em;
@@ -289,48 +291,43 @@
     overflow-y: hidden;
   }
   #projects .projectScroller {
+    display: none;
+  }
+  #projects .formMeButton {
+    grid-row: 4;
+    grid-column: 1/5;
     width: 100%;
-    height: 15%;
-    margin: -1% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .formMeButton button {
+    width: 10vh;
+    height: 5vh;
+    font-weight: bold;
+    font-size: 0;
+    border-radius: calc(0.2vh + 0.2vw);
+    background-color: #a93a2b;
+    color: rgb(187, 187, 206);
+    font-family: "Roboto", sans-serif;
+  }
+  .formMeButton button img {
+    display: flex;
+    max-width: 50%;
+    max-height: 50%;
+    margin: auto auto;
+    padding-left: 3%;
     position: relative;
-    display: grid;
-    border: 1px solid transparent;
-    border-bottom-left-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-    background: #38383f;
+    transform: rotate(90deg);
+  }
+  .formMeButton button:hover {
+    background-color: #b83f2f;
+    transition: 100ms ease-in;
   }
 
-  #projects .projectScroller #scrollUp {
-    width: 90%;
-    padding: 2%;
-    margin: auto;
-    text-align: center;
-    border: 1px solid transparent;
-    border-radius: 0.2em;
-  }
-
-  #projects .projectScroller #scrollUp img {
-    max-width: 5%;
-  }
-  #projects .projectScroller #scrollUp:hover {
-    cursor: pointer;
-    background-color: #a93a2b;
-  }
-
-  #projects .projectScroller #scrollDown {
-    width: 90%;
-    padding: 2%;
-    margin: auto;
-    text-align: center;
-    border: 1px solid transparent;
-    border-radius: 0.2em;
-  }
-  #projects .projectScroller #scrollDown:hover {
-    cursor: pointer;
-    background-color: #a93a2b;
-  }
-  #projects .projectScroller #scrollDown img {
-    max-width: 5%;
+  .formMeButton button:hover img {
+    margin-top: 5%;
+    transition: 100ms ease-in;
   }
 
   #contact {
@@ -679,7 +676,9 @@
   #projects .projectScroller #scrollDown img {
     max-width: 5%;
   }
-
+  #projects .formMeButton {
+    display: none;
+  }
   #contact {
     display: grid;
     grid-template-columns: 100%;
