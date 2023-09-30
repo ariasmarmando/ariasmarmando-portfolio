@@ -11,6 +11,7 @@ const Body = (props) => {
         title1={props.title1}
         title2={props.title2}
         scrollMeTo={(where) => props.clickHandle(where)}
+        scrollLocation={props.scrollLocation}
       />
       <div className="prev-button" onClick={props.scrollerClickb}>
         <img src={prevScroll} />

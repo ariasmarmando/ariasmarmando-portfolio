@@ -28,7 +28,7 @@ import SkillsIcon from "../svg/gem-regular.svg";
 import ArrowUp from "../svg/chevron-up-solid.svg/";
 import ArrowDown from "../svg/chevron-down-solid.svg/";
 import p1Preview from "../svg/projectPreview.png";
-
+import rightArrow from "../svg/circle-chevron-right-solid variation.svg";
 /* This data needs to be placed inside of a contex API later */
 const buttonData = [
   {
@@ -249,6 +249,8 @@ const HorizontalCarrier = (props) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
 
+  const scrollLocation = props.scrollLocation;
+
   return (
     <div className="elements-carrier">
       <div id="home" className="spaceBlock">
@@ -262,7 +264,11 @@ const HorizontalCarrier = (props) => {
           <HomeAnimation />
         </div>
         <div className="aboutMeButton">
-          <ScrollTo name="About Me" whereTo={props.scrollMeTo("aboutMe")} />
+          <ScrollTo
+            name="SEE MORE"
+            whereTo={props.scrollMeTo("aboutMe")}
+            img={rightArrow}
+          />
         </div>
         <div className="coffee-button">
           <img src={CoffeeMug} />
@@ -275,6 +281,7 @@ const HorizontalCarrier = (props) => {
           name={props.name}
           title1={props.title1}
           title2={props.title2}
+          scrollLocation={scrollLocation}
         />
         <div className="bio-section">
           <div id="bio-title1">
@@ -305,7 +312,7 @@ const HorizontalCarrier = (props) => {
             ))}
           </div>
         </div>
-        <div className="skills-section">
+        <div className={props.scrollLocation == 2 ? "skills-section" : "none"}>
           <div id="bio-title1">
             <span id="bio-slash">// </span>
             <span id="bio-title">Skills</span>
@@ -378,7 +385,10 @@ const HorizontalCarrier = (props) => {
                 onChange={onChange}
               />
             ))}
-            <button>SUBMIT</button>
+            <button>
+              SUBMIT
+              <img src={rightArrow} />
+            </button>
           </form>
         </div>
       </div>
