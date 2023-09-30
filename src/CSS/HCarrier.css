@@ -28,8 +28,9 @@
   }
 
   #home {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% 20% 10% 10%;
     background: radial-gradient(
       94.03% 57.44% at 50% 45.7%,
       rgba(46, 46, 51, 0) 0%,
@@ -38,17 +39,20 @@
     );
   }
   #home :nth-child(1) {
+    grid-row: 1;
   }
   #home :nth-child(2) {
+    grid-row: 2;
     text-align: center;
   }
   #home :nth-child(3) {
+    grid-row: 3;
     text-align: center;
   }
 
   .coffee-button {
-    margin-top: 5%;
-    align-self: flex-end;
+    grid-row: 4;
+    justify-self: end;
     display: block;
     width: 15%;
     height: 15%;
@@ -56,7 +60,7 @@
   .coffee-button img {
     opacity: 80%;
     display: block;
-    margin: 20% auto;
+    margin: 0 auto;
     max-width: 50%;
   }
   .coffee-button img:hover {
@@ -72,10 +76,10 @@
 
   .aboutMeButton button {
     text-align: center;
-    width: 9vh;
-    height: 12vh;
+    width: 10vh;
+    height: 5vh;
     font-weight: bold;
-    font-size: calc(1vh + 1vw);
+    font-size: 0;
     border-radius: calc(0.2vh + 0.2vw);
     background-color: #a93a2b;
     color: rgb(187, 187, 206);
@@ -84,11 +88,11 @@
   .aboutMeButton button img {
     display: flex;
     max-width: 50%;
+    max-height: 50%;
     margin: auto auto;
     padding-left: 3%;
     position: relative;
     transform: rotate(90deg);
-    margin-top: 20%;
   }
   .aboutMeButton button:hover {
     background-color: #b83f2f;
@@ -96,23 +100,25 @@
   }
 
   .aboutMeButton button:hover img {
-    margin-top: 60%;
+    margin-top: 5%;
     transition: 100ms ease-in;
   }
 
   #homeAnimation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: "Roboto", sans-serif;
     font-size: 6vh;
     text-wrap: nowrap;
     color: #848496;
     font-weight: 800;
-    margin-bottom: 25%;
   }
 
   #aboutMe {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 20% 30% 20% 30%;
+    grid-template-rows: 20% 25% 15% 15% 10%;
     background: radial-gradient(
       94.03% 57.44% at 50% 45.7%,
       rgba(46, 46, 51, 0) 0%,
@@ -121,10 +127,14 @@
     );
   }
 
-  #aboutMe :nth-child(1) {
+  #aboutMe .hidPOS {
+    display: flex;
+    justify-self: center;
+    align-items: center;
     grid-row: 1;
     grid-column: 1/5;
   }
+
   #aboutMe .bio-section {
     display: inline-block;
     margin: 0 auto;
@@ -136,7 +146,7 @@
 
   #bio-title1 #bio-slash {
     color: #a93a2b;
-    font-size: calc(1vh + 1vw);
+    font-size: calc(2vh + 2vw);
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -144,7 +154,7 @@
   }
   #bio-title1 #bio-title {
     color: #848496;
-    font-size: calc(1vh + 1vw);
+    font-size: calc(2vh + 2vw);
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -152,7 +162,7 @@
   }
   #aboutMe #bio-bio {
     color: #a9a9c2;
-    font-size: calc(0.8vh + 0.8vw);
+    font-size: calc(1vh + 1vw);
     font-style: normal;
     font-family: "Roboto", sans-serif;
   }
@@ -199,6 +209,43 @@
   #skillList {
     grid-column: 2;
     grid-row: 1;
+  }
+
+  .projectsMeButton {
+    grid-row: 5;
+    grid-column: 1/5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .projectsMeButton button {
+    width: 10vh;
+    height: 5vh;
+    font-weight: bold;
+    font-size: 0;
+    border-radius: calc(0.2vh + 0.2vw);
+    background-color: #a93a2b;
+    color: rgb(187, 187, 206);
+    font-family: "Roboto", sans-serif;
+  }
+  .projectsMeButton button img {
+    display: flex;
+    max-width: 50%;
+    max-height: 50%;
+    margin: auto auto;
+    padding-left: 3%;
+    position: relative;
+    transform: rotate(90deg);
+  }
+  .projectsMeButton button:hover {
+    background-color: #b83f2f;
+    transition: 100ms ease-in;
+  }
+
+  .projectsMeButton button:hover img {
+    margin-top: 5%;
+    transition: 100ms ease-in;
   }
 
   #projects {
@@ -545,7 +592,9 @@
     grid-column: 2;
     grid-row: 1;
   }
-
+  .projectsMeButton {
+    display: none;
+  }
   #projects {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;

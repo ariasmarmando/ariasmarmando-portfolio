@@ -276,13 +276,16 @@ const HorizontalCarrier = (props) => {
       </div>
 
       <div id="aboutMe" className="spaceBlock">
-        <HID
-          pfp={props.pfp}
-          name={props.name}
-          title1={props.title1}
-          title2={props.title2}
-          scrollLocation={scrollLocation}
-        />
+        <div className="hidPOS">
+          <HID
+            pfp={props.pfp}
+            name={props.name}
+            title1={props.title1}
+            title2={props.title2}
+            scrollLocation={scrollLocation}
+          />
+        </div>
+
         <div className="bio-section">
           <div id="bio-title1">
             <span id="bio-slash">// </span>
@@ -332,6 +335,13 @@ const HorizontalCarrier = (props) => {
               ))}
             </div>
           </div>
+        </div>
+        <div className="projectsMeButton">
+          <ScrollTo
+            name="SEE MORE"
+            whereTo={props.scrollMeTo("projects")}
+            img={rightArrow}
+          />
         </div>
       </div>
 

@@ -9,6 +9,7 @@
     width: 94%;
     height: 3%;
     filter: drop-shadow(0em 0.2em 0.4em #2a27276d);
+    border-radius: 0.2em 0.2em 0em 0em;
   }
 
   .Footer-Container p {
