@@ -13,7 +13,7 @@ import LiveProjects from "./LiveProjects";
 import ContactForm from "./ContactForm";
 
 /* svgs */
-import CoffeeMug from "../svg/mug-hot-solid.svg";
+import CoffeeMug from "../svg/bmc-logo.svg";
 import ResIcon from "../svg/file-lines-regular.svg";
 import Linkedin from "../svg/linkedin.svg";
 import Github from "../svg/square-github.svg";
@@ -275,7 +275,10 @@ const HorizontalCarrier = (props) => {
           />
         </div>
         <div className="coffee-button">
-          <img src={CoffeeMug} />
+          <a href="https://www.buymeacoffee.com/ariasmarmando">
+            {" "}
+            <img src={CoffeeMug} />
+          </a>
         </div>
       </div>
 
