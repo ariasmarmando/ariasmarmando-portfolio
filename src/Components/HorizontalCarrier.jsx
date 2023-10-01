@@ -13,7 +13,7 @@ import LiveProjects from "./LiveProjects";
 import ContactForm from "./ContactForm";
 
 /* svgs */
-import CoffeeMug from "../svg/mug-hot-solid.svg";
+import CoffeeMug from "../svg/bmc-logo.svg";
 import ResIcon from "../svg/file-lines-regular.svg";
 import Linkedin from "../svg/linkedin.svg";
 import Github from "../svg/square-github.svg";
@@ -263,7 +263,11 @@ const HorizontalCarrier = (props) => {
         <div id="homeAnimation">
           <HomeAnimation />
         </div>
+
         <div className="aboutMeButton">
+          <div id="nav2">
+            <span>Navigate</span>
+          </div>
           <ScrollTo
             name="SEE MORE"
             whereTo={props.scrollMeTo("aboutMe")}
@@ -271,18 +275,24 @@ const HorizontalCarrier = (props) => {
           />
         </div>
         <div className="coffee-button">
-          <img src={CoffeeMug} />
+          <a href="https://www.buymeacoffee.com/ariasmarmando">
+            {" "}
+            <img src={CoffeeMug} />
+          </a>
         </div>
       </div>
 
       <div id="aboutMe" className="spaceBlock">
-        <HID
-          pfp={props.pfp}
-          name={props.name}
-          title1={props.title1}
-          title2={props.title2}
-          scrollLocation={scrollLocation}
-        />
+        <div className="hidPOS">
+          <HID
+            pfp={props.pfp}
+            name={props.name}
+            title1={props.title1}
+            title2={props.title2}
+            scrollLocation={scrollLocation}
+          />
+        </div>
+
         <div className="bio-section">
           <div id="bio-title1">
             <span id="bio-slash">// </span>
@@ -333,6 +343,24 @@ const HorizontalCarrier = (props) => {
             </div>
           </div>
         </div>
+        <div id="nav2">
+          <span>Navigate</span>
+        </div>
+        <div className="projectsMeButton">
+          <div id="goBack">
+            {" "}
+            <ScrollTo
+              name="SEE MORE"
+              whereTo={props.scrollMeTo("home")}
+              img={rightArrow}
+            />
+          </div>
+          <ScrollTo
+            name="SEE MORE"
+            whereTo={props.scrollMeTo("projects")}
+            img={rightArrow}
+          />
+        </div>
       </div>
 
       <div id="projects" className="spaceBlock">
@@ -360,6 +388,23 @@ const HorizontalCarrier = (props) => {
             <div id="scrollUp" onClick={props.scrollMeTo("lp1")}>
               <img src={ArrowUp} />
             </div>
+          </div>
+          <div id="nav2">
+            <span>Navigate</span>
+          </div>
+          <div className="formMeButton">
+            <div id="goBack">
+              <ScrollTo
+                name="SEE MORE"
+                whereTo={props.scrollMeTo("aboutMe")}
+                img={rightArrow}
+              />
+            </div>
+            <ScrollTo
+              name="SEE MORE"
+              whereTo={props.scrollMeTo("contact")}
+              img={rightArrow}
+            />
           </div>
         </div>
       </div>
@@ -390,6 +435,13 @@ const HorizontalCarrier = (props) => {
               <img src={rightArrow} />
             </button>
           </form>
+        </div>
+        <div id="scrollHome">
+          <ScrollTo
+            name="Home"
+            whereTo={props.scrollMeTo("home")}
+            img={rightArrow}
+          />
         </div>
       </div>
     </div>
