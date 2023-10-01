@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 /* CSS */
 import "../CSS/HCarrier.css";
 
@@ -241,10 +242,35 @@ const HorizontalCarrier = (props) => {
     },
   ];
 
+  const form = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(console.log(formValues));
+    emailjs
+      .sendForm(
+        "service_so1xuwe",
+        "template_g9qwjvj",
+        form.current,
+        "J8bJLsRhXgEuX4q1j"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    setFormValues({
+      firstName: "",
+      lastName: "",
+      fromCompany: "",
+      email: "",
+      confirmEmail: "",
+      phoneNumber: "",
+      message: "",
+    });
   };
+
   const onChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
@@ -418,7 +444,7 @@ const HorizontalCarrier = (props) => {
           </div>
         </div>
         <div id="contact-content-form">
-          <form onSubmit={handleSubmit} id="form-container">
+          <form ref={form} onSubmit={handleSubmit} id="form-container">
             {formInputs.map((input) => (
               <ContactForm
                 key={input.id}
