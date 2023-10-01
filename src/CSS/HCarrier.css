@@ -1,4 +1,5 @@
 ::-webkit-scrollbar {
+  display: none;
   -webkit-appearance: none;
   width: 7px;
   background-color: #2e2e33;
@@ -16,7 +17,7 @@
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     height: 100%;
     width: 90%;
     align-self: center;
@@ -76,7 +77,7 @@
 
   .aboutMeButton button {
     text-align: center;
-    width: 10vh;
+    width: 5vh;
     height: 5vh;
     font-weight: bold;
     font-size: 0;
@@ -100,7 +101,7 @@
   }
 
   .aboutMeButton button:hover img {
-    margin-top: 5%;
+    scale: 1.2;
     transition: 100ms ease-in;
   }
 
@@ -118,7 +119,7 @@
   #aboutMe {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 20% 25% 15% 15% 10%;
+    grid-template-rows: 20% 25% 15% 15% 2% 5%;
     background: radial-gradient(
       94.03% 57.44% at 50% 45.7%,
       rgba(46, 46, 51, 0) 0%,
@@ -210,17 +211,27 @@
     grid-column: 2;
     grid-row: 1;
   }
-
-  .projectsMeButton {
+  #nav2 {
+    grid-column: 1/5;
     grid-row: 5;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: calc(0.7vh + 0.7vw);
+    color: #a9a9c2;
+  }
+  .projectsMeButton {
+    grid-row: 6;
     grid-column: 1/5;
     width: 100%;
     display: flex;
+    flex-direction: row;
+    gap: 5%;
     justify-content: center;
     align-items: center;
   }
+
   .projectsMeButton button {
-    width: 10vh;
+    width: 5vh;
     height: 5vh;
     font-weight: bold;
     font-size: 0;
@@ -238,13 +249,17 @@
     position: relative;
     transform: rotate(90deg);
   }
+  .projectsMeButton #goBack img {
+    transform: rotate(270deg);
+  }
+
   .projectsMeButton button:hover {
     background-color: #b83f2f;
     transition: 100ms ease-in;
   }
 
   .projectsMeButton button:hover img {
-    margin-top: 5%;
+    scale: 1.2;
     transition: 100ms ease-in;
   }
 
@@ -294,6 +309,7 @@
     display: none;
   }
   #projects .formMeButton {
+    gap: 5%;
     grid-row: 4;
     grid-column: 1/5;
     width: 100%;
@@ -301,8 +317,10 @@
     justify-content: center;
     align-items: center;
   }
+
   .formMeButton button {
-    width: 10vh;
+    display: flex;
+    width: 5vh;
     height: 5vh;
     font-weight: bold;
     font-size: 0;
@@ -320,20 +338,25 @@
     position: relative;
     transform: rotate(90deg);
   }
+  .formMeButton #goBack img {
+    transform: rotate(270deg);
+  }
+
   .formMeButton button:hover {
     background-color: #b83f2f;
     transition: 100ms ease-in;
   }
 
   .formMeButton button:hover img {
-    margin-top: 5%;
+    scale: 1.2;
     transition: 100ms ease-in;
   }
 
   #contact {
+    padding-top: 15%;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 10% 60% 20%;
     background: radial-gradient(
       94.03% 57.44% at 50% 45.7%,
       rgba(46, 46, 51, 0) 0%,
@@ -344,8 +367,8 @@
   #contact #contact-content-title {
     grid-row: 1;
     grid-column: 1;
-    padding: 2%;
-    margin: 0 auto;
+    text-wrap: nowrap;
+    margin: auto auto;
   }
   #contact #contact-content-form {
     margin: auto auto;
@@ -369,13 +392,13 @@
     background-color: #a93a2b;
     color: rgb(187, 187, 206);
     font-family: "Roboto", sans-serif;
-    height: 12%;
+    height: 10%;
     font-weight: bold;
     font-size: calc(0.9vh + 0.9vw);
     width: 100%;
     margin: 1%;
-    margin-left: 40%;
-    margin-right: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
     display: block;
     border-radius: calc(0.2vh + 0.2vw);
   }
@@ -394,6 +417,38 @@
   #contact form button:hover img {
     left: 5%;
     transition: 5s ease-in;
+  }
+  #scrollHome {
+    display: flex;
+    justify-self: center;
+  }
+  #scrollHome button img {
+    display: flex;
+    max-width: 50%;
+    max-height: 50%;
+    margin: auto auto;
+    padding-left: 3%;
+    position: relative;
+    transform: rotate(270deg);
+  }
+  #scrollHome button {
+    width: 5vh;
+    height: 5vh;
+    font-weight: bold;
+    font-size: 0;
+    border-radius: calc(0.2vh + 0.2vw);
+    background-color: #a93a2b;
+    color: rgb(187, 187, 206);
+    font-family: "Roboto", sans-serif;
+  }
+  #scrollHome button:hover {
+    background-color: #b83f2f;
+    transition: 100ms ease-in;
+  }
+
+  #scrollHome button:hover img {
+    scale: 1.2;
+    transition: 100ms ease-in;
   }
 }
 
@@ -743,5 +798,8 @@
   #contact form button:hover img {
     left: 5%;
     transition: 5s ease-in;
+  }
+  #nav2 {
+    display: none;
   }
 }

@@ -263,7 +263,11 @@ const HorizontalCarrier = (props) => {
         <div id="homeAnimation">
           <HomeAnimation />
         </div>
+
         <div className="aboutMeButton">
+          <div id="nav2">
+            <span>Navigate</span>
+          </div>
           <ScrollTo
             name="SEE MORE"
             whereTo={props.scrollMeTo("aboutMe")}
@@ -336,7 +340,18 @@ const HorizontalCarrier = (props) => {
             </div>
           </div>
         </div>
+        <div id="nav2">
+          <span>Navigate</span>
+        </div>
         <div className="projectsMeButton">
+          <div id="goBack">
+            {" "}
+            <ScrollTo
+              name="SEE MORE"
+              whereTo={props.scrollMeTo("home")}
+              img={rightArrow}
+            />
+          </div>
           <ScrollTo
             name="SEE MORE"
             whereTo={props.scrollMeTo("projects")}
@@ -371,7 +386,17 @@ const HorizontalCarrier = (props) => {
               <img src={ArrowUp} />
             </div>
           </div>
+          <div id="nav2">
+            <span>Navigate</span>
+          </div>
           <div className="formMeButton">
+            <div id="goBack">
+              <ScrollTo
+                name="SEE MORE"
+                whereTo={props.scrollMeTo("aboutMe")}
+                img={rightArrow}
+              />
+            </div>
             <ScrollTo
               name="SEE MORE"
               whereTo={props.scrollMeTo("contact")}
@@ -407,6 +432,13 @@ const HorizontalCarrier = (props) => {
               <img src={rightArrow} />
             </button>
           </form>
+        </div>
+        <div id="scrollHome">
+          <ScrollTo
+            name="Home"
+            whereTo={props.scrollMeTo("home")}
+            img={rightArrow}
+          />
         </div>
       </div>
     </div>
