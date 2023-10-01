@@ -12,6 +12,26 @@
   background-color: #848496;
   box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 4vh rgb(86, 87, 98) inset !important;
+}
+input:-webkit-autofill {
+  -webkit-text-fill-color: rgb(193, 193, 193) !important;
+}
+@keyframes slideTtB {
+  from {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
 @media only screen and (orientation: portrait) {
   .elements-carrier {
     display: flex;
@@ -802,4 +822,40 @@
   #nav2 {
     display: none;
   }
+}
+
+.msgReceived {
+  display: flex;
+  position: fixed;
+  top: 5%;
+  left: 10%;
+  width: 80%;
+  height: 10%;
+  background-color: rgb(59, 106, 79);
+  animation: slideTtB 1.5s ease-out 0s 1 normal;
+  color: #e3e3e3;
+  font-weight: 700;
+}
+.msgReceived-off {
+  display: none;
+}
+.msgReceived span {
+  margin: auto auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+}
+.msgNotReceived {
+  display: flex;
+  position: fixed;
+  top: 5%;
+  left: 10%;
+  width: 80%;
+  height: 10%;
+  background-color: rgb(163, 44, 44);
+  animation: slideTtB 1.5s ease-out 0s 1 normal;
+}
+.msgNotReceived span {
+  margin: auto auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
 }

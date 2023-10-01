@@ -167,6 +167,9 @@ const HorizontalCarrier = (props) => {
     message: "",
   });
 
+  const [displayMsg1, setDisplayMsg1] = useState(false);
+  const [displayMsg2, setDisplayMsg2] = useState(false);
+
   const formInputs = [
     {
       id: 1,
@@ -254,21 +257,17 @@ const HorizontalCarrier = (props) => {
       )
       .then(
         (result) => {
+          setDisplayMsg1(true);
           console.log(result.text);
+          setTimeout(() => setDisplayMsg1(false), 2500);
+          setTimeout(() => window.location.reload(), 3000);
         },
         (error) => {
           console.log(error.text);
+          setDisplayMsg2(true);
+          setTimeout(() => setDisplayMsg2(false), 5000);
         }
       );
-    setFormValues({
-      firstName: "",
-      lastName: "",
-      fromCompany: "",
-      email: "",
-      confirmEmail: "",
-      phoneNumber: "",
-      message: "",
-    });
   };
 
   const onChange = (e) => {
@@ -436,6 +435,16 @@ const HorizontalCarrier = (props) => {
       </div>
 
       <div id="contact" className="spaceBlock">
+        <div
+          className={displayMsg1 == true ? "msgReceived" : "msgReceived-off"}
+        >
+          <span>Your message has been sent</span>
+        </div>
+        <div
+          className={displayMsg2 == true ? "msgNotReceived" : "msgReceived-off"}
+        >
+          <span>Message not sent</span>
+        </div>
         <div id="contact-content-title">
           <div id="bio-title1">
             <span id="bio-slash"> &#91; </span>
