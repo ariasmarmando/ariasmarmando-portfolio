@@ -43,3 +43,9 @@
     margin-right: 5%;
   }
 }
+.IconsButton a {
+  color: #a9a9c2;
+}
+.IconsButton a:hover {
+  color: #a9a9c2;
+}

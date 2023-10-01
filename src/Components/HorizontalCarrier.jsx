@@ -47,13 +47,13 @@ const buttonData = [
     id: "bd3",
     name: "LinkedIn",
     image: Linkedin,
-    route: null,
+    route: "https://www.linkedin.com/in/ariasmarmando/",
   },
   {
     id: "bd4",
     name: "Github",
     image: Github,
-    route: null,
+    route: "https://github.com/ariasmarmando",
   },
 ];
 

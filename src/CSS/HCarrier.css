@@ -685,7 +685,7 @@
       rgba(56, 56, 63, 0.62) 100%
     );
 
-    overflow-y: hidden;
+    overflow-y: auto;
   }
   #projects .projectScroller {
     width: 100%;
