@@ -36,13 +36,15 @@ const buttonData = [
     id: "bd1",
     name: "Resume",
     image: ResIcon,
-    route: null,
+    route:
+      "https://drive.google.com/file/d/1BhA_tJo2eCvIJZNmcay0xbnXeZ6mo6Y2/view?usp=share_link",
   },
   {
     id: "bd2",
     name: "Certs",
     image: ResIcon,
-    route: null,
+    route:
+      "https://www.credly.com/badges/64440fec-cce9-4e05-9a0c-cff68f238dab/linked_in?t=s0a8nm",
   },
   {
     id: "bd3",
