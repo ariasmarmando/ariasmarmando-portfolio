@@ -24,7 +24,6 @@ function App() {
         inline: "center",
       });
     }
-    window.history.pushState({}, "", id);
     if (id == "home") {
       setlocIndex(1);
     } else if (id == "aboutMe") {
