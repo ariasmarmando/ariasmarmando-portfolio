@@ -3,7 +3,9 @@ const IconButtons = (props) => {
   return (
     <div className="IconsButton">
       <img src={props.iconIMG} />
-      <span onClick={props.buttonRoute}>{props.buttonName}</span>
+      <span>
+        <a href={props.buttonRoute}>{props.buttonName}</a>
+      </span>
     </div>
   );
 };

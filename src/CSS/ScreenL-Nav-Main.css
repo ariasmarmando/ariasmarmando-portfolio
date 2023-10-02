@@ -8,11 +8,12 @@
     align-self: center;
     padding-top: 1%;
     width: 95%;
-    height: 3%;
+    height: 4vh;
     border: 0;
     border-style: none;
     border-radius: 0em 0em 0.2em 0.2em;
   }
+
   .Nav-Container :nth-child(1) {
     grid-column: 1;
   }

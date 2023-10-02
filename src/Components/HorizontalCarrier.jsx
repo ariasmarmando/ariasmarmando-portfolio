@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 /* CSS */
 import "../CSS/HCarrier.css";
 
@@ -35,25 +36,27 @@ const buttonData = [
     id: "bd1",
     name: "Resume",
     image: ResIcon,
-    route: null,
+    route:
+      "https://drive.google.com/file/d/1BhA_tJo2eCvIJZNmcay0xbnXeZ6mo6Y2/view?usp=share_link",
   },
   {
     id: "bd2",
     name: "Certs",
     image: ResIcon,
-    route: null,
+    route:
+      "https://www.credly.com/badges/64440fec-cce9-4e05-9a0c-cff68f238dab/linked_in?t=s0a8nm",
   },
   {
     id: "bd3",
     name: "LinkedIn",
     image: Linkedin,
-    route: null,
+    route: "https://www.linkedin.com/in/ariasmarmando/",
   },
   {
     id: "bd4",
     name: "Github",
     image: Github,
-    route: null,
+    route: "https://github.com/ariasmarmando",
   },
 ];
 
@@ -166,6 +169,9 @@ const HorizontalCarrier = (props) => {
     message: "",
   });
 
+  const [displayMsg1, setDisplayMsg1] = useState(false);
+  const [displayMsg2, setDisplayMsg2] = useState(false);
+
   const formInputs = [
     {
       id: 1,
@@ -241,10 +247,31 @@ const HorizontalCarrier = (props) => {
     },
   ];
 
+  const form = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(console.log(formValues));
+    emailjs
+      .sendForm(
+        "service_so1xuwe",
+        "template_g9qwjvj",
+        form.current,
+        "J8bJLsRhXgEuX4q1j"
+      )
+      .then(
+        (result) => {
+          setDisplayMsg1(true);
+          console.log(result.text);
+          setTimeout(() => setDisplayMsg1(false), 2500);
+          setTimeout(() => window.location.reload(), 3000);
+        },
+        (error) => {
+          console.log(error.text);
+          setDisplayMsg2(true);
+          setTimeout(() => setDisplayMsg2(false), 5000);
+        }
+      );
   };
+
   const onChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
@@ -410,6 +437,16 @@ const HorizontalCarrier = (props) => {
       </div>
 
       <div id="contact" className="spaceBlock">
+        <div
+          className={displayMsg1 == true ? "msgReceived" : "msgReceived-off"}
+        >
+          <span>Your message has been sent</span>
+        </div>
+        <div
+          className={displayMsg2 == true ? "msgNotReceived" : "msgReceived-off"}
+        >
+          <span>Message not sent</span>
+        </div>
         <div id="contact-content-title">
           <div id="bio-title1">
             <span id="bio-slash"> &#91; </span>
@@ -418,7 +455,7 @@ const HorizontalCarrier = (props) => {
           </div>
         </div>
         <div id="contact-content-form">
-          <form onSubmit={handleSubmit} id="form-container">
+          <form ref={form} onSubmit={handleSubmit} id="form-container">
             {formInputs.map((input) => (
               <ContactForm
                 key={input.id}
