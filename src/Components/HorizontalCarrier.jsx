@@ -37,7 +37,7 @@ const buttonData = [
     name: "Resume",
     image: ResIcon,
     route:
-      "https://drive.google.com/file/d/1BhA_tJo2eCvIJZNmcay0xbnXeZ6mo6Y2/view?usp=share_link",
+      "https://drive.google.com/file/d/1e9q_PrgRfQHzZg9xYF90shuB3v6cRARk/view?usp=share_link",
   },
   {
     id: "bd2",
