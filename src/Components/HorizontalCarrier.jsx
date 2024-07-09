@@ -23,12 +23,14 @@ import Reacticon from "../svg/react.svg";
 import HTMLicon from "../svg/html5.svg";
 import CSSicon from "../svg/css3-alt.svg";
 import Figmaicon from "../svg/figma.svg";
+import JavaIcon from "../svg/java.svg";
 import IllustratorIcon from "../svg/bezier-curve-solid.svg";
 import Photoshopicon from "../svg/image-solid.svg";
 import SkillsIcon from "../svg/gem-regular.svg";
 import ArrowUp from "../svg/chevron-up-solid.svg/";
 import ArrowDown from "../svg/chevron-down-solid.svg/";
 import p1Preview from "../svg/projectPreview.png";
+import guessOrDiePreview from "../images/guessordiePreview.png";
 import rightArrow from "../svg/circle-chevron-right-solid variation.svg";
 /* This data needs to be placed inside of a contex API later */
 const buttonData = [
@@ -68,7 +70,7 @@ const skillList = [
   },
   {
     id: "sk2",
-    name: "React.js",
+    name: "React",
     image: Reacticon,
   },
   {
@@ -83,33 +85,33 @@ const skillList = [
   },
   {
     id: "sk5",
+    name: "Java",
+    image: JavaIcon,
+  },
+  {
+    id: "sk6",
+    name: "C / C++",
+    image: null,
+  },
+  {
+    id: "sk7",
+    name: "Github",
+    image: Github,
+  },
+  {
+    id: "sk8",
     name: "Figma",
     image: Figmaicon,
   },
   {
-    id: "sk6",
+    id: "sk9",
     name: "Illustrator",
     image: IllustratorIcon,
   },
   {
-    id: "sk7",
+    id: "sk10",
     name: "Photoshop",
     image: Photoshopicon,
-  },
-  {
-    id: "sk8",
-    name: "placeholder",
-    image: null,
-  },
-  {
-    id: "sk9",
-    name: "placeholder",
-    image: null,
-  },
-  {
-    id: "sk10",
-    name: "placeholder",
-    image: null,
   },
   {
     id: "sk11",
@@ -126,33 +128,38 @@ const skillList = [
     name: "placeholder",
     image: null,
   },
-  {
-    id: "sk14",
-    name: "placeholder",
-    image: null,
-  },
 ];
 
 const liveProjectData = [
   {
     id: "lp1",
-    name: "Portfolio",
-    desc: "My personal portfolio is a single-page application developed in React.js + vite to showcase my skills and other projects.",
-    img: p1Preview,
+    name: "GuessOrDie",
+    desc: "I developed a mini-game using JavaScript, React, and CSS, which incorporates a probability-based math formula. The game takes user input to generate real-time visual output, providing an engaging and interactive experience that simulates a simplified video game environment.",
+    img: guessOrDiePreview,
+    projectLink: "https://ariasmarmando.github.io/GuessOrDie/",
     skills: [
       { ...skillList[0] },
       { ...skillList[1] },
       { ...skillList[2] },
       { ...skillList[3] },
-      { ...skillList[4] },
-      { ...skillList[5] },
+      { ...skillList[7] },
+      { ...skillList[8] },
     ],
   },
   {
     id: "lp2",
-    name: "Placeholer",
-    desc: "Project Description goes here.",
-    skills: [{ ...skillList[0] }, { ...skillList[1] }, { ...skillList[2] }],
+    name: "Portfolio",
+    desc: "I designed a responsive portfolio using Figma and implemented it with React and JavaScript. By creating reusable components and applying CSS for a stylish, unique design, I ensured the project accurately followed the initial wireframes and prototypes. The result is a visually appealing and functional portfolio that adapts seamlessly to various devices.",
+    img: p1Preview,
+    projectLink: "https://armandoarias.me",
+    skills: [
+      { ...skillList[0] },
+      { ...skillList[1] },
+      { ...skillList[2] },
+      { ...skillList[3] },
+      { ...skillList[7] },
+      { ...skillList[8] },
+    ],
   },
 ];
 
@@ -326,17 +333,15 @@ const HorizontalCarrier = (props) => {
             <span id="bio-title">Get to know me</span>
           </div>
           <span id="bio-bio">
-            Programming since the age of 15, when I first fell in love with the
-            freedom that one obtains when you learn to speak the language of
-            computers and the web. I am a Front-End certified web developer,
-            currently pursuing a Bachelor's in Computer Science. I enjoy
-            collaborating with teammates to develop stunning and accessible
-            solutions.
+            A software developer currently pursuing a Bachelor’s in Computer
+            Science, with a focus on building accessible and efficient software
+            solutions. Experienced in front-end development, with a passion for
+            collaborating with teams to deliver high-quality products.
           </span>
         </div>
         <div className="icons-buttons">
           <div id="bio-title1">
-            <span id="bio-title">More of me</span>
+            <span id="bio-title">More about me:</span>
           </div>
           <div id="link-buttons-positioner">
             {buttonData.map((buttonData) => (
@@ -405,17 +410,18 @@ const HorizontalCarrier = (props) => {
                 skillObject={liveProjectData.skills}
                 title={liveProjectData.name}
                 desc={liveProjectData.desc}
+                projectLink={liveProjectData.projectLink}
               />
             ))}
           </div>
-          <div className="projectScroller">
+          {/* <div className="projectScroller">
             <div id="scrollDown" onClick={props.scrollMeTo("lp2")}>
               <img src={ArrowDown} />
             </div>
             <div id="scrollUp" onClick={props.scrollMeTo("lp1")}>
               <img src={ArrowUp} />
             </div>
-          </div>
+          </div> */}
           <div id="nav2">
             <span>Navigate</span>
           </div>

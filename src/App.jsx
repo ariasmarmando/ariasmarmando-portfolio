@@ -10,7 +10,7 @@ function App() {
   const personalData = {
     pfp: IDimage,
     name: "Armando Arias",
-    title1: "Front-End Developer",
+    title1: "Software Developer",
     title2: "UX / UI Designer",
   };
 

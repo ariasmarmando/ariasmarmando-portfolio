@@ -687,6 +687,14 @@ input:-webkit-autofill {
     background-color: #38383f;
     border: 1px solid transparent;
     border-radius: 0.5em;
+    ::-webkit-scrollbar {
+      display: block;
+      -webkit-appearance: block;
+      width: 7px;
+      background-color: #2e2e33;
+      border-bottom-right-radius: 0.5em;
+      border-bottom-left-radius: 0.5em;
+    }
   }
   #projects #bio-title1 {
     text-align: center;

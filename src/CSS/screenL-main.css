@@ -20,7 +20,7 @@
     left: 0;
     right: 0;
     margin: auto;
-    max-width: 90%;
+    width: 90%;
     max-height: 90%;
     height: auto;
     filter: drop-shadow(1em 1em 2em #2a272798);

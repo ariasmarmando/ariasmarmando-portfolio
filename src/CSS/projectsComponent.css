@@ -79,6 +79,7 @@
     font-size: calc(0.6vh + 0.6vw);
     font-family: "Roboto", sans-serif;
     text-align: left;
+    overflow: scroll;
   }
   .project-grid #project-desc-container #section-desc #description {
     width: 95%;
@@ -131,7 +132,6 @@
     display: grid;
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: repeat(4, 25%);
-    padding-bottom: 1%;
   }
 
   .project-grid #project-img-section {
@@ -145,18 +145,21 @@
     border: 1px solid transparent;
     border-radius: 0.5em;
   }
+
   .project-grid #project-img-section #img-container {
     display: flex;
     width: 90%;
-    height: 90%;
+    height: 100%;
     margin: auto auto;
   }
+
   .project-grid #project-img-section #img-container img {
     transition: 0.5s ease;
     margin: auto auto;
     max-width: 100%;
     max-height: 90%;
   }
+
   .project-grid #project-img-section #img-container img:hover {
     transition: 0.5s ease;
     transform: rotate(5deg) scale(1.2);

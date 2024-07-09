@@ -1,12 +1,14 @@
 import "../CSS/projectsComponent.css";
 import Skill from "./Skill";
 
-const LiveProjects = ({ id, img, title, desc, skillObject }) => {
+const LiveProjects = ({ id, img, title, desc, skillObject, projectLink }) => {
   return (
     <div className="project-grid" id={id}>
       <div id="project-img-section">
-        <div id="img-container">
-          <img src={img} />
+        <div>
+          <a id="img-container" href={projectLink}>
+            <img src={img} />
+          </a>
         </div>
       </div>
       <div id="project-desc-container">
