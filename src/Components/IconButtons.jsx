@@ -1,12 +1,12 @@
 import "../CSS/iconButtons.css";
 const IconButtons = (props) => {
   return (
-    <div className="IconsButton">
-      <img src={props.iconIMG} />
-      <span>
-        <a href={props.buttonRoute}>{props.buttonName}</a>
-      </span>
-    </div>
+    <a target="_blank" href={props.buttonRoute} className="IconsButton">
+      <div className="buttonContent">
+        <img src={props.iconIMG} alt={props.buttonName} />
+        <span>{props.buttonName}</span>
+      </div>
+    </a>
   );
 };
 export default IconButtons;

@@ -32,7 +32,7 @@ body {
   background: rgb(68, 68, 74);
   background: radial-gradient(
     circle,
-    rgba(68, 68, 74, 1) 59%,
+    rgba(68, 68, 74, 1) 50%,
     rgba(93, 93, 103, 1) 100%
   );
 }

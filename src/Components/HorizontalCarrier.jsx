@@ -134,7 +134,7 @@ const liveProjectData = [
   {
     id: "lp1",
     name: "GuessOrDie",
-    desc: "I developed a mini-game using JavaScript, React, and CSS, which incorporates a probability-based math formula. The game takes user input to generate real-time visual output, providing an engaging and interactive experience that simulates a simplified video game environment.",
+    desc: "Developed a mini-game using JavaScript, React, and CSS. The game takes user input and leverages component reusability and state to generate real-time visual output, providing an engaging and interactive experience that simulates a simplified video game environment.",
     img: guessOrDiePreview,
     projectLink: "https://ariasmarmando.github.io/GuessOrDie/",
     skills: [
@@ -309,7 +309,7 @@ const HorizontalCarrier = (props) => {
           />
         </div>
         <div className="coffee-button">
-          <a href="https://www.buymeacoffee.com/ariasmarmando">
+          <a target="blank" href="https://www.buymeacoffee.com/ariasmarmando">
             {" "}
             <img src={CoffeeMug} />
           </a>
@@ -333,10 +333,10 @@ const HorizontalCarrier = (props) => {
             <span id="bio-title">Get to know me</span>
           </div>
           <span id="bio-bio">
-            A software developer currently pursuing a Bachelor’s in Computer
+            I am software developer currently pursuing a Bachelor’s in Computer
             Science, with a focus on building accessible and efficient software
             solutions. Experienced in front-end development, with a passion for
-            collaborating with teams to deliver high-quality products.
+            collaborating with teams to deliver high-quality end results.
           </span>
         </div>
         <div className="icons-buttons">

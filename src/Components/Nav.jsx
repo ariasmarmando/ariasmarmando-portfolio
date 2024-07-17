@@ -8,10 +8,10 @@ const Nav = (props) => {
         <a onClick={props.clickHandle("home")}>Portfolio</a>
       </span>
       <div className="nav-links">
-        <a href="https://github.com/ariasmarmando">
+        <a target="blank" href="https://github.com/ariasmarmando">
           <img src={githubButton} />
         </a>
-        <a href="https://linkedin.com/in/ariasmarmando">
+        <a target="blank" href="https://linkedin.com/in/ariasmarmando">
           <img src={linkedInButton} />
         </a>
       </div>

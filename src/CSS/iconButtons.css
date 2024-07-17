@@ -23,10 +23,11 @@
 
 @media only screen and (orientation: landscape) {
   .IconsButton {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
     justify-content: center;
     font-family: "Roboto", sans-serif;
-    width: 10%;
+    width: 15%;
     font-size: calc(0.6vh + 0.6vw);
     border-radius: 0.2em;
     background-color: #a93a2b;
@@ -34,18 +35,30 @@
     margin-right: 1%;
     padding: 1%;
   }
-  .IconsButton:hover {
-    background-color: #b83f2f;
-    cursor: pointer;
-  }
-  .IconsButton img {
-    max-width: 15%;
-    margin-right: 5%;
-  }
+}
+.IconsButton:hover {
+  background-color: #dededed2;
+  cursor: pointer;
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.IconsButton img {
+  margin-right: 2%;
+  width: 10%;
+  max-width: 10%;
 }
 .IconsButton a {
   color: #a9a9c2;
 }
 .IconsButton a:hover {
   color: #a9a9c2;
+}
+
+.IconsButton span {
+  display: inline-block;
 }
