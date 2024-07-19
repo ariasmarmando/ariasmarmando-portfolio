@@ -414,7 +414,10 @@ const HorizontalCarrier = (props) => {
               />
             ))}
           </div>
-          {/* <div className="projectScroller">
+          {/*
+          This portion of the code creates a custom scroller, this feature needs improvement
+          before full implementation.
+          <div className="projectScroller">
             <div id="scrollDown" onClick={props.scrollMeTo("lp2")}>
               <img src={ArrowDown} />
             </div>
