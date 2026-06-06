@@ -11,7 +11,7 @@ import ScrollTo from "./ScrollTo.jsx";
 import HID from "./HID.jsx";
 import IconButtons from "./IconButtons.jsx";
 import Skill from "./Skill.jsx";
-import LiveProjects from "../../../../../Downloads/files-5/LiveProjects.jsx";
+import LiveProjects from "./LiveProjects";
 import ContactForm from "./ContactForm";
 import CodeAnimation from "./CodeAnimation.jsx";
 
