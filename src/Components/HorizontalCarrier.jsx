@@ -19,14 +19,19 @@ import CoffeeMug from "../svg/bmc-logo.svg";
 import ResIcon from "../svg/file-lines-regular.svg";
 import Linkedin from "../svg/linkedin.svg";
 import Github from "../svg/square-github.svg";
-import PythonIcon from "../svg/python.svg";
-import TypeScriptIcon from "../svg/typescript.svg";
+// PythonIcon - add src/svg/python.svg to restore
+const PythonIcon = null;
+// TypeScriptIcon - add src/svg/typescript.svg to restore
+const TypeScriptIcon = null;
 import JavaScriptIcon from "../svg/square-js.svg";
 import JavaIcon from "../svg/java.svg";
 import ReactIcon from "../svg/react.svg";
-import DockerIcon from "../svg/docker.svg";
-import GitIcon from "../svg/git.svg";
-import PostgresIcon from "../svg/postgresql.svg";
+// DockerIcon - add src/svg/docker.svg to restore
+const DockerIcon = null;
+// GitIcon - add src/svg/git.svg to restore
+const GitIcon = null;
+// PostgresIcon - add src/svg/postgresql.svg to restore
+const PostgresIcon = null;
 import SkillsIcon from "../svg/gem-regular.svg";
 import rightArrow from "../svg/circle-chevron-right-solid variation.svg";
 import guessOrDiePreview from "../images/guessordiePreview.png";
