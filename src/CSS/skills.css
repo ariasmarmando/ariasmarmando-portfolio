@@ -17,23 +17,24 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  width: 6em;
-  font-size: calc(0.6vh + 0.6vw);
-  border-radius: 0.2em;
+  /* Responsive size: bigger on portrait, smaller on landscape */
+  font-size: calc(0.7vh + 0.7vw);
+  padding: 5px 10px;
+  border-radius: 4px;
   background-color: #a93a2b;
-  color: #a9a9c2;
-  margin-right: 1%;
-  margin-bottom: 1%;
-  padding: 1%;
+  color: #e0e0ef;
   animation: skillAppear 0.4s ease-out both;
+  white-space: nowrap;
 }
 
 .Skills img {
-  max-width: 15%;
-  margin-right: 5%;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  object-fit: contain;
 }
 
-/* Hidden state before the staggered delay fires */
+/* Hidden state before staggered delay fires */
 .Skills--hidden {
   opacity: 0;
   pointer-events: none;

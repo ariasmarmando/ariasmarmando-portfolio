@@ -1,0 +1,71 @@
+/* ── CodeAnimation — portrait only ── */
+.ca-outer {
+  width: 100%;
+  background-color: #26262b;
+  border-radius: 0.5em;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Red accent line at the very top — matches the design */
+.ca-top-border {
+  width: 100%;
+  height: 3px;
+  background-color: #a93a2b;
+}
+
+/* Clipping window — only shows VISIBLE_LINES worth of rows */
+.ca-window {
+  height: 224px; /* 8 lines × 28px */
+  overflow: hidden;
+  position: relative;
+}
+
+/* The scrolling inner container — moved by JS translateY */
+.ca-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  will-change: transform;
+}
+
+/* One row of "code" */
+.ca-row {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 3%;
+  gap: 3%;
+}
+
+/* Left column: tiny square representing a line number */
+.ca-linenum {
+  width: 18px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background-color: #3a3a42;
+}
+
+/* Right column: code token blocks */
+.ca-blocks {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.ca-block {
+  height: 10px;
+  border-radius: 4px;
+  background-color: #4a4a55;
+  flex-shrink: 0;
+  min-width: 10px;
+}
+
+/* Keyword / accent block — red */
+.ca-block--red {
+  background-color: #a93a2b;
+}

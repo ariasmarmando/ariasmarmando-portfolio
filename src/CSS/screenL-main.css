@@ -4,8 +4,8 @@
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
-    /* offset for the fixed nav — adjust if nav height changes */
-    padding-top: 14vh;
+    /* Nav height: ~10px top pad + 22px icons + 2px gap + 15px label + 4px gap + ~18px links + 8px bottom = ~79px */
+    padding-top: 80px;
     box-sizing: border-box;
   }
 }
@@ -28,16 +28,7 @@
     filter: drop-shadow(1em 1em 2em #2a272798);
   }
 
-  Nav {
-    grid-column: auto;
-    grid-row: 1;
-  }
-  Body {
-    grid-column: auto;
-    grid-row: 2;
-  }
-  Footer {
-    grid-column: auto;
-    grid-row: 3;
-  }
+  .screenL-skeleton-container > *:nth-child(1) { grid-row: 1; }
+  .screenL-skeleton-container > *:nth-child(2) { grid-row: 2; }
+  .screenL-skeleton-container > *:nth-child(3) { grid-row: 3; }
 }

@@ -1,848 +1,865 @@
 ::-webkit-scrollbar {
-    display: none;
-    -webkit-appearance: none;
-    width: 7px;
-    background-color: #2e2e33;
-    border-bottom-right-radius: 0.5em;
-    border-bottom-left-radius: 0.5em;
+  display: none;
+  -webkit-appearance: none;
+  width: 7px;
+  background-color: #2e2e33;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: #848496;
-    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  background-color: #848496;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 4vh rgb(86, 87, 98) inset !important;
+  -webkit-box-shadow: 0 0 0 4vh rgb(86, 87, 98) inset !important;
 }
 input:-webkit-autofill {
-    -webkit-text-fill-color: rgb(193, 193, 193) !important;
+  -webkit-text-fill-color: rgb(193, 193, 193) !important;
 }
 @keyframes slideTtB {
-    from {
-        transform: translateY(-10%);
-        opacity: 0;
-    }
+  from {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
 
-    to {
-        transform: translateY(0);
-        opacity: 100%;
-    }
+  to {
+    transform: translateY(0);
+    opacity: 100%;
+  }
 }
 @media only screen and (orientation: portrait) {
-    /* ── Carrier & sections ── */
-    .elements-carrier {
-        display: flex;
-        flex-direction: column;
-        overflow-x: hidden;
-        overflow-y: auto;
-        height: 100%;
-        width: 100%;
-    }
 
-    .spaceBlock {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        min-height: 100vh;
-    }
+  /* ── Carrier ── */
+  .elements-carrier {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+  }
 
-    /* ─────────────────────────────
-       HOME
-    ───────────────────────────── */
-    #home {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2vh;
-        padding: 8vh 0 4vh;
-        background: radial-gradient(
-                94.03% 57.44% at 50% 45.7%,
-                rgba(46, 46, 51, 0) 0%,
-                #2e2e33 93.23%,
-                #2e2e33 100%
-        );
-    }
+  .spaceBlock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+  }
 
-    /* IDCard fills its natural centered slot */
-    #home :nth-child(1) {
-        width: 100%;
-    }
+  /* ─────────────────────────────
+     HOME
+  ───────────────────────────── */
+  #home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4vh 6% 0;
+    gap: 2vh;
+    background: radial-gradient(
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
+    );
+  }
 
-    /* Hide the HomeAnimation ("Let's Ideate...") on portrait */
-    #homeAnimation {
-        display: none;
-    }
+  /* IDCard takes full width; internal centering handled by IDCard.css */
+  #home > *:first-child {
+    width: 100%;
+  }
 
-    /* "Navigate" label hidden — replaced by arrow button */
-    #home #nav2 {
-        display: none;
-    }
+  /* Hide typed animation on portrait */
+  #homeAnimation {
+    display: none;
+  }
 
-    /* Down-arrow button: square red, centered */
-    .aboutMeButton {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5vh;
-    }
-    .aboutMeButton #nav2 {
-        display: none;
-    }
-    .aboutMeButton button {
-        width: 6vh;
-        height: 6vh;
-        font-size: 0;
-        font-weight: bold;
-        border-radius: calc(0.3vh + 0.3vw);
-        background-color: #a93a2b;
-        color: rgb(187, 187, 206);
-        font-family: "Roboto", sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .aboutMeButton button img {
-        max-width: 45%;
-        max-height: 45%;
-        transform: rotate(90deg);
-    }
-    .aboutMeButton button:hover {
-        background-color: #b83f2f;
-        transition: 100ms ease-in;
-    }
+  #home #nav2 {
+    display: none;
+  }
 
-    /* Coffee button — small inline icon flowing at bottom of home section */
-    .coffee-button {
-        align-self: flex-end;
-        padding-right: 5vw;
-    }
-    .coffee-button img {
-        opacity: 0.8;
-        display: block;
-        width: 28px;
-        height: 28px;
-        object-fit: contain;
-    }
-    .coffee-button img:hover {
-        opacity: 1;
-        scale: 1.15;
-        cursor: pointer;
-        transition: 0.3s ease;
-    }
+  /* Down-arrow button — centered */
+  .aboutMeButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .aboutMeButton #nav2 {
+    display: none;
+  }
+  .aboutMeButton button {
+    width: 48px;
+    height: 48px;
+    font-size: 0;
+    border-radius: 6px;
+    background-color: #a93a2b;
+    color: rgb(187, 187, 206);
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+  }
+  .aboutMeButton button img {
+    width: 18px;
+    height: 18px;
+    transform: rotate(90deg);
+  }
+  .aboutMeButton button:hover {
+    background-color: #b83f2f;
+    transition: 100ms ease-in;
+  }
 
-    #orangeForth {
-        color: #a93a2b;
-    }
+  /* Coffee button — tiny, right-aligned */
+  .coffee-button {
+    align-self: flex-end;
+    padding-right: 2vw;
+    margin-top: auto;
+    padding-bottom: 1.5vh;
+  }
+  .coffee-button img {
+    opacity: 0.7;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: block;
+  }
+  .coffee-button img:hover {
+    opacity: 1;
+    scale: 1.15;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
 
-    /* ─────────────────────────────
-       ABOUT ME
-    ───────────────────────────── */
-    #aboutMe {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0 5% 4vh;
-        gap: 3vh;
-        background: radial-gradient(
-                94.03% 57.44% at 50% 45.7%,
-                rgba(46, 46, 51, 0) 0%,
-                #2e2e33 93.23%,
-                #2e2e33 100%
-        );
-    }
+  /* Code animation panel — full width, sits at bottom of home */
+  .home-code-animation {
+    width: 100%;
+    margin-top: auto;
+  }
 
-    /* HID mini card — right-aligned strip at the top */
-    #aboutMe .hidPOS {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        padding-top: 1vh;
-    }
+  #orangeForth {
+    color: #a93a2b;
+  }
 
-    /* Bio section */
-    #aboutMe .bio-section {
-        width: 100%;
-    }
+  /* ─────────────────────────────
+     ABOUT ME
+  ───────────────────────────── */
+  #aboutMe {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2vh 6% 4vh;
+    gap: 2.5vh;
+    background: radial-gradient(
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
+    );
+  }
 
-    #bio-title1 #bio-slash {
-        color: #a93a2b;
-        font-size: calc(1.8vh + 1.8vw);
-        font-weight: 700;
-        font-family: "Roboto", sans-serif;
-    }
-    #bio-title1 #bio-title {
-        color: #848496;
-        font-size: calc(1.8vh + 1.8vw);
-        font-weight: 700;
-        font-family: "Roboto", sans-serif;
-    }
-    #aboutMe #bio-bio {
-        color: #a9a9c2;
-        font-size: calc(1vh + 1vw);
-        font-family: "Roboto", sans-serif;
-        line-height: 1.6;
-        margin-top: 1vh;
-    }
+  /* HID strip — right-aligned */
+  #aboutMe .hidPOS {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
-    /* Icon buttons (Resume, Certs, LinkedIn, Github) — full-width pills stacked */
-    .icons-buttons {
-        width: 100%;
-    }
-    .icons-buttons #bio-title1 {
-        display: none; /* "More about me:" label hidden per design */
-    }
-    .icons-buttons #link-buttons-positioner {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5vh;
-        width: 100%;
-    }
+  /* Bio */
+  #aboutMe .bio-section {
+    width: 100%;
+  }
 
-    /* Skills section */
-    .skills-section {
-        width: 100%;
-    }
-    .skills-section #bio-title1 #bio-title {
-        font-size: calc(1.8vh + 1.8vw);
-    }
-    .skills-section #skills-section-skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1%;
-        padding: 2% 0;
-        background: transparent;
-    }
-    /* Hide gem icon on portrait — skills flow freely */
-    .title-icon {
-        display: none;
-    }
-    #skillList {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1%;
-    }
+  #bio-title1 #bio-slash {
+    color: #a93a2b;
+    font-size: calc(1.6vh + 1.6vw);
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+  }
+  #bio-title1 #bio-title {
+    color: #848496;
+    font-size: calc(1.6vh + 1.6vw);
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+  }
+  #aboutMe #bio-bio {
+    display: block;
+    color: #a9a9c2;
+    font-size: calc(0.9vh + 0.9vw);
+    font-family: "Roboto", sans-serif;
+    line-height: 1.65;
+    margin-top: 1vh;
+  }
 
-    /* Navigate label hidden, nav arrow buttons shown centered */
-    #aboutMe #nav2 {
-        display: none;
-    }
-    .projectsMeButton {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 5%;
-    }
-    .projectsMeButton button {
-        width: 6vh;
-        height: 6vh;
-        font-size: 0;
-        font-weight: bold;
-        border-radius: calc(0.3vh + 0.3vw);
-        background-color: #a93a2b;
-        color: rgb(187, 187, 206);
-        font-family: "Roboto", sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .projectsMeButton button img {
-        max-width: 45%;
-        max-height: 45%;
-        transform: rotate(90deg);
-    }
-    .projectsMeButton #goBack button img {
-        transform: rotate(270deg);
-    }
-    .projectsMeButton button:hover {
-        background-color: #b83f2f;
-        transition: 100ms ease-in;
-    }
+  /* Link buttons — full width dark pills stacked vertically */
+  .icons-buttons {
+    width: 100%;
+  }
+  .icons-buttons #bio-title1 {
+    display: none;
+  }
+  .icons-buttons #link-buttons-positioner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2vh;
+    width: 100%;
+  }
 
-    /* ─────────────────────────────
-       PROJECTS
-    ───────────────────────────── */
-    #projects {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0 5% 4vh;
-        gap: 2vh;
-        background: radial-gradient(
-                94.03% 57.44% at 50% 45.7%,
-                rgba(46, 46, 51, 0) 0%,
-                #2e2e33 93.23%,
-                #2e2e33 100%
-        );
-    }
+  /* Skills */
+  .skills-section {
+    width: 100%;
+  }
+  .skills-section #skills-section-skills {
+    display: block;
+    padding: 1.5vh 0 0;
+    background: transparent;
+    border-radius: 0;
+  }
+  .title-icon {
+    display: none;
+  }
+  #skillList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1.2vh;
+  }
 
-    /* HID strip — right-aligned */
-    #projects .hidPOS {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        padding-top: 1vh;
-    }
+  /* Nav arrows */
+  #aboutMe #nav2 {
+    display: none;
+  }
+  .projectsMeButton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 1vh;
+  }
+  .projectsMeButton button {
+    width: 48px;
+    height: 48px;
+    font-size: 0;
+    border-radius: 6px;
+    background-color: #a93a2b;
+    color: rgb(187, 187, 206);
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+  }
+  .projectsMeButton button img {
+    width: 18px;
+    height: 18px;
+    transform: rotate(90deg);
+  }
+  .projectsMeButton #goBack button img {
+    transform: rotate(270deg);
+  }
+  .projectsMeButton button:hover {
+    background-color: #b83f2f;
+    transition: 100ms ease-in;
+  }
 
-    #projects #projects-content {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 2vh;
-        background: transparent;
-        border: none;
-        border-radius: 0;
-        margin: 0;
-        height: auto;
-    }
+  /* ─────────────────────────────
+     PROJECTS
+  ───────────────────────────── */
+  #projects {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2vh 6% 4vh;
+    gap: 2vh;
+    background: radial-gradient(
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
+    );
+  }
 
-    #projects #bio-title1 {
-        text-align: center;
-        padding: 0;
-    }
+  /* HID strip right-aligned */
+  #projects .hidPOS {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
 
-    #projects #projects-component {
-        width: 100%;
-        height: auto;
-        background: transparent;
-        overflow-y: visible;
-        display: flex;
-        flex-direction: column;
-        gap: 2vh;
-    }
+  #projects #projects-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    height: auto;
+  }
 
-    #projects .projectScroller {
-        display: none;
-    }
+  #projects #bio-title1 {
+    text-align: center;
+    padding: 0;
+    width: 100%;
+  }
 
-    /* Nav arrows */
-    #projects #nav2 {
-        display: none;
-    }
-    .formMeButton {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 5%;
-    }
-    .formMeButton button {
-        width: 6vh;
-        height: 6vh;
-        font-size: 0;
-        font-weight: bold;
-        border-radius: calc(0.3vh + 0.3vw);
-        background-color: #a93a2b;
-        color: rgb(187, 187, 206);
-        font-family: "Roboto", sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .formMeButton button img {
-        max-width: 45%;
-        max-height: 45%;
-        transform: rotate(90deg);
-    }
-    .formMeButton #goBack button img {
-        transform: rotate(270deg);
-    }
-    .formMeButton button:hover {
-        background-color: #b83f2f;
-        transition: 100ms ease-in;
-    }
+  #projects #projects-component {
+    width: 100%;
+    height: auto;
+    background: transparent;
+    overflow-y: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+  }
 
-    /* ─────────────────────────────
-       CONTACT
-    ───────────────────────────── */
-    #contact {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 4vh 5%;
-        gap: 3vh;
-        background: radial-gradient(
-                94.03% 57.44% at 50% 45.7%,
-                rgba(46, 46, 51, 0) 0%,
-                #2e2e33 93.23%,
-                #2e2e33 100%
-        );
-    }
+  #projects .projectScroller {
+    display: none;
+  }
 
-    #contact #contact-content-title {
-        width: 100%;
-        text-align: center;
-    }
+  #projects #nav2 {
+    display: none;
+  }
 
-    #contact #contact-content-form {
-        width: 100%;
-        background: transparent;
-        border: none;
-        border-radius: 0;
-    }
+  .formMeButton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 1vh;
+  }
+  .formMeButton button {
+    width: 48px;
+    height: 48px;
+    font-size: 0;
+    border-radius: 6px;
+    background-color: #a93a2b;
+    color: rgb(187, 187, 206);
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+  }
+  .formMeButton button img {
+    width: 18px;
+    height: 18px;
+    transform: rotate(90deg);
+  }
+  .formMeButton #goBack button img {
+    transform: rotate(270deg);
+  }
+  .formMeButton button:hover {
+    background-color: #b83f2f;
+    transition: 100ms ease-in;
+  }
 
-    #contact #contact-content-form #form-container {
-        display: flex;
-        flex-direction: column;
-        gap: 2vh;
-        width: 100%;
-        padding: 0;
-    }
+  /* ─────────────────────────────
+     CONTACT
+  ───────────────────────────── */
+  #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4vh 6%;
+    gap: 2.5vh;
+    background: radial-gradient(
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
+    );
+  }
 
-    /* Full-width submit button */
-    #contact form button {
-        background-color: #a93a2b;
-        color: rgb(187, 187, 206);
-        font-family: "Roboto", sans-serif;
-        font-weight: bold;
-        font-size: calc(1.2vh + 1.2vw);
-        width: 100%;
-        height: 7vh;
-        margin: 0;
-        border-radius: calc(0.3vh + 0.3vw);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 4%;
-    }
-    #contact form button:hover {
-        background-color: #b83f2f;
-        transition: 100ms ease-in;
-    }
-    #contact form button img {
-        max-width: 7%;
-    }
+  #contact #contact-content-title {
+    width: 100%;
+    text-align: center;
+  }
 
-    /* Up-arrow home button */
-    #scrollHome {
-        display: flex;
-        justify-content: center;
-    }
-    #scrollHome button {
-        width: 6vh;
-        height: 6vh;
-        font-size: 0;
-        font-weight: bold;
-        border-radius: calc(0.3vh + 0.3vw);
-        background-color: #a93a2b;
-        color: rgb(187, 187, 206);
-        font-family: "Roboto", sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #scrollHome button img {
-        max-width: 45%;
-        max-height: 45%;
-        transform: rotate(270deg);
-    }
-    #scrollHome button:hover {
-        background-color: #b83f2f;
-        transition: 100ms ease-in;
-    }
+  #contact #contact-content-form {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+  }
 
-    /* Global nav2 label hidden in portrait */
-    #nav2 {
-        display: none;
-    }
+  #contact #contact-content-form #form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Full-width red submit button */
+  #contact form button {
+    background-color: #a93a2b;
+    color: rgb(220, 220, 230);
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: calc(1vh + 1vw);
+    width: 100%;
+    height: 56px;
+    margin: 0;
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    letter-spacing: 0.08em;
+  }
+  #contact form button:hover {
+    background-color: #b83f2f;
+    transition: 100ms ease-in;
+  }
+  #contact form button img {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Up-arrow home button */
+  #scrollHome {
+    display: flex;
+    justify-content: center;
+  }
+  #scrollHome button {
+    width: 48px;
+    height: 48px;
+    font-size: 0;
+    border-radius: 6px;
+    background-color: #a93a2b;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  #scrollHome button img {
+    width: 18px;
+    height: 18px;
+    transform: rotate(270deg);
+  }
+  #scrollHome button:hover {
+    background-color: #b83f2f;
+    transition: 100ms ease-in;
+  }
+
+  /* Global nav2 label hidden on portrait */
+  #nav2 {
+    display: none;
+  }
 }
 
 @media only screen and (orientation: landscape) {
-    .elements-carrier {
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto;
-        overflow-y: hidden;
-        margin: 0 auto;
-        height: 100%;
-        width: 100%;
-        border-radius: 0.5em;
-    }
+  .elements-carrier {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5em;
+  }
 
-    .spaceBlock {
-        display: inline-block;
-        min-width: 100%;
-        max-height: 100%;
-    }
+  .spaceBlock {
+    display: inline-block;
+    min-width: 100%;
+    max-height: 100%;
+  }
 
-    #home {
-        display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
-        grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-        background: radial-gradient(
-                94.03% 57.44% at 50% 45.7%,
-                rgba(46, 46, 51, 0) 0%,
-                #2e2e33 93.23%,
-                #2e2e33 100%
-        );
-    }
-    #home :nth-child(1) {
-        grid-column: 2 / 4;
-        grid-row: 1/7;
-    }
-    #home :nth-child(2) {
-        text-align: center;
-        grid-column: 1 / 5;
-        grid-row: 6/8;
-    }
-    #home :nth-child(3) {
-        text-align: center;
-        grid-column: 1 / 5;
-        grid-row: 8;
-    }
+  /* Code animation is portrait-only */
+  .home-code-animation {
+    display: none;
+  }
 
-    .coffee-button {
-        grid-column: 4;
-        grid-row: 10;
-        margin-left: 70%;
-        margin-right: 10%;
-    }
-    .coffee-button img {
-        opacity: 80%;
-        display: block;
-        margin: 20% auto;
-        max-width: 50%;
-    }
-    .coffee-button img:hover {
-        transition: 0.5s ease;
-        opacity: 100%;
-        scale: 1.2;
-        cursor: pointer;
-    }
+  #home {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    background: radial-gradient(
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
+    );
+  }
+  #home :nth-child(1) {
+    grid-column: 2 / 4;
+    grid-row: 1/7;
+  }
+  #home :nth-child(2) {
+    text-align: center;
+    grid-column: 1 / 5;
+    grid-row: 6/8;
+  }
+  #home :nth-child(3) {
+    text-align: center;
+    grid-column: 1 / 5;
+    grid-row: 8;
+  }
 
-    #orangeForth {
-        color: #a93a2b;
-    }
+  .coffee-button {
+    grid-column: 4;
+    grid-row: 10;
+    margin-left: 70%;
+    margin-right: 10%;
+  }
+  .coffee-button img {
+    opacity: 80%;
+    display: block;
+    margin: 20% auto;
+    max-width: 50%;
+  }
+  .coffee-button img:hover {
+    transition: 0.5s ease;
+    opacity: 100%;
+    scale: 1.2;
+    cursor: pointer;
+  }
 
-    .aboutMeButton button {
-        margin-top: 2%;
-        width: 18%;
-        font-weight: bold;
-        font-size: calc(0.9vh + 0.9vw);
-        border-radius: calc(0.2vh + 0.2vw);
-        background-color: #a93a2b;
-        color: rgb(187, 187, 206);
-        font-family: "Roboto", sans-serif;
-    }
-    .aboutMeButton button img {
-        display: inline-flex;
-        max-width: 10%;
-        margin: auto auto;
-        padding-left: 3%;
-        position: relative;
-    }
-    .aboutMeButton button:hover {
-        background-color: #b83f2f;
-        transition: 100ms ease-in;
-    }
+  #orangeForth {
+    color: #a93a2b;
+  }
 
-    .aboutMeButton button:hover img {
-        left: 5%;
-        transition: 100ms ease-in;
-    }
+  .aboutMeButton button {
+    margin-top: 2%;
+    width: 18%;
+    font-weight: bold;
+    font-size: calc(0.9vh + 0.9vw);
+    border-radius: calc(0.2vh + 0.2vw);
+    background-color: #a93a2b;
+    color: rgb(187, 187, 206);
+    font-family: "Roboto", sans-serif;
+  }
+  .aboutMeButton button img {
+    display: inline-flex;
+    max-width: 10%;
+    margin: auto auto;
+    padding-left: 3%;
+    position: relative;
+  }
+  .aboutMeButton button:hover {
+    background-color: #b83f2f;
+    transition: 100ms ease-in;
+  }
 
-    #homeAnimation {
-        font-family: "Roboto", sans-serif;
-        margin-top: 1%;
-        font-size: 5vw;
-        color: #848496;
-        font-weight: 800;
-    }
-    #aboutMe {
-        display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
-        grid-template-rows: 20% 30% 20% 30%;
-        background: radial-gradient(
-                94.03% 57.44% at 50% 45.7%,
-                rgba(46, 46, 51, 0) 0%,
-                #2e2e33 93.23%,
-                #2e2e33 100%
-        );
-    }
+  .aboutMeButton button:hover img {
+    left: 5%;
+    transition: 100ms ease-in;
+  }
 
-    #aboutMe :nth-child(1) {
-        grid-row: 1;
-        grid-column: 1/5;
-    }
-    #aboutMe .bio-section {
-        display: inline-block;
-        margin: 0 auto;
-        width: 80%;
-        grid-row: 2;
-        grid-column: 1/5;
-        overflow-y: auto;
-    }
+  #homeAnimation {
+    font-family: "Roboto", sans-serif;
+    margin-top: 1%;
+    font-size: 5vw;
+    color: #848496;
+    font-weight: 800;
+  }
+  #aboutMe {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 20% 30% 20% 30%;
+    background: radial-gradient(
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
+    );
+  }
 
-    #bio-title1 #bio-slash {
-        color: #a93a2b;
-        font-size: calc(1vh + 1vw);
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        font-family: "Roboto", sans-serif;
-    }
-    #bio-title1 #bio-title {
-        color: #848496;
-        font-size: calc(1vh + 1vw);
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        font-family: "Roboto", sans-serif;
-    }
-    #aboutMe #bio-bio {
-        color: #a9a9c2;
-        font-size: calc(0.8vh + 0.8vw);
-        font-style: normal;
-        font-family: "Roboto", sans-serif;
-    }
+  #aboutMe :nth-child(1) {
+    grid-row: 1;
+    grid-column: 1/5;
+  }
+  #aboutMe .bio-section {
+    display: inline-block;
+    margin: 0 auto;
+    width: 80%;
+    grid-row: 2;
+    grid-column: 1/5;
+    overflow-y: auto;
+  }
 
-    .icons-buttons {
-        width: 80%;
-        display: inline-block;
-        margin: 0 auto;
-        grid-row: 3;
-        grid-column: 1 / span 5;
-    }
+  #bio-title1 #bio-slash {
+    color: #a93a2b;
+    font-size: calc(1vh + 1vw);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-family: "Roboto", sans-serif;
+  }
+  #bio-title1 #bio-title {
+    color: #848496;
+    font-size: calc(1vh + 1vw);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-family: "Roboto", sans-serif;
+  }
+  #aboutMe #bio-bio {
+    color: #a9a9c2;
+    font-size: calc(0.8vh + 0.8vw);
+    font-style: normal;
+    font-family: "Roboto", sans-serif;
+  }
 
-    .icons-buttons #bio-title1 {
-        text-align: center;
-        padding-bottom: 1%;
-    }
-    .icons-buttons #link-buttons-positioner {
-        display: flex;
-        margin: 0 auto;
-        justify-content: center;
-    }
+  .icons-buttons {
+    width: 80%;
+    display: inline-block;
+    margin: 0 auto;
+    grid-row: 3;
+    grid-column: 1 / span 5;
+  }
 
-    .skills-section {
-        width: 80%;
-        display: inline-block;
-        margin: 0 auto;
-        grid-row: 4;
-        grid-column: 1/5;
-    }
-    .skills-section #skills-section-skills {
-        display: grid;
-        grid-template-columns: 5% 95%;
-        grid-template-rows: 100%;
-        border-radius: 5px;
-        padding: 1%;
-        background: rgba(63, 63, 70, 0.38);
-    }
-    .title-icon {
-        grid-column: 1;
-        grid-row: 1;
-        padding-top: 2%;
-        max-width: 4%;
-    }
-    #skillList {
-        grid-column: 2;
-        grid-row: 1;
-    }
-    .projectsMeButton {
-        display: none;
-    }
-    #projects {
-        display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
-        grid-template-rows: 20% 30% 20% 30%;
-        background: radial-gradient(
-                94.03% 57.44% at 50% 45.7%,
-                rgba(46, 46, 51, 0) 0%,
-                #2e2e33 93.23%,
-                #2e2e33 100%
-        );
-    }
-    #projects #projects-content {
-        margin: auto auto;
-        grid-column: 1/5;
-        grid-row: 1/5;
-        width: 90%;
-        height: 80%;
-        background-color: #38383f;
-        border: 1px solid transparent;
-        border-radius: 0.5em;
-        ::-webkit-scrollbar {
-            display: block;
-            -webkit-appearance: block;
-            width: 7px;
-            background-color: #2e2e33;
-            border-bottom-right-radius: 0.5em;
-            border-bottom-left-radius: 0.5em;
-        }
-    }
-    #projects #bio-title1 {
-        text-align: center;
-        padding: 2%;
-    }
+  .icons-buttons #bio-title1 {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  .icons-buttons #link-buttons-positioner {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+  }
 
-    #projects #projects-component {
-        margin: 0 auto;
-        width: 95%;
-        height: 80%;
-        background: rgb(56, 56, 63);
-        background: linear-gradient(
-                0deg,
-                rgba(56, 56, 63, 1) 0%,
-                rgba(63, 63, 70, 0.499) 50%,
-                rgba(56, 56, 63, 0.62) 100%
-        );
+  .skills-section {
+    width: 80%;
+    display: inline-block;
+    margin: 0 auto;
+    grid-row: 4;
+    grid-column: 1/5;
+  }
+  .skills-section #skills-section-skills {
+    display: grid;
+    grid-template-columns: 5% 95%;
+    grid-template-rows: 100%;
+    border-radius: 5px;
+    padding: 1%;
+    background: rgba(63, 63, 70, 0.38);
+  }
+  .title-icon {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 2%;
+    max-width: 4%;
+  }
+  #skillList {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .projectsMeButton {
+    display: none;
+  }
+  #projects {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 20% 30% 20% 30%;
+    background: radial-gradient(
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
+    );
+  }
+  #projects #projects-content {
+    margin: auto auto;
+    grid-column: 1/5;
+    grid-row: 1/5;
+    width: 90%;
+    height: 80%;
+    background-color: #38383f;
+    border: 1px solid transparent;
+    border-radius: 0.5em;
+    ::-webkit-scrollbar {
+      display: block;
+      -webkit-appearance: block;
+      width: 7px;
+      background-color: #2e2e33;
+      border-bottom-right-radius: 0.5em;
+      border-bottom-left-radius: 0.5em;
+    }
+  }
+  #projects #bio-title1 {
+    text-align: center;
+    padding: 2%;
+  }
 
-        overflow-y: auto;
-    }
-    #projects .projectScroller {
-        width: 100%;
-        height: 15%;
-        margin: -1% auto;
-        position: relative;
-        display: grid;
-        border: 1px solid transparent;
-        border-bottom-left-radius: 0.5em;
-        border-bottom-right-radius: 0.5em;
-        background: #38383f;
-    }
+  #projects #projects-component {
+    margin: 0 auto;
+    width: 95%;
+    height: 80%;
+    background: rgb(56, 56, 63);
+    background: linear-gradient(
+      0deg,
+      rgba(56, 56, 63, 1) 0%,
+      rgba(63, 63, 70, 0.499) 50%,
+      rgba(56, 56, 63, 0.62) 100%
+    );
 
-    #projects .projectScroller #scrollUp {
-        width: 90%;
-        padding: 2%;
-        margin: auto;
-        text-align: center;
-        border: 1px solid transparent;
-        border-radius: 0.2em;
-    }
+    overflow-y: auto;
+  }
+  #projects .projectScroller {
+    width: 100%;
+    height: 15%;
+    margin: -1% auto;
+    position: relative;
+    display: grid;
+    border: 1px solid transparent;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    background: #38383f;
+  }
 
-    #projects .projectScroller #scrollUp img {
-        max-width: 5%;
-    }
-    #projects .projectScroller #scrollUp:hover {
-        cursor: pointer;
-        background-color: #a93a2b;
-    }
+  #projects .projectScroller #scrollUp {
+    width: 90%;
+    padding: 2%;
+    margin: auto;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 0.2em;
+  }
 
-    #projects .projectScroller #scrollDown {
-        width: 90%;
-        padding: 2%;
-        margin: auto;
-        text-align: center;
-        border: 1px solid transparent;
-        border-radius: 0.2em;
-    }
-    #projects .projectScroller #scrollDown:hover {
-        cursor: pointer;
-        background-color: #a93a2b;
-    }
-    #projects .projectScroller #scrollDown img {
-        max-width: 5%;
-    }
-    #projects .formMeButton {
-        display: none;
-    }
-    #contact {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 10% 90%;
-        background: radial-gradient(
-                94.03% 57.44% at 50% 45.7%,
-                rgba(46, 46, 51, 0) 0%,
-                #2e2e33 93.23%,
-                #2e2e33 100%
-        );
-    }
-    #contact #contact-content-title {
-        grid-row: 1;
-        grid-column: 1;
-        padding: 2%;
-        margin: 0 auto;
-    }
-    #contact #contact-content-form {
-        margin: auto auto;
-        grid-column: 1;
-        grid-row: 2;
-        width: 90%;
-        height: 95%;
-        display: flex;
-        background-color: #38383f;
-        border: 1px solid transparent;
-        border-radius: 0.5em;
-    }
-    #contact #contact-content-form #form-container {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 4%;
-        width: 100%;
-    }
+  #projects .projectScroller #scrollUp img {
+    max-width: 5%;
+  }
+  #projects .projectScroller #scrollUp:hover {
+    cursor: pointer;
+    background-color: #a93a2b;
+  }
 
-    #contact form button {
-        background-color: #a93a2b;
-        color: rgb(187, 187, 206);
-        font-family: "Roboto", sans-serif;
-        height: 12%;
-        font-weight: bold;
-        font-size: calc(0.9vh + 0.9vw);
-        width: 100%;
-        margin: 1%;
-        margin-left: 40%;
-        margin-right: 40%;
-        display: block;
-        border-radius: calc(0.2vh + 0.2vw);
-    }
-    #contact form button:hover {
-        background-color: #b83f2f;
-        transition: 100ms ease-in;
-    }
-    #contact form button img {
-        display: inline-flex;
-        max-width: 10%;
-        margin: auto auto;
-        padding-left: 3%;
-        position: relative;
-    }
+  #projects .projectScroller #scrollDown {
+    width: 90%;
+    padding: 2%;
+    margin: auto;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 0.2em;
+  }
+  #projects .projectScroller #scrollDown:hover {
+    cursor: pointer;
+    background-color: #a93a2b;
+  }
+  #projects .projectScroller #scrollDown img {
+    max-width: 5%;
+  }
+  #projects .formMeButton {
+    display: none;
+  }
+  #contact {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 90%;
+    background: radial-gradient(
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
+    );
+  }
+  #contact #contact-content-title {
+    grid-row: 1;
+    grid-column: 1;
+    padding: 2%;
+    margin: 0 auto;
+  }
+  #contact #contact-content-form {
+    margin: auto auto;
+    grid-column: 1;
+    grid-row: 2;
+    width: 90%;
+    height: 95%;
+    display: flex;
+    background-color: #38383f;
+    border: 1px solid transparent;
+    border-radius: 0.5em;
+  }
+  #contact #contact-content-form #form-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4%;
+    width: 100%;
+  }
 
-    #contact form button:hover img {
-        left: 5%;
-        transition: 5s ease-in;
-    }
-    #nav2 {
-        display: none;
-    }
+  #contact form button {
+    background-color: #a93a2b;
+    color: rgb(187, 187, 206);
+    font-family: "Roboto", sans-serif;
+    height: 12%;
+    font-weight: bold;
+    font-size: calc(0.9vh + 0.9vw);
+    width: 100%;
+    margin: 1%;
+    margin-left: 40%;
+    margin-right: 40%;
+    display: block;
+    border-radius: calc(0.2vh + 0.2vw);
+  }
+  #contact form button:hover {
+    background-color: #b83f2f;
+    transition: 100ms ease-in;
+  }
+  #contact form button img {
+    display: inline-flex;
+    max-width: 10%;
+    margin: auto auto;
+    padding-left: 3%;
+    position: relative;
+  }
+
+  #contact form button:hover img {
+    left: 5%;
+    transition: 5s ease-in;
+  }
+  #nav2 {
+    display: none;
+  }
 }
 
 .msgReceived {
-    display: flex;
-    position: fixed;
-    top: 5%;
-    left: 10%;
-    width: 80%;
-    height: 10%;
-    background-color: rgb(59, 106, 79);
-    animation: slideTtB 1.5s ease-out 0s 1 normal;
-    color: #e3e3e3;
-    font-weight: 700;
+  display: flex;
+  position: fixed;
+  top: 5%;
+  left: 10%;
+  width: 80%;
+  height: 10%;
+  background-color: rgb(59, 106, 79);
+  animation: slideTtB 1.5s ease-out 0s 1 normal;
+  color: #e3e3e3;
+  font-weight: 700;
 }
 .msgReceived-off {
-    display: none;
+  display: none;
 }
 .msgReceived span {
-    margin: auto auto;
-    font-family: "Roboto", sans-serif;
-    font-size: 1.5rem;
+  margin: auto auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
 }
 .msgNotReceived {
-    display: flex;
-    position: fixed;
-    top: 5%;
-    left: 10%;
-    width: 80%;
-    height: 10%;
-    background-color: rgb(163, 44, 44);
-    animation: slideTtB 1.5s ease-out 0s 1 normal;
+  display: flex;
+  position: fixed;
+  top: 5%;
+  left: 10%;
+  width: 80%;
+  height: 10%;
+  background-color: rgb(163, 44, 44);
+  animation: slideTtB 1.5s ease-out 0s 1 normal;
 }
 .msgNotReceived span {
-    margin: auto auto;
-    font-family: "Roboto", sans-serif;
-    font-size: 1.5rem;
+  margin: auto auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
 }

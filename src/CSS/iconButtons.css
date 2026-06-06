@@ -6,36 +6,35 @@
     font-family: "Roboto", sans-serif;
     width: 100%;
     font-size: calc(0.9vh + 0.9vw);
-    border-radius: 0.4em;
-    background-color: #3f3f46;
+    padding: 12px 16px;
+    border-radius: 6px;
+    background-color: #3a3a42;
     color: #a9a9c2;
-    padding: 2.5% 4%;
-    border: 1px solid #51515b;
+    border: 1px solid #4a4a54;
     text-decoration: none;
     transition: background-color 0.2s ease;
+    cursor: pointer;
   }
   .IconsButton:hover {
-    background-color: #4a4a52;
-    cursor: pointer;
+    background-color: #44444e;
   }
   .buttonContent {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6%;
+    gap: 8px;
     width: 100%;
   }
   .IconsButton img {
-    width: calc(1.4vh + 1.4vw);
-    max-width: 22px;
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
   .IconsButton span {
     display: inline-block;
   }
   .IconsButton a {
-    color: #a9a9c2;
-  }
-  .IconsButton a:hover {
     color: #a9a9c2;
   }
 }

@@ -11,8 +11,9 @@ import ScrollTo from "./ScrollTo.jsx";
 import HID from "./HID.jsx";
 import IconButtons from "./IconButtons.jsx";
 import Skill from "./Skill.jsx";
-import LiveProjects from "./LiveProjects";
+import LiveProjects from "../../../../../Downloads/files-5/LiveProjects.jsx";
 import ContactForm from "./ContactForm";
+import CodeAnimation from "./CodeAnimation.jsx";
 
 /* svgs */
 import CoffeeMug from "../svg/bmc-logo.svg";
@@ -47,14 +48,14 @@ const buttonData = [
     name: "Resume",
     image: ResIcon,
     route:
-        "https://docs.google.com/document/d/1q8Dx7SjUzh648pkBNvUpj-1neP2pkOdLYkZL5OttUBw/edit?usp=sharing",
+      "https://docs.google.com/document/d/1q8Dx7SjUzh648pkBNvUpj-1neP2pkOdLYkZL5OttUBw/edit?usp=sharing",
   },
   {
     id: "bd2",
     name: "Certs",
     image: ResIcon,
     route:
-        "https://www.credly.com/badges/64440fec-cce9-4e05-9a0c-cff68f238dab/linked_in?t=s0a8nm",
+      "https://www.credly.com/badges/64440fec-cce9-4e05-9a0c-cff68f238dab/linked_in?t=s0a8nm",
   },
   {
     id: "bd3",
@@ -228,24 +229,24 @@ const HorizontalCarrier = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
-        .sendForm(
-            import.meta.env.VITE_EMAILJS_SERVICE_ID,
-            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-            form.current,
-            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-        )
-        .then(
-            () => {
-              setDisplayMsg1(true);
-              setTimeout(() => setDisplayMsg1(false), 2500);
-              setTimeout(() => window.location.reload(), 3000);
-            },
-            (error) => {
-              console.error("EmailJS error:", error);
-              setDisplayMsg2(true);
-              setTimeout(() => setDisplayMsg2(false), 5000);
-            }
-        );
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setDisplayMsg1(true);
+          setTimeout(() => setDisplayMsg1(false), 2500);
+          setTimeout(() => window.location.reload(), 3000);
+        },
+        (error) => {
+          console.error("EmailJS error:", error);
+          setDisplayMsg2(true);
+          setTimeout(() => setDisplayMsg2(false), 5000);
+        }
+      );
   };
 
   const onChange = (e) => {
@@ -256,54 +257,58 @@ const HorizontalCarrier = (props) => {
   const { scrollLocation } = props;
 
   return (
-      <div className="elements-carrier">
+    <div className="elements-carrier">
 
-        {/* ── HOME ── */}
-        <div id="home" className="spaceBlock">
-          <IDCard
-              pfp={props.pfp}
-              name={props.name}
-              title1={props.title1}
-              title2={props.title2}
+      {/* ── HOME ── */}
+      <div id="home" className="spaceBlock">
+        <IDCard
+          pfp={props.pfp}
+          name={props.name}
+          title1={props.title1}
+          title2={props.title2}
+        />
+        <div id="homeAnimation">
+          <HomeAnimation />
+        </div>
+        <div className="aboutMeButton">
+          <div id="nav2">
+            <span>Navigate</span>
+          </div>
+          <ScrollTo
+            name="SEE MORE"
+            whereTo={props.scrollMeTo("aboutMe")}
+            img={rightArrow}
           />
-          <div id="homeAnimation">
-            <HomeAnimation />
-          </div>
-          <div className="aboutMeButton">
-            <div id="nav2">
-              <span>Navigate</span>
-            </div>
-            <ScrollTo
-                name="SEE MORE"
-                whereTo={props.scrollMeTo("aboutMe")}
-                img={rightArrow}
-            />
-          </div>
-          <div className="coffee-button">
-            <a target="_blank" rel="noreferrer" href="https://www.buymeacoffee.com/ariasmarmando">
-              <img src={CoffeeMug} alt="Buy me a coffee" />
-            </a>
-          </div>
+        </div>
+        <div className="coffee-button">
+          <a target="_blank" rel="noreferrer" href="https://www.buymeacoffee.com/ariasmarmando">
+            <img src={CoffeeMug} alt="Buy me a coffee" />
+          </a>
+        </div>
+        {/* Code animation panel — portrait only, hidden in landscape via CSS */}
+        <div className="home-code-animation">
+          <CodeAnimation />
+        </div>
+      </div>
+
+      {/* ── ABOUT ME ── */}
+      <div id="aboutMe" className="spaceBlock">
+        <div className="hidPOS">
+          <HID
+            pfp={props.pfp}
+            name={props.name}
+            title1={props.title1}
+            title2={props.title2}
+            scrollLocation={scrollLocation}
+          />
         </div>
 
-        {/* ── ABOUT ME ── */}
-        <div id="aboutMe" className="spaceBlock">
-          <div className="hidPOS">
-            <HID
-                pfp={props.pfp}
-                name={props.name}
-                title1={props.title1}
-                title2={props.title2}
-                scrollLocation={scrollLocation}
-            />
+        <div className="bio-section">
+          <div id="bio-title1">
+            <span id="bio-slash">// </span>
+            <span id="bio-title">Get to know me</span>
           </div>
-
-          <div className="bio-section">
-            <div id="bio-title1">
-              <span id="bio-slash">// </span>
-              <span id="bio-title">Get to know me</span>
-            </div>
-            <span id="bio-bio">
+          <span id="bio-bio">
             Software engineer and Computer Science student at Arizona State
             University (B.S., expected Fall 2026 — all core CS completed,
             capstone remaining). I build accessible, efficient software across
@@ -311,130 +316,130 @@ const HorizontalCarrier = (props) => {
             containerized backend systems. I enjoy working on problems where
             engineering and design intersect.
           </span>
-          </div>
+        </div>
 
-          <div className="icons-buttons">
-            <div id="bio-title1">
-              <span id="bio-title">More about me:</span>
+        <div className="icons-buttons">
+          <div id="bio-title1">
+            <span id="bio-title">More about me:</span>
+          </div>
+          <div id="link-buttons-positioner">
+            {buttonData.map((btn) => (
+              <IconButtons
+                key={btn.id}
+                buttonName={btn.name}
+                iconIMG={btn.image}
+                buttonRoute={btn.route}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className={scrollLocation === 2 ? "skills-section" : "none"}>
+          <div id="bio-title1">
+            <span id="bio-slash">// </span>
+            <span id="bio-title">Programming Languages<br />and Technologies</span>
+          </div>
+          <div id="skills-section-skills">
+            <div className="title-icon">
+              <img src={SkillsIcon} alt="" />
             </div>
-            <div id="link-buttons-positioner">
-              {buttonData.map((btn) => (
-                  <IconButtons
-                      key={btn.id}
-                      buttonName={btn.name}
-                      iconIMG={btn.image}
-                      buttonRoute={btn.route}
-                  />
+            <div id="skillList">
+              {skillList.map((skill) => (
+                <Skill
+                  key={skill.id}
+                  id={skill.id}
+                  skillName={skill.name}
+                  iconIMG={skill.image}
+                />
               ))}
             </div>
           </div>
+        </div>
 
-          <div className={scrollLocation === 2 ? "skills-section" : "none"}>
-            <div id="bio-title1">
-              <span id="bio-slash">// </span>
-              <span id="bio-title">Skills</span>
-            </div>
-            <div id="skills-section-skills">
-              <div className="title-icon">
-                <img src={SkillsIcon} alt="" />
-              </div>
-              <div id="skillList">
-                {skillList.map((skill) => (
-                    <Skill
-                        key={skill.id}
-                        id={skill.id}
-                        skillName={skill.name}
-                        iconIMG={skill.image}
-                    />
-                ))}
-              </div>
-            </div>
+        <div id="nav2">
+          <span>Navigate</span>
+        </div>
+        <div className="projectsMeButton">
+          <div id="goBack">
+            <ScrollTo name="SEE MORE" whereTo={props.scrollMeTo("home")} img={rightArrow} />
           </div>
+          <ScrollTo name="SEE MORE" whereTo={props.scrollMeTo("projects")} img={rightArrow} />
+        </div>
+      </div>
 
+      {/* ── PROJECTS ── */}
+      <div id="projects" className="spaceBlock">
+        <div id="projects-content">
+          <div id="bio-title1">
+            <span id="bio-slash">// </span>
+            <span id="bio-title">Projects</span>
+          </div>
+          <div id="projects-component">
+            {liveProjectData.map((project) => (
+              <LiveProjects
+                key={project.id}
+                id={project.id}
+                img={project.img}
+                skillObject={project.skills}
+                title={project.name}
+                desc={project.desc}
+                projectLink={project.projectLink}
+                isPrivate={project.isPrivate}
+              />
+            ))}
+          </div>
           <div id="nav2">
             <span>Navigate</span>
           </div>
-          <div className="projectsMeButton">
+          <div className="formMeButton">
             <div id="goBack">
-              <ScrollTo name="SEE MORE" whereTo={props.scrollMeTo("home")} img={rightArrow} />
+              <ScrollTo name="SEE MORE" whereTo={props.scrollMeTo("aboutMe")} img={rightArrow} />
             </div>
-            <ScrollTo name="SEE MORE" whereTo={props.scrollMeTo("projects")} img={rightArrow} />
+            <ScrollTo name="SEE MORE" whereTo={props.scrollMeTo("contact")} img={rightArrow} />
           </div>
         </div>
-
-        {/* ── PROJECTS ── */}
-        <div id="projects" className="spaceBlock">
-          <div id="projects-content">
-            <div id="bio-title1">
-              <span id="bio-slash">// </span>
-              <span id="bio-title">Projects</span>
-            </div>
-            <div id="projects-component">
-              {liveProjectData.map((project) => (
-                  <LiveProjects
-                      key={project.id}
-                      id={project.id}
-                      img={project.img}
-                      skillObject={project.skills}
-                      title={project.name}
-                      desc={project.desc}
-                      projectLink={project.projectLink}
-                      isPrivate={project.isPrivate}
-                  />
-              ))}
-            </div>
-            <div id="nav2">
-              <span>Navigate</span>
-            </div>
-            <div className="formMeButton">
-              <div id="goBack">
-                <ScrollTo name="SEE MORE" whereTo={props.scrollMeTo("aboutMe")} img={rightArrow} />
-              </div>
-              <ScrollTo name="SEE MORE" whereTo={props.scrollMeTo("contact")} img={rightArrow} />
-            </div>
-          </div>
-        </div>
-
-        {/* ── CONTACT ── */}
-        <div id="contact" className="spaceBlock">
-          <div className={displayMsg1 ? "msgReceived" : "msgReceived-off"}>
-            <span>Your message has been sent</span>
-          </div>
-          <div className={displayMsg2 ? "msgNotReceived" : "msgReceived-off"}>
-            <span>Message not sent — please try again</span>
-          </div>
-
-          <div id="contact-content-title">
-            <div id="bio-title1">
-              <span id="bio-slash"> &#91; </span>
-              <span id="bio-title">Let's Work Together!</span>
-              <span id="bio-slash"> &#93; </span>
-            </div>
-          </div>
-
-          <div id="contact-content-form">
-            <form ref={form} onSubmit={handleSubmit} id="form-container">
-              {formInputs.map((input) => (
-                  <ContactForm
-                      key={input.id}
-                      value={formValues[input.name]}
-                      {...input}
-                      onChange={onChange}
-                  />
-              ))}
-              <button type="submit">
-                SUBMIT
-                <img src={rightArrow} alt="" />
-              </button>
-            </form>
-          </div>
-
-          <div id="scrollHome">
-            <ScrollTo name="Home" whereTo={props.scrollMeTo("home")} img={rightArrow} />
-          </div>
-        </div>
-
       </div>
+
+      {/* ── CONTACT ── */}
+      <div id="contact" className="spaceBlock">
+        <div className={displayMsg1 ? "msgReceived" : "msgReceived-off"}>
+          <span>Your message has been sent</span>
+        </div>
+        <div className={displayMsg2 ? "msgNotReceived" : "msgReceived-off"}>
+          <span>Message not sent — please try again</span>
+        </div>
+
+        <div id="contact-content-title">
+          <div id="bio-title1">
+            <span id="bio-slash"> &#91; </span>
+            <span id="bio-title">Let's Work Together!</span>
+            <span id="bio-slash"> &#93; </span>
+          </div>
+        </div>
+
+        <div id="contact-content-form">
+          <form ref={form} onSubmit={handleSubmit} id="form-container">
+            {formInputs.map((input) => (
+              <ContactForm
+                key={input.id}
+                value={formValues[input.name]}
+                {...input}
+                onChange={onChange}
+              />
+            ))}
+            <button type="submit">
+              SUBMIT
+              <img src={rightArrow} alt="" />
+            </button>
+          </form>
+        </div>
+
+        <div id="scrollHome">
+          <ScrollTo name="Home" whereTo={props.scrollMeTo("home")} img={rightArrow} />
+        </div>
+      </div>
+
+    </div>
   );
 };
 

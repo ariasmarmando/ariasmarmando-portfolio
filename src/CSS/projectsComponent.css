@@ -39,125 +39,166 @@
 
 /* ── Portrait ── */
 @media only screen and (orientation: portrait) {
+  /* Each project is a self-contained dark card */
   .project-grid {
-    width: 95%;
-    height: 50%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 25%);
-    grid-template-rows: repeat(4, 25%);
-    padding-bottom: 1%;
+    width: 100%;
+    background-color: #2e2e34;
+    border: 1px solid #3a3a42;
+    border-radius: 0.6em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
-  .project-grid .project-img-section {
+  /* ── Card header: colored dots left, project name right ── */
+  .project-card-header {
     display: flex;
-    width: 90%;
-    height: 80%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px 8px;
+  }
+
+  .project-dots {
+    display: flex;
+    gap: 5px;
+  }
+  .project-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .project-dots span:nth-child(1) { background-color: #a93a2b; }
+  .project-dots span:nth-child(2) { background-color: #848496; }
+  .project-dots span:nth-child(3) { background-color: #4a4a55; }
+
+  .project-card-title {
+    font-family: "Roboto", sans-serif;
+    font-size: calc(0.9vh + 0.9vw);
+    font-weight: 700;
+    color: #848496;
+  }
+
+  /* ── Image + description row ── */
+  .project-body {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    padding: 0 14px 12px;
+    align-items: flex-start;
+  }
+
+  /* Left: image thumbnail */
+  .project-img-section {
+    flex: 0 0 38%;
     background-color: #3f3f46;
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 4;
-    margin: auto;
-    border: 1px solid transparent;
-    border-radius: 0.5em;
-  }
-
-  .project-grid .project-img-section .img-container {
+    border-radius: 0.4em;
+    overflow: hidden;
     display: flex;
-    width: 90%;
-    height: 90%;
-    margin: auto;
+    align-items: center;
+    justify-content: center;
+    min-height: 90px;
   }
 
-  .project-grid .project-img-section .img-container img {
+  .img-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.5s ease;
-    margin: auto;
-    max-width: 100%;
-    max-height: 90%;
+  }
+  .img-container img:hover {
+    transform: scale(1.05);
   }
 
-  .project-grid .project-img-section .img-container img:hover {
-    transform: rotate(5deg) scale(1.2);
-  }
-
-  .project-grid .project-desc-container {
+  /* Private project placeholder */
+  .img-container--private {
     width: 100%;
-    height: 80%;
-    grid-column: 3 / span 4;
-    grid-row: 1 / span 3;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 15% 85%;
-    gap: 1%;
-    margin: 7% auto auto auto;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2e2e34;
+    border: 1px dashed #51515b;
+    border-radius: 0.4em;
   }
-
-  .project-grid .project-desc-container .project-section-title {
-    grid-column: 1;
-    grid-row: 1;
-    color: #848496;
-    font-size: calc(0.8vh + 0.8vw);
-    font-weight: 700;
+  .private-label {
     font-family: "Roboto", sans-serif;
+    font-size: calc(0.5vh + 0.5vw);
+    color: #51515b;
+    letter-spacing: 0.05em;
+    text-align: center;
+    padding: 8px;
   }
 
-  .project-grid .project-desc-container .project-section-desc {
-    grid-column: 1;
-    grid-row: 2;
+  /* Right: description */
+  .project-desc-container {
+    flex: 1;
+    padding-left: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .project-section-title {
+    display: none; /* title is in the header now */
+  }
+
+  .project-section-desc {
     width: 100%;
-    height: 60%;
-    margin-bottom: 1%;
-    background-color: #3f3f46;
-    border: 1px solid transparent;
-    border-radius: 0.2em;
+  }
+  .description {
+    font-family: "Roboto", sans-serif;
+    font-size: calc(0.7vh + 0.7vw);
     color: #a9a9c2;
-    font-size: calc(0.6vh + 0.6vw);
-    font-family: "Roboto", sans-serif;
-    text-align: left;
-    overflow: auto;
+    line-height: 1.5;
   }
 
-  .project-grid .project-desc-container .project-section-desc .description {
-    width: 95%;
-    margin: auto;
+  /* ── Skills row — full width below the body ── */
+  .project-skills-container {
+    padding: 0 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
 
-  .project-grid .project-skills-container {
-    grid-column: 3 / span 4;
-    grid-row: 3 / 5;
+  .project-skills-container .project-section-title {
+    display: none;
+  }
+
+  .project-skill-list {
     width: 100%;
-    height: 60%;
-    display: grid;
-    gap: 10%;
-    grid-template-columns: 100%;
-    grid-template-rows: 20% 80%;
-    margin: auto;
+    background: transparent;
+    border: none;
+  }
+  .project-skill-list::-webkit-scrollbar { display: none; }
+
+  .ind-skill {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
   }
 
-  .project-grid .project-skills-container .project-section-title {
-    grid-column: 1;
-    grid-row: 1;
-    color: #848496;
-    font-size: calc(0.8vh + 0.8vw);
-    font-weight: 700;
+  /* Live link */
+  .project-live-link {
+    display: inline-block;
+    margin-top: 6px;
     font-family: "Roboto", sans-serif;
+    font-size: calc(0.7vh + 0.7vw);
+    color: #a93a2b;
+    text-decoration: none;
+    border-bottom: 1px solid #a93a2b55;
+    transition: border-color 0.2s ease, color 0.2s ease;
   }
-
-  .project-grid .project-skills-container .project-skill-list {
-    grid-column: 1;
-    grid-row: 2;
-    overflow-y: auto;
-    width: 100%;
-    height: 90%;
-    background-color: #3f3f46;
-    border: 1px solid transparent;
-  }
-
-  .project-grid .project-skills-container .project-skill-list::-webkit-scrollbar {
-    height: 0.4em;
-  }
-
-  .project-grid .project-skills-container .project-skill-list .ind-skill {
-    padding: 1%;
+  .project-live-link:hover {
+    color: #c4442f;
+    border-color: #c4442f;
   }
 }
 

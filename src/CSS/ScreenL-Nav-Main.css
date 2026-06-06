@@ -9,44 +9,57 @@
     flex-direction: column;
     align-items: center;
     background-color: #38383f;
-    padding: 1.5% 0 1%;
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+    padding: 10px 0 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
   }
 
-  /* Row 1: social icons + PORTFOLIO label */
+  /* Social icons row */
   .nav-links {
+    order: 1;
     display: flex;
     align-items: center;
-    gap: 2vw;
-    order: 1;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 2px;
+  }
+  .nav-links a {
+    display: flex;
+    align-items: center;
   }
   .nav-links img {
-    display: inline-block;
-    width: calc(2vh + 2vw);
-    max-width: 28px;
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    display: block;
+    opacity: 0.85;
   }
   .nav-links img:hover {
-    scale: 1.2;
+    opacity: 1;
+    scale: 1.15;
   }
 
+  /* "PORTFOLIO" label */
   .nav-title {
     order: 2;
+    margin-bottom: 4px;
   }
   .nav-title a {
     display: block;
     color: #a9a9c2;
     font-family: "Roboto", sans-serif;
-    font-size: calc(0.9vh + 0.9vw);
-    font-weight: 500;
-    letter-spacing: 0.15em;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
     text-align: center;
     cursor: pointer;
+    text-transform: uppercase;
   }
   .nav-title a:hover {
     color: #a93a2b;
   }
 
-  /* Row 2: nav links */
+  /* Nav links row */
   .nav {
     order: 3;
     width: 100%;
@@ -54,18 +67,18 @@
   .nav ul {
     display: flex;
     justify-content: center;
+    align-items: center;
     list-style: none;
-    margin: 0.4em 0 0;
+    margin: 0;
     padding: 0;
-    gap: 0;
-    color: #a9a9c2;
   }
   .nav li {
     font-family: "Roboto", sans-serif;
-    font-size: calc(0.7vh + 0.7vw);
-    padding: 0 3vw;
+    font-size: calc(0.65vh + 0.65vw);
+    padding: 0 4vw;
     white-space: nowrap;
     border-left: 1px solid #464651;
+    line-height: 1.6;
   }
   .nav li:first-child {
     border-left: none;
@@ -73,16 +86,15 @@
   .nav a {
     color: #a9a9c2;
     cursor: pointer;
+    display: block;
+    padding: 2px 0;
   }
   .nav a.active {
-    border-bottom: 0.15em solid #a93a2bb9;
-    border-bottom-left-radius: 5%;
-    border-bottom-right-radius: 5%;
-    transition: border 200ms ease-in;
+    border-bottom: 2px solid #a93a2b;
+    padding-bottom: 0;
   }
   .nav li a:hover {
     color: #a93a2b;
-    cursor: pointer;
   }
 }
 
