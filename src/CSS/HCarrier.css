@@ -33,25 +33,33 @@ input:-webkit-autofill {
   }
 }
 @media only screen and (orientation: portrait) {
+  /* ── Carrier & sections ── */
   .elements-carrier {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
     height: 100%;
-    width: 90%;
-    align-self: center;
-  }
-  .spaceBlock {
-    display: flex;
     width: 100%;
-    height: 100vh;
   }
 
+  .spaceBlock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  /* ─────────────────────────────
+     HOME
+  ───────────────────────────── */
   #home {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 40% 20% 10% 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    padding: 8vh 0 4vh;
     background: radial-gradient(
       94.03% 57.44% at 50% 45.7%,
       rgba(46, 46, 51, 0) 0%,
@@ -59,60 +67,48 @@ input:-webkit-autofill {
       #2e2e33 100%
     );
   }
+
+  /* IDCard fills its natural centered slot */
   #home :nth-child(1) {
-    grid-row: 1;
-  }
-  #home :nth-child(2) {
-    grid-row: 2;
-    text-align: center;
-  }
-  #home :nth-child(3) {
-    grid-row: 3;
-    text-align: center;
+    width: 100%;
   }
 
-  .coffee-button {
-    grid-row: 4;
-    justify-self: end;
-    display: block;
-    width: 15%;
-    height: 15%;
-  }
-  .coffee-button img {
-    opacity: 80%;
-    display: block;
-    margin: 0 auto;
-    max-width: 50%;
-  }
-  .coffee-button img:hover {
-    transition: 0.5s ease;
-    opacity: 100%;
-    scale: 1.2;
-    cursor: pointer;
+  /* Hide the HomeAnimation ("Let's Ideate...") on portrait */
+  #homeAnimation {
+    display: none;
   }
 
-  #orangeForth {
-    color: #a93a2b;
+  /* "Navigate" label hidden — replaced by arrow button */
+  #home #nav2 {
+    display: none;
   }
 
+  /* Down-arrow button: square red, centered */
+  .aboutMeButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5vh;
+  }
+  .aboutMeButton #nav2 {
+    display: none;
+  }
   .aboutMeButton button {
-    text-align: center;
-    width: 5vh;
-    height: 5vh;
-    font-weight: bold;
+    width: 6vh;
+    height: 6vh;
     font-size: 0;
-    border-radius: calc(0.2vh + 0.2vw);
+    font-weight: bold;
+    border-radius: calc(0.3vh + 0.3vw);
     background-color: #a93a2b;
     color: rgb(187, 187, 206);
     font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .aboutMeButton button img {
-    display: flex;
-    max-width: 50%;
-    max-height: 50%;
-    margin: auto auto;
-    padding-left: 3%;
-    position: relative;
+    max-width: 45%;
+    max-height: 45%;
     transform: rotate(90deg);
   }
   .aboutMeButton button:hover {
@@ -120,26 +116,38 @@ input:-webkit-autofill {
     transition: 100ms ease-in;
   }
 
-  .aboutMeButton button:hover img {
-    scale: 1.2;
-    transition: 100ms ease-in;
+  /* Coffee button — bottom-right corner */
+  .coffee-button {
+    position: absolute;
+    bottom: 2vh;
+    right: 4vw;
+  }
+  .coffee-button img {
+    opacity: 0.8;
+    display: block;
+    width: 6vw;
+    min-width: 28px;
+  }
+  .coffee-button img:hover {
+    opacity: 1;
+    scale: 1.15;
+    cursor: pointer;
+    transition: 0.3s ease;
   }
 
-  #homeAnimation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Roboto", sans-serif;
-    font-size: 6vh;
-    text-wrap: nowrap;
-    color: #848496;
-    font-weight: 800;
+  #orangeForth {
+    color: #a93a2b;
   }
 
+  /* ─────────────────────────────
+     ABOUT ME
+  ───────────────────────────── */
   #aboutMe {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 20% 25% 15% 15% 2% 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 5% 4vh;
+    gap: 3vh;
     background: radial-gradient(
       94.03% 57.44% at 50% 45.7%,
       rgba(46, 46, 51, 0) 0%,
@@ -148,147 +156,123 @@ input:-webkit-autofill {
     );
   }
 
+  /* HID mini card — right-aligned strip at the top */
   #aboutMe .hidPOS {
+    width: 100%;
     display: flex;
-    justify-self: center;
+    justify-content: flex-end;
     align-items: center;
-    grid-row: 1;
-    grid-column: 1/5;
+    padding-top: 1vh;
   }
 
+  /* Bio section */
   #aboutMe .bio-section {
-    display: inline-block;
-    margin: 0 auto;
-    width: 80%;
-    grid-row: 2;
-    grid-column: 1/5;
-    overflow-y: auto;
+    width: 100%;
   }
 
   #bio-title1 #bio-slash {
     color: #a93a2b;
-    font-size: calc(2vh + 2vw);
-    font-style: normal;
+    font-size: calc(1.8vh + 1.8vw);
     font-weight: 700;
-    line-height: normal;
     font-family: "Roboto", sans-serif;
   }
   #bio-title1 #bio-title {
     color: #848496;
-    font-size: calc(2vh + 2vw);
-    font-style: normal;
+    font-size: calc(1.8vh + 1.8vw);
     font-weight: 700;
-    line-height: normal;
     font-family: "Roboto", sans-serif;
   }
   #aboutMe #bio-bio {
     color: #a9a9c2;
     font-size: calc(1vh + 1vw);
-    font-style: normal;
     font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    margin-top: 1vh;
   }
 
+  /* Icon buttons (Resume, Certs, LinkedIn, Github) — full-width pills stacked */
   .icons-buttons {
-    width: 80%;
-    display: inline-block;
-    margin: 0 auto;
-    grid-row: 3;
-    grid-column: 1 / span 5;
+    width: 100%;
   }
-
   .icons-buttons #bio-title1 {
-    text-align: center;
-    padding-bottom: 1%;
+    display: none; /* "More about me:" label hidden per design */
   }
   .icons-buttons #link-buttons-positioner {
     display: flex;
-    margin: 0 auto;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1.5vh;
+    width: 100%;
   }
 
+  /* Skills section */
   .skills-section {
-    width: 80%;
-    display: inline-block;
-    margin: 0 auto;
-    grid-row: 4;
-    grid-column: 1/5;
+    width: 100%;
+  }
+  .skills-section #bio-title1 #bio-title {
+    font-size: calc(1.8vh + 1.8vw);
   }
   .skills-section #skills-section-skills {
-    display: grid;
-    grid-template-columns: 5% 95%;
-    grid-template-rows: 100%;
-    border-radius: 5px;
-    padding: 1%;
-    background: rgba(63, 63, 70, 0.38);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+    padding: 2% 0;
+    background: transparent;
   }
+  /* Hide gem icon on portrait — skills flow freely */
   .title-icon {
-    grid-column: 1;
-    grid-row: 1;
-    padding-top: 2%;
-    max-width: 4%;
+    display: none;
   }
   #skillList {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  #nav2 {
-    grid-column: 1/5;
-    grid-row: 5;
-    text-align: center;
-    font-family: "Roboto", sans-serif;
-    font-size: calc(0.7vh + 0.7vw);
-    color: #a9a9c2;
-  }
-  .projectsMeButton {
-    grid-row: 6;
-    grid-column: 1/5;
-    width: 100%;
     display: flex;
-    flex-direction: row;
-    gap: 5%;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 1%;
   }
 
+  /* Navigate label hidden, nav arrow buttons shown centered */
+  #aboutMe #nav2 {
+    display: none;
+  }
+  .projectsMeButton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+  }
   .projectsMeButton button {
-    width: 5vh;
-    height: 5vh;
-    font-weight: bold;
+    width: 6vh;
+    height: 6vh;
     font-size: 0;
-    border-radius: calc(0.2vh + 0.2vw);
+    font-weight: bold;
+    border-radius: calc(0.3vh + 0.3vw);
     background-color: #a93a2b;
     color: rgb(187, 187, 206);
     font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .projectsMeButton button img {
-    display: flex;
-    max-width: 50%;
-    max-height: 50%;
-    margin: auto auto;
-    padding-left: 3%;
-    position: relative;
+    max-width: 45%;
+    max-height: 45%;
     transform: rotate(90deg);
   }
-  .projectsMeButton #goBack img {
+  .projectsMeButton #goBack button img {
     transform: rotate(270deg);
   }
-
   .projectsMeButton button:hover {
     background-color: #b83f2f;
     transition: 100ms ease-in;
   }
 
-  .projectsMeButton button:hover img {
-    scale: 1.2;
-    transition: 100ms ease-in;
-  }
-
+  /* ─────────────────────────────
+     PROJECTS
+  ───────────────────────────── */
   #projects {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 20% 30% 20% 30%;
-    overflow-y: auto;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5% 4vh;
+    gap: 2vh;
     background: radial-gradient(
       94.03% 57.44% at 50% 45.7%,
       rgba(46, 46, 51, 0) 0%,
@@ -296,87 +280,91 @@ input:-webkit-autofill {
       #2e2e33 100%
     );
   }
-  #projects #projects-content {
-    margin: 15% auto;
-    grid-column: 1/5;
-    grid-row: 1/4;
-    width: 90%;
-    height: 90%;
-    background-color: #38383f;
-    border: 1px solid transparent;
-    border-radius: 0.5em;
+
+  /* HID strip — right-aligned */
+  #projects .hidPOS {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1vh;
   }
+
+  #projects #projects-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    height: auto;
+  }
+
   #projects #bio-title1 {
     text-align: center;
-    padding: 2%;
+    padding: 0;
   }
 
   #projects #projects-component {
-    margin: 0 auto;
-    width: 95%;
-    height: 80%;
-    background: rgb(56, 56, 63);
-    background: linear-gradient(
-      0deg,
-      rgba(56, 56, 63, 1) 0%,
-      rgba(63, 63, 70, 0.499) 50%,
-      rgba(56, 56, 63, 0.62) 100%
-    );
-
-    overflow-y: hidden;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    overflow-y: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
   }
+
   #projects .projectScroller {
     display: none;
   }
-  #projects .formMeButton {
-    gap: 5%;
-    grid-row: 4;
-    grid-column: 1/5;
+
+  /* Nav arrows */
+  #projects #nav2 {
+    display: none;
+  }
+  .formMeButton {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 5%;
   }
-
   .formMeButton button {
-    display: flex;
-    width: 5vh;
-    height: 5vh;
-    font-weight: bold;
+    width: 6vh;
+    height: 6vh;
     font-size: 0;
-    border-radius: calc(0.2vh + 0.2vw);
+    font-weight: bold;
+    border-radius: calc(0.3vh + 0.3vw);
     background-color: #a93a2b;
     color: rgb(187, 187, 206);
     font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .formMeButton button img {
-    display: flex;
-    max-width: 50%;
-    max-height: 50%;
-    margin: auto auto;
-    padding-left: 3%;
-    position: relative;
+    max-width: 45%;
+    max-height: 45%;
     transform: rotate(90deg);
   }
-  .formMeButton #goBack img {
+  .formMeButton #goBack button img {
     transform: rotate(270deg);
   }
-
   .formMeButton button:hover {
     background-color: #b83f2f;
     transition: 100ms ease-in;
   }
 
-  .formMeButton button:hover img {
-    scale: 1.2;
-    transition: 100ms ease-in;
-  }
-
+  /* ─────────────────────────────
+     CONTACT
+  ───────────────────────────── */
   #contact {
-    padding-top: 15%;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 10% 60% 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4vh 5%;
+    gap: 3vh;
     background: radial-gradient(
       94.03% 57.44% at 50% 45.7%,
       rgba(46, 46, 51, 0) 0%,
@@ -384,91 +372,82 @@ input:-webkit-autofill {
       #2e2e33 100%
     );
   }
+
   #contact #contact-content-title {
-    grid-row: 1;
-    grid-column: 1;
-    text-wrap: nowrap;
-    margin: auto auto;
-  }
-  #contact #contact-content-form {
-    margin: auto auto;
-    grid-column: 1;
-    grid-row: 2;
-    width: 90%;
-    height: 95%;
-    display: flex;
-    background-color: #38383f;
-    border: 1px solid transparent;
-    border-radius: 0.5em;
-  }
-  #contact #contact-content-form #form-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 4%;
     width: 100%;
+    text-align: center;
   }
 
+  #contact #contact-content-form {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+  }
+
+  #contact #contact-content-form #form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Full-width submit button */
   #contact form button {
     background-color: #a93a2b;
     color: rgb(187, 187, 206);
     font-family: "Roboto", sans-serif;
-    height: 10%;
     font-weight: bold;
-    font-size: calc(0.9vh + 0.9vw);
+    font-size: calc(1.2vh + 1.2vw);
     width: 100%;
-    margin: 1%;
-    margin-left: 30%;
-    margin-right: 30%;
-    display: block;
-    border-radius: calc(0.2vh + 0.2vw);
+    height: 7vh;
+    margin: 0;
+    border-radius: calc(0.3vh + 0.3vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4%;
   }
   #contact form button:hover {
     background-color: #b83f2f;
     transition: 100ms ease-in;
   }
   #contact form button img {
-    display: inline-flex;
-    max-width: 10%;
-    margin: auto auto;
-    padding-left: 3%;
-    position: relative;
+    max-width: 7%;
   }
 
-  #contact form button:hover img {
-    left: 5%;
-    transition: 5s ease-in;
-  }
+  /* Up-arrow home button */
   #scrollHome {
     display: flex;
-    justify-self: center;
-  }
-  #scrollHome button img {
-    display: flex;
-    max-width: 50%;
-    max-height: 50%;
-    margin: auto auto;
-    padding-left: 3%;
-    position: relative;
-    transform: rotate(270deg);
+    justify-content: center;
   }
   #scrollHome button {
-    width: 5vh;
-    height: 5vh;
-    font-weight: bold;
+    width: 6vh;
+    height: 6vh;
     font-size: 0;
-    border-radius: calc(0.2vh + 0.2vw);
+    font-weight: bold;
+    border-radius: calc(0.3vh + 0.3vw);
     background-color: #a93a2b;
     color: rgb(187, 187, 206);
     font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #scrollHome button img {
+    max-width: 45%;
+    max-height: 45%;
+    transform: rotate(270deg);
   }
   #scrollHome button:hover {
     background-color: #b83f2f;
     transition: 100ms ease-in;
   }
 
-  #scrollHome button:hover img {
-    scale: 1.2;
-    transition: 100ms ease-in;
+  /* Global nav2 label hidden in portrait */
+  #nav2 {
+    display: none;
   }
 }
 

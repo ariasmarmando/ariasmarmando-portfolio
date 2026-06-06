@@ -1,23 +1,6 @@
 @media only screen and (orientation: portrait) {
   .Footer-Container {
-    position: fixed;
-    margin-top: 97vh;
-    justify-content: center;
-    align-self: center;
-    display: flex;
-    background-color: #38383f;
-    width: 94%;
-    height: 3%;
-    filter: drop-shadow(0em 0.2em 0.4em #2a27276d);
-    border-radius: 0.2em 0.2em 0em 0em;
-  }
-
-  .Footer-Container p {
-    font-family: "Roboto", sans-serif;
-    color: #a9a9c2;
-    padding: 0;
-    text-align: center;
-    font-size: 1vh;
+    display: none;
   }
 }
 

@@ -13,41 +13,48 @@
   .ID-Card {
     display: flex;
     flex-direction: column;
-    margin: auto auto;
+    align-items: center;
     width: 100%;
-    height: 100%;
+    padding-top: 2vh;
   }
+
   .ID-Picture {
-    aspect-ratio: 5/5;
-    display: block;
-    margin: 15% auto;
-    max-width: 100%;
+    width: 45vw;
+    height: 45vw;
+    max-width: 220px;
+    max-height: 220px;
     border-radius: 100%;
     border: 0.2em solid #54545e;
     box-shadow: 0px 3px 16px 3px rgba(36, 36, 38, 0.25);
     overflow: hidden;
     position: relative;
     animation: slideTtB 1.5s ease-out 0s 1 normal;
+    margin-bottom: 3vh;
   }
+
   .ID-Picture img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
+
   .ID-Name {
     text-align: center;
-    margin-top: -12%;
     color: #848496;
     font-family: "Roboto", sans-serif;
-    font-size: calc(1.5vh + 1.5vw);
-    line-height: normal;
+    font-size: calc(1.4vh + 1.4vw);
+    line-height: 1.3;
+    margin-bottom: 0.5vh;
   }
 
   .ID-Title1 {
     font-family: "Roboto", sans-serif;
     text-align: center;
     color: #a9a9c2;
-    font-size: calc(1.6vh + 1.6vw);
-    line-height: normal;
-    text-wrap: nowrap;
+    font-size: calc(2.2vh + 2.2vw);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5vh;
   }
 
   .orangeBrackets {
@@ -59,7 +66,7 @@
     font-family: "Roboto", sans-serif;
     text-align: center;
     color: #a9a9c2;
-    font-size: calc(1vh + 1vw);
+    font-size: calc(1.2vh + 1.2vw);
   }
 
   #orangePsign {
