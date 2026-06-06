@@ -8,6 +8,7 @@
   color: #afafc3;
   font-family: "Roboto", sans-serif;
 }
+
 input {
   color: #848496;
   all: unset;
@@ -15,56 +16,39 @@ input {
   font-family: "Roboto", sans-serif;
   caret-color: #a93a2b;
 }
-input:invalid[focused="true"] {
+
+input:invalid[data-focused="true"] {
   border-color: #a93a2b;
 }
 
+/* Label: hidden by default, shown on hover/focus */
 .formInput label {
   display: none;
 }
-.formInput:hover label {
+.formInput:hover label,
+.formInput:focus-within label {
   display: block;
 }
-.formInput:active label {
-  display: block;
-}
-
-.formInput label[focused="true"] {
+.formInput label[data-focused="true"] {
   display: block;
 }
 
-.formInput span {
+/* Error message */
+.formInput__error {
   display: none;
   color: #b83f2f;
+  font-size: 0.85em;
 }
-input:invalid[focused="true"] ~ span {
+input:invalid[data-focused="true"] ~ .formInput__error {
   display: block;
 }
 
-.formInput :nth-child(1) {
-  grid-column: 1;
-  grid-row: 1;
-}
-.formInput :nth-child(2) {
-  grid-column: 1;
-  grid-row: 2;
-}
-.formInput :nth-child(3) {
-  grid-column: 1;
-  grid-row: 3;
-}
+/* Grid positioning */
+.formInput :nth-child(1) { grid-column: 1; grid-row: 1; }
+.formInput :nth-child(2) { grid-column: 1; grid-row: 2; }
+.formInput :nth-child(3) { grid-column: 1; grid-row: 3; }
 
-#stack3 {
-  width: 90%;
-}
-#stack2 {
-  width: 90%;
-}
-#stack1 {
-  width: 100%;
-}
-#none {
-  height: 30%;
-  width: 90%;
-  display: none;
-}
+/* Width variants via className */
+.input--stack3 { width: 90%; }
+.input--stack2 { width: 90%; }
+.input--stack1 { width: 100%; }

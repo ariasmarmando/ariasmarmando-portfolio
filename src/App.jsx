@@ -3,75 +3,91 @@ import Nav from "./Components/Nav";
 import Body from "./Components/Body";
 import Footer from "./Components/Footer";
 import IDimage from "./images/PFP3.png";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+
+const SECTIONS = ["home", "aboutMe", "projects", "contact"];
+const SECTION_INDEX = { home: 1, aboutMe: 2, projects: 3, contact: 4 };
 
 function App() {
-  const [locIndex, setlocIndex] = useState(1);
+  const [locIndex, setLocIndex] = useState(1);
+
   const personalData = {
     pfp: IDimage,
     name: "Armando Arias",
-    title1: "Software Developer",
-    title2: "UX / UI Designer",
+    title1: "Computer Scientist",
+    title2: "and Software Engineer",
   };
 
-  const handleClick = (anchor) => () => {
-    const id = `${anchor}`;
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "center",
-      });
-    }
-    if (id == "home") {
-      setlocIndex(1);
-    } else if (id == "aboutMe") {
-      setlocIndex(2);
-    } else if (id == "projects") {
-      setlocIndex(3);
-    } else if (id == "contact") {
-      setlocIndex(4);
-    }
-  };
+  // Sync active nav state with actual scroll position
+  useEffect(() => {
+    const observers = [];
 
-  function scrollerClickf() {
-    if (locIndex == 1) {
-      return handleClick("aboutMe");
-    } else if (locIndex == 2) {
-      return handleClick("projects");
-    } else if (locIndex == 3) {
-      return handleClick("contact");
-    }
-  }
-  function scrollerClickb() {
-    if (locIndex == 2) {
-      return handleClick("home");
-    } else if (locIndex == 3) {
-      return handleClick("aboutMe");
-    } else if (locIndex == 4) {
-      return handleClick("projects");
-    }
-  }
+    SECTIONS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setLocIndex(SECTION_INDEX[id]);
+            }
+          },
+          { threshold: 0.5 }
+      );
+
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
+  const handleClick = useCallback(
+      (anchor) => () => {
+        const element = document.getElementById(anchor);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+          });
+        }
+      },
+      []
+  );
+
+  // Returns the handler for the next section, or null if at the last section
+  const scrollerClickF = useCallback(() => {
+    const nextId = SECTIONS[locIndex]; // locIndex is 1-based; SECTIONS is 0-based → next
+    if (!nextId) return null;
+    return handleClick(nextId);
+  }, [locIndex, handleClick]);
+
+  // Returns the handler for the previous section, or null if at the first section
+  const scrollerClickB = useCallback(() => {
+    const prevId = SECTIONS[locIndex - 2]; // two steps back in 0-based array
+    if (!prevId) return null;
+    return handleClick(prevId);
+  }, [locIndex, handleClick]);
 
   return (
-    <div className="screenL-skeleton-container">
-      <Nav
-        sliderLocator={locIndex}
-        clickHandle={(props) => handleClick(`${props}`)}
-      />
-      <Body
-        pfp={personalData.pfp}
-        name={personalData.name}
-        title1={personalData.title1}
-        title2={personalData.title2}
-        clickHandle={(props) => handleClick(`${props}`)}
-        scrollerClickf={scrollerClickf()}
-        scrollerClickb={scrollerClickb()}
-        scrollLocation={locIndex}
-      />
-      <Footer />
-    </div>
+      <div className="screenL-skeleton-container">
+        <Nav
+            sliderLocator={locIndex}
+            clickHandle={(section) => handleClick(section)}
+        />
+        <Body
+            pfp={personalData.pfp}
+            name={personalData.name}
+            title1={personalData.title1}
+            title2={personalData.title2}
+            clickHandle={(section) => handleClick(section)}
+            scrollerClickF={scrollerClickF()}
+            scrollerClickB={scrollerClickB()}
+            scrollLocation={locIndex}
+        />
+        <Footer />
+      </div>
   );
 }
 

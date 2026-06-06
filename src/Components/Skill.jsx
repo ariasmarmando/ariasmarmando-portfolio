@@ -1,19 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../CSS/skills.css";
-const Skills = (props) => {
-  var delayInMilliseconds = Math.floor(Math.random() * 4000); //1 second
-  const [hideMe, setHideMe] = useState(true);
-  setTimeout(function () {
-    setHideMe(false);
-  }, delayInMilliseconds);
+
+const Skill = (props) => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const delay = Math.floor(Math.random() * 1200); // tighter range: max 1.2s
+    const timer = setTimeout(() => setVisible(true), delay);
+    return () => clearTimeout(timer); // cleanup on unmount
+  }, []);
 
   return (
-    <div
-      className={props.skillName == "placeholder" ? "Skills-none" : "Skills"}
-    >
-      <img id={hideMe == false ? "here" : "notHere"} src={props.iconIMG} />
-      <span id={hideMe == false ? "here" : "notHere"}>{props.skillName}</span>
-    </div>
+      <div className={visible ? "Skills" : "Skills Skills--hidden"}>
+        {props.iconIMG && (
+            <img src={props.iconIMG} alt={props.skillName} />
+        )}
+        <span>{props.skillName}</span>
+      </div>
   );
 };
-export default Skills;
+
+export default Skill;
