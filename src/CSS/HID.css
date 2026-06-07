@@ -33,8 +33,8 @@
   overflow: hidden;
 }
 .H-ID-Picture img {
-  width: 100%;
-  height: 100%;
+  width: 120%;
+  height: 120%;
   object-fit: cover;
   display: block;
 }
