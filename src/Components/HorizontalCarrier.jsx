@@ -309,12 +309,7 @@ const HorizontalCarrier = (props) => {
             <span id="bio-title">Get to know me</span>
           </div>
           <span id="bio-bio">
-            Software engineer and Computer Science student at Arizona State
-            University (B.S., expected Fall 2026 — all core CS completed,
-            capstone remaining). I build accessible, efficient software across
-            the full stack, with experience in Python, TypeScript, React, and
-            containerized backend systems. I enjoy working on problems where
-            engineering and design intersect.
+            I am a Computer scientist and Software Engineer early in my career, but not early in the way I think about software. My approach is to tackle problems from first principles,  building clean, responsive frontends and designing the backend logic that supports them. I care about code that's readable, systems that scale reasonably, and shipping things that actually work.
           </span>
         </div>
 
