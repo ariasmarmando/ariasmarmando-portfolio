@@ -60,13 +60,14 @@ input:-webkit-autofill {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 4vh 6% 0;
+    padding: 4vh 6% 4vh;
     gap: 2vh;
+    min-height: auto;
     background: radial-gradient(
-      94.03% 57.44% at 50% 45.7%,
-      rgba(46, 46, 51, 0) 0%,
-      #2e2e33 93.23%,
-      #2e2e33 100%
+            94.03% 57.44% at 50% 45.7%,
+            rgba(46, 46, 51, 0) 0%,
+            #2e2e33 93.23%,
+            #2e2e33 100%
     );
   }
 
@@ -121,7 +122,6 @@ input:-webkit-autofill {
   .coffee-button {
     align-self: flex-end;
     padding-right: 2vw;
-    margin-top: auto;
     padding-bottom: 1.5vh;
   }
   .coffee-button img {
@@ -138,10 +138,10 @@ input:-webkit-autofill {
     transition: 0.3s ease;
   }
 
-  /* Code animation panel — full width, sits at bottom of home */
+  /* Code animation panel — full width, positioned below the arrow button */
   .home-code-animation {
     width: 100%;
-    margin-top: auto;
+    margin-top: 4vh;
   }
 
   #orangeForth {
@@ -158,21 +158,32 @@ input:-webkit-autofill {
     padding: 2vh 6% 4vh;
     gap: 2.5vh;
     background: radial-gradient(
-      94.03% 57.44% at 50% 45.7%,
-      rgba(46, 46, 51, 0) 0%,
-      #2e2e33 93.23%,
-      #2e2e33 100%
+            94.03% 57.44% at 50% 45.7%,
+            rgba(46, 46, 51, 0) 0%,
+            #2e2e33 93.23%,
+            #2e2e33 100%
     );
   }
 
-  /* HID strip — right-aligned, clipped to viewport */
+  /* HID strip — right-aligned but never cropped */
   #aboutMe .hidPOS,
   #projects .hidPOS {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    overflow: hidden;
+    min-width: 0;
+  }
+  /* Card can shrink/scroll horizontally instead of overflowing the screen */
+  #aboutMe .hidPOS .H-ID-Card,
+  #projects .hidPOS .H-ID-Card {
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  #aboutMe .hidPOS .H-ID-Card::-webkit-scrollbar,
+  #projects .hidPOS .H-ID-Card::-webkit-scrollbar {
+    display: none;
   }
 
   /* Bio */
@@ -283,10 +294,10 @@ input:-webkit-autofill {
     padding: 2vh 6% 4vh;
     gap: 2vh;
     background: radial-gradient(
-      94.03% 57.44% at 50% 45.7%,
-      rgba(46, 46, 51, 0) 0%,
-      #2e2e33 93.23%,
-      #2e2e33 100%
+            94.03% 57.44% at 50% 45.7%,
+            rgba(46, 46, 51, 0) 0%,
+            #2e2e33 93.23%,
+            #2e2e33 100%
     );
   }
 
@@ -377,10 +388,10 @@ input:-webkit-autofill {
     padding: 4vh 6%;
     gap: 2.5vh;
     background: radial-gradient(
-      94.03% 57.44% at 50% 45.7%,
-      rgba(46, 46, 51, 0) 0%,
-      #2e2e33 93.23%,
-      #2e2e33 100%
+            94.03% 57.44% at 50% 45.7%,
+            rgba(46, 46, 51, 0) 0%,
+            #2e2e33 93.23%,
+            #2e2e33 100%
     );
   }
 
@@ -493,10 +504,10 @@ input:-webkit-autofill {
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
     background: radial-gradient(
-      94.03% 57.44% at 50% 45.7%,
-      rgba(46, 46, 51, 0) 0%,
-      #2e2e33 93.23%,
-      #2e2e33 100%
+            94.03% 57.44% at 50% 45.7%,
+            rgba(46, 46, 51, 0) 0%,
+            #2e2e33 93.23%,
+            #2e2e33 100%
     );
   }
   #home :nth-child(1) {
@@ -576,16 +587,22 @@ input:-webkit-autofill {
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 20% 30% 20% 30%;
     background: radial-gradient(
-      94.03% 57.44% at 50% 45.7%,
-      rgba(46, 46, 51, 0) 0%,
-      #2e2e33 93.23%,
-      #2e2e33 100%
+            94.03% 57.44% at 50% 45.7%,
+            rgba(46, 46, 51, 0) 0%,
+            #2e2e33 93.23%,
+            #2e2e33 100%
     );
   }
 
   #aboutMe :nth-child(1) {
     grid-row: 1;
     grid-column: 1/5;
+  }
+  #aboutMe .hidPOS {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
   #aboutMe .bio-section {
     display: inline-block;
@@ -670,11 +687,15 @@ input:-webkit-autofill {
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 20% 30% 20% 30%;
     background: radial-gradient(
-      94.03% 57.44% at 50% 45.7%,
-      rgba(46, 46, 51, 0) 0%,
-      #2e2e33 93.23%,
-      #2e2e33 100%
+            94.03% 57.44% at 50% 45.7%,
+            rgba(46, 46, 51, 0) 0%,
+            #2e2e33 93.23%,
+            #2e2e33 100%
     );
+  }
+  /* HID not part of landscape projects layout */
+  #projects .hidPOS {
+    display: none;
   }
   #projects #projects-content {
     margin: auto auto;
@@ -705,10 +726,10 @@ input:-webkit-autofill {
     height: 80%;
     background: rgb(56, 56, 63);
     background: linear-gradient(
-      0deg,
-      rgba(56, 56, 63, 1) 0%,
-      rgba(63, 63, 70, 0.499) 50%,
-      rgba(56, 56, 63, 0.62) 100%
+            0deg,
+            rgba(56, 56, 63, 1) 0%,
+            rgba(63, 63, 70, 0.499) 50%,
+            rgba(56, 56, 63, 0.62) 100%
     );
 
     overflow-y: auto;
@@ -765,10 +786,10 @@ input:-webkit-autofill {
     grid-template-columns: 100%;
     grid-template-rows: 10% 90%;
     background: radial-gradient(
-      94.03% 57.44% at 50% 45.7%,
-      rgba(46, 46, 51, 0) 0%,
-      #2e2e33 93.23%,
-      #2e2e33 100%
+            94.03% 57.44% at 50% 45.7%,
+            rgba(46, 46, 51, 0) 0%,
+            #2e2e33 93.23%,
+            #2e2e33 100%
     );
   }
   #contact #contact-content-title {
