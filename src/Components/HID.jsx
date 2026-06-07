@@ -1,11 +1,12 @@
 import "../CSS/HID.css";
+import hidAvatar from "../images/me-hid.png";
 
 const HID = (props) => {
   const visible = props.scrollLocation === 2 || props.scrollLocation === 3;
   return (
     <div className={visible ? "H-ID-Card" : "none"}>
       <div className="H-ID-Picture">
-        <img src={props.pfp} alt={props.name} />
+        <img src={hidAvatar} alt={props.name} />
       </div>
       <span className="h-inside-text">{props.name}</span>
       <span className="hid-sep">|</span>
