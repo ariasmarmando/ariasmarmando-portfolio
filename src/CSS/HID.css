@@ -66,17 +66,24 @@
   .H-ID-Card {
     max-width: 100%;
     padding: 5px 10px;
-    gap: 5px;
+    gap: 4px;
+    box-sizing: border-box;
   }
   .H-ID-Card .H-ID-Picture {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
   }
   .h-inside-text,
   .H-orangeBrackets,
   #H-orangePsign,
   .hid-sep {
-    font-size: 10px;
+    font-size: 9px;
+  }
+  /* Allow the trailing title to truncate so the strip always fits */
+  .H-ID-Card .h-inside-text:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
   }
 }
 

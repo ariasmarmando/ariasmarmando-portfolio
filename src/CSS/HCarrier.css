@@ -39,16 +39,19 @@ input:-webkit-autofill {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: visible;
     width: 100%;
-    height: 100%;
+    max-width: 100%;
   }
 
   .spaceBlock {
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 100%;
     min-height: 100vh;
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
 
   /* ─────────────────────────────
@@ -165,7 +168,7 @@ input:-webkit-autofill {
     );
   }
 
-  /* HID strip — right-aligned but never cropped */
+  /* HID strip — right-aligned, constrained to content width */
   #aboutMe .hidPOS,
   #projects .hidPOS {
     width: 100%;
@@ -173,17 +176,14 @@ input:-webkit-autofill {
     justify-content: flex-end;
     align-items: center;
     min-width: 0;
+    overflow: hidden;
   }
-  /* Card can shrink/scroll horizontally instead of overflowing the screen */
+  /* Card sizes to its content but never exceeds the strip width */
   #aboutMe .hidPOS .H-ID-Card,
   #projects .hidPOS .H-ID-Card {
     max-width: 100%;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  #aboutMe .hidPOS .H-ID-Card::-webkit-scrollbar,
-  #projects .hidPOS .H-ID-Card::-webkit-scrollbar {
-    display: none;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   /* Bio */

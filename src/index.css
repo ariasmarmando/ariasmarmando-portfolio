@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Roboto", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -23,18 +23,43 @@ a:hover {
   color: #535bf2;
 }
 
+/* Global: never allow horizontal scroll/shift */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
   background: rgb(68, 68, 74);
   background: radial-gradient(
-    circle,
-    rgba(68, 68, 74, 1) 50%,
-    rgba(93, 93, 103, 1) 100%
+          circle,
+          rgba(68, 68, 74, 1) 50%,
+          rgba(93, 93, 103, 1) 100%
   );
+}
+
+/* Landscape: center the fixed-aspect-ratio card */
+@media only screen and (orientation: landscape) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+}
+
+/* Portrait: normal block flow, no centering, full width */
+@media only screen and (orientation: portrait) {
+  body {
+    display: block;
+  }
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 }
 
 h1 {
@@ -53,23 +78,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
