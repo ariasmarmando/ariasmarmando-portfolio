@@ -2,7 +2,7 @@ import "./CSS/screenL-main.css";
 import Nav from "./Components/Nav";
 import Body from "./Components/Body";
 import Footer from "./Components/Footer";
-import IDimage from "./images/PFP3.png";
+import IDimage from "./me-fav.svg";
 import { useState, useEffect, useCallback } from "react";
 
 const SECTIONS = ["home", "aboutMe", "projects", "contact"];
