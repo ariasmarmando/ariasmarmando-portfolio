@@ -43,15 +43,29 @@
     border-radius: 50%;
     background: #a93a2b;
     box-shadow: 0 10px 26px 2px rgba(36, 36, 38, 0.35);
+    z-index: 0;
   }
 
-  /* Avatar pops above the disc */
+  /* White ring — smaller than the disc, sits between disc and avatar */
+  .ID-Ring {
+    position: absolute;
+    left: 50%;
+    bottom: 7%;
+    transform: translateX(-50%);
+    width: 82%;
+    height: 82%;
+    border-radius: 50%;
+    background: #f4f4f0;
+    z-index: 1;
+  }
+
+  /* Avatar pops above everything */
   .ID-Avatar {
     position: relative;
     z-index: 2;
-    width: 104%;
+    width: 92%;
     height: auto;
-    transform: translateY(-6%);
+    transform: translateY(-8%);
     filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.3));
     animation: slideTtB 1.5s ease-out 0s 1 normal;
   }
@@ -114,13 +128,25 @@
     border-radius: 50%;
     background: #a93a2b;
     box-shadow: 0 8px 20px 2px rgba(36, 36, 38, 0.3);
+    z-index: 0;
+  }
+  .ID-Ring {
+    position: absolute;
+    left: 50%;
+    bottom: 7%;
+    transform: translateX(-50%);
+    width: 82%;
+    height: 82%;
+    border-radius: 50%;
+    background: #f4f4f0;
+    z-index: 1;
   }
   .ID-Avatar {
     position: relative;
     z-index: 2;
-    width: 104%;
+    width: 92%;
     height: auto;
-    transform: translateY(-6%);
+    transform: translateY(-8%);
     filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
     animation: slideTtB 1.5s ease-out 0s 1 normal;
   }

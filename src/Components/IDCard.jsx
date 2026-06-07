@@ -5,6 +5,7 @@ const IDCard = (props) => {
     <div className="ID-Card">
       <div className="ID-Picture">
         <div className="ID-Disc" />
+        <div className="ID-Ring" />
         <img src={props.pfp} alt={props.name} className="ID-Avatar" />
       </div>
       <div className="ID-Name">
