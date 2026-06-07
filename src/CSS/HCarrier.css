@@ -34,6 +34,17 @@ input:-webkit-autofill {
 }
 @media only screen and (orientation: portrait) {
 
+  /* ── Vertical mode removals: nav bar replaces these ── */
+  .hidPOS {            /* HID strip not shown in vertical scroll */
+    display: none !important;
+  }
+  .aboutMeButton,      /* home down-arrow */
+  .projectsMeButton,   /* about prev/next arrows */
+  .formMeButton,       /* projects prev/next arrows */
+  #scrollHome {        /* contact home-up arrow */
+    display: none !important;
+  }
+
   /* ── Carrier ── */
   .elements-carrier {
     display: flex;
