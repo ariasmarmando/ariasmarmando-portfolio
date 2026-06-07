@@ -87,6 +87,7 @@ const skillList = [
   { id: "sk-restapi",    name: "REST APIs",   image: null },
   { id: "sk-postgres",   name: "PostgreSQL",  image: PostgresIcon },
   { id: "sk-mysql",      name: "MySQL",       image: null },
+  { id: "sk-typescript", name: "TypeScript",       image: null },
 ];
 
 // Skills used per project — reference by id
