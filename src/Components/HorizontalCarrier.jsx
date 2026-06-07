@@ -102,8 +102,10 @@ const liveProjectData = [
     isPrivate: true,
     skills: [
       skillMap["sk-python"],
-      skillMap["sk-fastapi"],
+      skillMap["sk-typescript"],
+      skillMap["sk-react"],
       skillMap["sk-docker"],
+      skillMap["sk-fastapi"],
       skillMap["sk-restapi"],
       skillMap["sk-numpy"],
       skillMap["sk-antspy"],
