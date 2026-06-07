@@ -15,7 +15,7 @@ function App() {
     pfp: IDimage,
     name: "Armando Arias",
     title1: "Computer Scientist",
-    title2: "and Software Engineer",
+    title2: "Software Engineer",
   };
 
   // Sync active nav state with actual scroll position
