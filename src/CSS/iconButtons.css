@@ -3,20 +3,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    font-weight: 700;
     width: 100%;
     font-size: calc(0.9vh + 0.9vw);
-    padding: 12px 16px;
-    border-radius: 6px;
-    background-color: #3a3a42;
-    color: #a9a9c2;
-    border: 1px solid #4a4a54;
+    padding: 14px 16px;
+    border-radius: 8px;
+    background-color: #a93a2b;
+    color: #f4f4f0;
+    border: 2px solid #1f1f23;
+    box-shadow: 4px 4px 0 0 #1f1f23;
     text-decoration: none;
-    transition: background-color 0.2s ease;
     cursor: pointer;
+    transition: transform 0.08s ease, box-shadow 0.08s ease,
+    background-color 0.2s ease;
   }
+  /* Press effect — button sinks into its shadow */
   .IconsButton:hover {
-    background-color: #44444e;
+    background-color: #b83f2f;
+  }
+  .IconsButton:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 0 #1f1f23;
   }
   .buttonContent {
     display: flex;
