@@ -369,6 +369,15 @@ const HorizontalCarrier = (props) => {
 
       {/* ── PROJECTS ── */}
       <div id="projects" className="spaceBlock">
+        <div className="hidPOS">
+          <HID
+            pfp={props.pfp}
+            name={props.name}
+            title1={props.title1}
+            title2={props.title2}
+            scrollLocation={scrollLocation}
+          />
+        </div>
         <div id="projects-content">
           <div id="bio-title1">
             <span id="bio-slash">// </span>

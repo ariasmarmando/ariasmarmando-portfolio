@@ -12,68 +12,61 @@
 
 @media only screen and (orientation: portrait) {
   .H-ID-Card {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
-    gap: 2vw;
-    width: auto;
-    height: auto;
-    padding: 1.5% 3%;
+    gap: 8px;
+    max-width: 90vw;          /* never overflow viewport */
+    overflow: hidden;
+    padding: 6px 10px;
     background-color: #4949515a;
     box-shadow: 0px 1px 3px 1px rgba(36, 36, 38, 0.158);
     border: 1px solid transparent;
-    border-radius: 5px;
-    white-space: nowrap;
+    border-radius: 6px;
     animation: slideTtB 1.5s ease-out 0s 1 normal;
   }
 
-  /* Text group: name | [title1] + title2 laid out inline */
-  .H-ID-Name {
-    text-align: right;
-  }
-  .H-ID-Title1 {
-    text-align: right;
-  }
-  .H-ID-Title2 {
-    text-align: right;
-  }
-
-  .h-inside-text {
-    display: inline;
-    font-family: "Roboto", sans-serif;
-    color: #848496;
-    font-size: calc(0.7vh + 0.7vw);
-    white-space: nowrap;
-  }
-
-  .H-orangeBrackets {
-    color: #a93a2b;
-    font-size: calc(0.7vh + 0.7vw);
-  }
-
-  #H-orangePsign {
-    color: #a93a2b;
-    font-size: calc(0.7vh + 0.7vw);
-  }
-
-  /* Mini profile circle — right side */
+  /* Mini profile circle — fixed size, never shrinks */
   .H-ID-Card .H-ID-Picture {
-    width: calc(4vh + 4vw);
-    height: calc(4vh + 4vw);
-    max-width: 48px;
-    max-height: 48px;
-    border-radius: 100%;
-    border: 2px solid #54545e;
-    box-shadow: 0px 3px 16px 3px rgba(36, 36, 38, 0.25);
-    overflow: hidden;
+    width: 36px;
+    height: 36px;
     flex-shrink: 0;
+    border-radius: 50%;
+    border: 1.5px solid #54545e;
+    overflow: hidden;
   }
-
   .H-ID-Picture img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  /* Text group */
+  .H-ID-Name,
+  .H-ID-Title1,
+  .H-ID-Title2 {
+    /* each sits inline in the flex row */
+  }
+
+  .h-inside-text {
+    font-family: "Roboto", sans-serif;
+    color: #848496;
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .H-orangeBrackets {
+    color: #a93a2b;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  #H-orangePsign {
+    color: #a93a2b;
+    font-size: 11px;
+    white-space: nowrap;
   }
 
   .none {

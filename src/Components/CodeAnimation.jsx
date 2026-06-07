@@ -1,98 +1,71 @@
 import { useEffect, useRef } from "react";
 import "../CSS/CodeAnimation.css";
 
-// Each "line" of fake code is an array of block widths (as % of the content area)
-// Varied lengths simulate real code tokens. Red block = keyword.
+// Block widths in px. Wider blocks = more realistic code line feel.
+// Red = keyword/accent token.
 const CODE_LINES = [
-  [{ w: 18, red: true }, { w: 32, red: false }, { w: 14, red: false }],
-  [{ w: 24, red: false }, { w: 16, red: false }],
-  [{ w: 38, red: false }, { w: 20, red: false }, { w: 12, red: false }],
-  [{ w: 28, red: false }, { w: 22, red: false }, { w: 18, red: false }],
-  [{ w: 16, red: true }, { w: 44, red: false }],
-  [{ w: 30, red: false }, { w: 14, red: false }],
-  [{ w: 20, red: false }, { w: 26, red: false }, { w: 16, red: false }],
-  [{ w: 36, red: false }, { w: 18, red: false }],
-  [{ w: 14, red: true }, { w: 28, red: false }, { w: 20, red: false }],
-  [{ w: 22, red: false }, { w: 16, red: false }, { w: 12, red: false }],
-  [{ w: 40, red: false }, { w: 14, red: false }],
-  [{ w: 18, red: false }, { w: 30, red: false }],
-  [{ w: 24, red: true }, { w: 20, red: false }, { w: 16, red: false }],
-  [{ w: 32, red: false }, { w: 18, red: false }, { w: 14, red: false }],
-  [{ w: 16, red: false }, { w: 24, red: false }],
-  [{ w: 28, red: true }, { w: 36, red: false }],
-  [{ w: 20, red: false }, { w: 14, red: false }, { w: 22, red: false }],
-  [{ w: 34, red: false }, { w: 16, red: false }],
-  [{ w: 18, red: false }, { w: 28, red: false }, { w: 12, red: false }],
-  [{ w: 22, red: true }, { w: 18, red: false }],
+  [{ w: 80, red: false }, { w: 50, red: false }],
+  [{ w: 100, red: false }, { w: 60, red: false }, { w: 90, red: true }],
+  [{ w: 160, red: false }],
+  [{ w: 55, red: false }],
+  [{ w: 70, red: false }, { w: 50, red: false }, { w: 80, red: false }],
+  [{ w: 110, red: false }, { w: 55, red: false }],
+  [{ w: 90, red: false }, { w: 40, red: false }],
+  [{ w: 65, red: false }, { w: 75, red: false }, { w: 50, red: false }],
+  [{ w: 120, red: true }, { w: 60, red: false }],
+  [{ w: 85, red: false }],
+  [{ w: 55, red: false }, { w: 90, red: false }],
+  [{ w: 70, red: false }, { w: 50, red: false }, { w: 110, red: false }],
+  [{ w: 95, red: false }, { w: 45, red: true }],
+  [{ w: 130, red: false }],
+  [{ w: 60, red: false }, { w: 40, red: false }],
+  [{ w: 80, red: true }, { w: 70, red: false }, { w: 55, red: false }],
+  [{ w: 100, red: false }, { w: 60, red: false }],
+  [{ w: 75, red: false }, { w: 85, red: false }],
+  [{ w: 55, red: false }, { w: 40, red: false }, { w: 70, red: false }],
+  [{ w: 90, red: false }, { w: 50, red: true }],
 ];
 
-const VISIBLE_LINES = 8; // how many lines show at once
+const VISIBLE_LINES = 7;
+const LINE_HEIGHT = 28;
 
 const CodeAnimation = () => {
   const containerRef = useRef(null);
-  const offsetRef = useRef(0);
   const rafRef = useRef(null);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    const lineHeight = 28; // px per line
     const totalLines = CODE_LINES.length;
-
-    // Build DOM lines once
     const lineEls = [];
-    for (let i = 0; i < VISIBLE_LINES + 2; i++) {
-      const lineIndex = i % totalLines;
-      const row = document.createElement("div");
-      row.className = "ca-row";
-
-      // Line number square
-      const lineNum = document.createElement("div");
-      lineNum.className = "ca-linenum";
-      row.appendChild(lineNum);
-
-      // Code blocks
-      const blocks = document.createElement("div");
-      blocks.className = "ca-blocks";
-      CODE_LINES[lineIndex].forEach((block) => {
-        const b = document.createElement("div");
-        b.className = block.red ? "ca-block ca-block--red" : "ca-block";
-        b.style.width = block.w + "%";
-        blocks.appendChild(b);
-      });
-      row.appendChild(blocks);
-      container.appendChild(row);
-      lineEls.push(row);
-    }
-
     let currentLine = 0;
 
-    const tick = () => {
-      offsetRef.current += 0.4; // scroll speed px per frame
+    // Build initial rows
+    for (let i = 0; i < VISIBLE_LINES + 2; i++) {
+      const lineIndex = i % totalLines;
+      lineEls.push(buildRow(CODE_LINES[lineIndex]));
+      container.appendChild(lineEls[lineEls.length - 1]);
+    }
 
-      if (offsetRef.current >= lineHeight) {
-        offsetRef.current -= lineHeight;
+    let offset = 0;
+
+    const tick = () => {
+      offset += 0.5;
+
+      if (offset >= LINE_HEIGHT) {
+        offset -= LINE_HEIGHT;
         currentLine = (currentLine + 1) % totalLines;
 
-        // Recycle the top row to the bottom with new content
+        // Recycle top row to bottom with new content
         const recycled = lineEls.shift();
-        const nextLineIndex = (currentLine + VISIBLE_LINES + 1) % totalLines;
-        // Update blocks
-        const blocksEl = recycled.querySelector(".ca-blocks");
-        blocksEl.innerHTML = "";
-        CODE_LINES[nextLineIndex].forEach((block) => {
-          const b = document.createElement("div");
-          b.className = block.red ? "ca-block ca-block--red" : "ca-block";
-          b.style.width = block.w + "%";
-          blocksEl.appendChild(b);
-        });
+        const nextIndex = (currentLine + VISIBLE_LINES + 1) % totalLines;
+        updateRow(recycled, CODE_LINES[nextIndex]);
         container.appendChild(recycled);
         lineEls.push(recycled);
       }
 
-      // Apply translate to the whole container
-      container.style.transform = `translateY(-${offsetRef.current}px)`;
+      container.style.transform = `translateY(-${offset}px)`;
       rafRef.current = requestAnimationFrame(tick);
     };
 
@@ -109,5 +82,36 @@ const CodeAnimation = () => {
     </div>
   );
 };
+
+function buildRow(lineData) {
+  const row = document.createElement("div");
+  row.className = "ca-row";
+
+  const gutter = document.createElement("div");
+  gutter.className = "ca-linenum";
+  row.appendChild(gutter);
+
+  const blocks = document.createElement("div");
+  blocks.className = "ca-blocks";
+  lineData.forEach((b) => {
+    const el = document.createElement("div");
+    el.className = b.red ? "ca-block ca-block--red" : "ca-block";
+    el.style.width = b.w + "px";
+    blocks.appendChild(el);
+  });
+  row.appendChild(blocks);
+  return row;
+}
+
+function updateRow(row, lineData) {
+  const blocks = row.querySelector(".ca-blocks");
+  blocks.innerHTML = "";
+  lineData.forEach((b) => {
+    const el = document.createElement("div");
+    el.className = b.red ? "ca-block ca-block--red" : "ca-block";
+    el.style.width = b.w + "px";
+    blocks.appendChild(el);
+  });
+}
 
 export default CodeAnimation;
