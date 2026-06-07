@@ -165,12 +165,14 @@ input:-webkit-autofill {
     );
   }
 
-  /* HID strip — right-aligned */
-  #aboutMe .hidPOS {
+  /* HID strip — right-aligned, clipped to viewport */
+  #aboutMe .hidPOS,
+  #projects .hidPOS {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    overflow: hidden;
   }
 
   /* Bio */

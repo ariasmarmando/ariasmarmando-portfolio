@@ -15,21 +15,21 @@
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    gap: 8px;
-    max-width: 90vw;          /* never overflow viewport */
+    gap: 6px;
+    max-width: calc(100vw - 20px);
     overflow: hidden;
-    padding: 6px 10px;
+    padding: 5px 10px;
     background-color: #4949515a;
     box-shadow: 0px 1px 3px 1px rgba(36, 36, 38, 0.158);
     border: 1px solid transparent;
     border-radius: 6px;
     animation: slideTtB 1.5s ease-out 0s 1 normal;
+    flex-shrink: 0;
   }
 
-  /* Mini profile circle — fixed size, never shrinks */
   .H-ID-Card .H-ID-Picture {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     flex-shrink: 0;
     border-radius: 50%;
     border: 1.5px solid #54545e;
@@ -41,32 +41,31 @@
     object-fit: cover;
   }
 
-  /* Text group */
-  .H-ID-Name,
-  .H-ID-Title1,
-  .H-ID-Title2 {
-    /* each sits inline in the flex row */
-  }
-
+  /* All text in the strip */
   .h-inside-text {
     font-family: "Roboto", sans-serif;
     color: #848496;
-    font-size: 11px;
+    font-size: 10px;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
-
   .H-orangeBrackets {
     color: #a93a2b;
-    font-size: 11px;
+    font-size: 10px;
     white-space: nowrap;
+    flex-shrink: 0;
   }
-
   #H-orangePsign {
     color: #a93a2b;
-    font-size: 11px;
+    font-size: 10px;
     white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Separator between name and title */
+  .hid-sep {
+    color: #464651;
+    font-size: 10px;
+    flex-shrink: 0;
   }
 
   .none {

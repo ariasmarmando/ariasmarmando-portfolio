@@ -8,9 +8,11 @@ const HID = (props) => {
         <img src={props.pfp} alt={props.name} />
       </div>
       <span className="h-inside-text">{props.name}</span>
+      <span className="hid-sep">|</span>
       <span className="H-orangeBrackets">&#91;</span>
       <span className="h-inside-text">{props.title1}</span>
       <span className="H-orangeBrackets">&#93;</span>
+      <span className="hid-sep">|</span>
       <span id="H-orangePsign">&#43;</span>
       <span className="h-inside-text">{props.title2}</span>
     </div>
