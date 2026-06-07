@@ -2,7 +2,7 @@ import "./CSS/screenL-main.css";
 import Nav from "./Components/Nav";
 import Body from "./Components/Body";
 import Footer from "./Components/Footer";
-import IDimage from "./me-fav.svg";
+import IDimage from "./images/me-cutout.png";
 import { useState, useEffect, useCallback } from "react";
 
 const SECTIONS = ["home", "aboutMe", "projects", "contact"];
@@ -15,7 +15,7 @@ function App() {
     pfp: IDimage,
     name: "Armando Arias",
     title1: "Computer Scientist",
-    title2: "Software Engineer",
+    title2: "and Software Engineer",
   };
 
   // Sync active nav state with actual scroll position
@@ -27,12 +27,12 @@ function App() {
       if (!el) return;
 
       const observer = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) {
-              setLocIndex(SECTION_INDEX[id]);
-            }
-          },
-          { threshold: 0.5 }
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setLocIndex(SECTION_INDEX[id]);
+          }
+        },
+        { threshold: 0.5 }
       );
 
       observer.observe(el);
@@ -43,17 +43,17 @@ function App() {
   }, []);
 
   const handleClick = useCallback(
-      (anchor) => () => {
-        const element = document.getElementById(anchor);
-        if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-            inline: "center",
-          });
-        }
-      },
-      []
+    (anchor) => () => {
+      const element = document.getElementById(anchor);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "center",
+        });
+      }
+    },
+    []
   );
 
   // Returns the handler for the next section, or null if at the last section
@@ -71,23 +71,23 @@ function App() {
   }, [locIndex, handleClick]);
 
   return (
-      <div className="screenL-skeleton-container">
-        <Nav
-            sliderLocator={locIndex}
-            clickHandle={(section) => handleClick(section)}
-        />
-        <Body
-            pfp={personalData.pfp}
-            name={personalData.name}
-            title1={personalData.title1}
-            title2={personalData.title2}
-            clickHandle={(section) => handleClick(section)}
-            scrollerClickF={scrollerClickF()}
-            scrollerClickB={scrollerClickB()}
-            scrollLocation={locIndex}
-        />
-        <Footer />
-      </div>
+    <div className="screenL-skeleton-container">
+      <Nav
+        sliderLocator={locIndex}
+        clickHandle={(section) => handleClick(section)}
+      />
+      <Body
+        pfp={personalData.pfp}
+        name={personalData.name}
+        title1={personalData.title1}
+        title2={personalData.title2}
+        clickHandle={(section) => handleClick(section)}
+        scrollerClickF={scrollerClickF()}
+        scrollerClickB={scrollerClickB()}
+        scrollLocation={locIndex}
+      />
+      <Footer />
+    </div>
   );
 }
 
