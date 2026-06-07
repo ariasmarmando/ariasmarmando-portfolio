@@ -78,10 +78,10 @@ input:-webkit-autofill {
     gap: 2vh;
     min-height: auto;
     background: radial-gradient(
-            94.03% 57.44% at 50% 45.7%,
-            rgba(46, 46, 51, 0) 0%,
-            #2e2e33 93.23%,
-            #2e2e33 100%
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
     );
   }
 
@@ -172,10 +172,10 @@ input:-webkit-autofill {
     padding: 2vh 6% 4vh;
     gap: 2.5vh;
     background: radial-gradient(
-            94.03% 57.44% at 50% 45.7%,
-            rgba(46, 46, 51, 0) 0%,
-            #2e2e33 93.23%,
-            #2e2e33 100%
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
     );
   }
 
@@ -305,10 +305,10 @@ input:-webkit-autofill {
     padding: 2vh 6% 4vh;
     gap: 2vh;
     background: radial-gradient(
-            94.03% 57.44% at 50% 45.7%,
-            rgba(46, 46, 51, 0) 0%,
-            #2e2e33 93.23%,
-            #2e2e33 100%
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
     );
   }
 
@@ -399,10 +399,10 @@ input:-webkit-autofill {
     padding: 4vh 6%;
     gap: 2.5vh;
     background: radial-gradient(
-            94.03% 57.44% at 50% 45.7%,
-            rgba(46, 46, 51, 0) 0%,
-            #2e2e33 93.23%,
-            #2e2e33 100%
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
     );
   }
 
@@ -515,10 +515,10 @@ input:-webkit-autofill {
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
     background: radial-gradient(
-            94.03% 57.44% at 50% 45.7%,
-            rgba(46, 46, 51, 0) 0%,
-            #2e2e33 93.23%,
-            #2e2e33 100%
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
     );
   }
   #home :nth-child(1) {
@@ -598,10 +598,10 @@ input:-webkit-autofill {
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 20% 30% 20% 30%;
     background: radial-gradient(
-            94.03% 57.44% at 50% 45.7%,
-            rgba(46, 46, 51, 0) 0%,
-            #2e2e33 93.23%,
-            #2e2e33 100%
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
     );
   }
 
@@ -689,6 +689,10 @@ input:-webkit-autofill {
   #skillList {
     grid-column: 2;
     grid-row: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-content: flex-start;
   }
   .projectsMeButton {
     display: none;
@@ -698,10 +702,10 @@ input:-webkit-autofill {
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 20% 30% 20% 30%;
     background: radial-gradient(
-            94.03% 57.44% at 50% 45.7%,
-            rgba(46, 46, 51, 0) 0%,
-            #2e2e33 93.23%,
-            #2e2e33 100%
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
     );
   }
   /* HID not part of landscape projects layout */
@@ -737,10 +741,10 @@ input:-webkit-autofill {
     height: 80%;
     background: rgb(56, 56, 63);
     background: linear-gradient(
-            0deg,
-            rgba(56, 56, 63, 1) 0%,
-            rgba(63, 63, 70, 0.499) 50%,
-            rgba(56, 56, 63, 0.62) 100%
+      0deg,
+      rgba(56, 56, 63, 1) 0%,
+      rgba(63, 63, 70, 0.499) 50%,
+      rgba(56, 56, 63, 0.62) 100%
     );
 
     overflow-y: auto;
@@ -797,10 +801,10 @@ input:-webkit-autofill {
     grid-template-columns: 100%;
     grid-template-rows: 10% 90%;
     background: radial-gradient(
-            94.03% 57.44% at 50% 45.7%,
-            rgba(46, 46, 51, 0) 0%,
-            #2e2e33 93.23%,
-            #2e2e33 100%
+      94.03% 57.44% at 50% 45.7%,
+      rgba(46, 46, 51, 0) 0%,
+      #2e2e33 93.23%,
+      #2e2e33 100%
     );
   }
   #contact #contact-content-title {

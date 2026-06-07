@@ -25,6 +25,8 @@
   color: #e0e0ef;
   animation: skillAppear 0.4s ease-out both;
   white-space: nowrap;
+  /* Fallback spacing when the parent isn't a gap-based flex container */
+  margin: 0 4px 6px 0;
 }
 
 .Skills img {
